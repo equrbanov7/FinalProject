@@ -1,0 +1,31 @@
+.middleSearch {
+  display: flex;
+  // width: 856px;
+  flex-grow: 0.7;
+  .searchSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--d-grey-02, #f6f8fa);
+    width: 100%;
+    position: relative;
+   
+  }
+  .line {
+    width: 2px;
+    height: 24px;
+    background: #e4e9ee;
+  }
+  .searchING {
+    width: 100%;
+    input {
+      border-radius: 8px;
+      background: var(--d-grey-02, #f6f8fa);
+      border: none;
+      outline: none;
+      padding: 11px 16px;
+      width: 100%;
+    }
+  }
+}

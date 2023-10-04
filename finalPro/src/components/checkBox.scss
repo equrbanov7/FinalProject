@@ -1,0 +1,25 @@
+.catchFormCheck {
+  form {
+    display: flex;
+    align-items: center;
+    // gap: 8px;
+
+    input{
+        margin-right: 8px;
+    }
+    label {
+      color: var(--grey-01, #818b9c);
+      font-family: Clash Grotesk;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      transform: translateY(1px);
+    }
+    img {
+      width: 18px;
+      height: 18px;
+      margin-right: 4px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+header {
+  margin: 2rem auto;
+
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto 40px;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,14 @@
+.titleitem {
+  display: flex;
+  justify-content: space-between;
+  // margin: auto 120px;
+  h1 {
+    color: var(--black-01, #0b0f0e);
+    font-family: Clash Grotesk;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+  }
+}

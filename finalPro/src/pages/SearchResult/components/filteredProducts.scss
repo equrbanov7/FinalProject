@@ -1,0 +1,44 @@
+.allElementsinSearch {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  .paginationCatch {
+    margin-top: 52px;
+    .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+      color: var(--dark-green-03, #1d9e34);
+      text-align: center;
+
+      /* Paragraph/P2/14 Medium - Lh 160% */
+      font-family: Clash Grotesk;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%; /* 22.4px */
+    }
+    .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
+      color: #1d9e34;
+    }
+    .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root {
+      color: var(--grey-01, #818b9c);
+      text-align: center;
+
+      /* Paragraph/P2/14 Medium - Lh 160% */
+      font-family: Clash Grotesk;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%; /* 22.4px */
+      padding: 11px 16px !important;
+    }
+  }
+}
+.catchFilteredPro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  .cathcCardComp {
+    margin-top: 0;
+    max-width: 278px;
+  }
+}

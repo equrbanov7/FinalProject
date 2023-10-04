@@ -1,0 +1,7 @@
+.catchPopularProducts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin: auto 120px;
+  margin-top: 20px;
+}

@@ -1,0 +1,27 @@
+.FeaturedCtgAll {
+  // margin: auto 120px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+
+//   .slideriTemsCatch {
+//     display: flex;
+//     background: #fff;
+//     justify-content: space-between;
+//     gap: 24px;
+//   }
+  .swiper-scrollbar {
+    // opacity: 1;
+
+    .swiper-scrollbar-drag {
+      width: 300px !important;
+      height: 6px;
+      border-radius: 30px;
+      background: var(--dark-green-01, #1e4c2f);
+    }
+  }
+  .swiper-wrapper {
+    padding-bottom: 52px;
+  }
+}

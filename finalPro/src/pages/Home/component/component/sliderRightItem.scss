@@ -1,0 +1,91 @@
+.sliderrightCatch {
+  width: 45%;
+  position: relative;
+  //   padding-right: 60px;
+  .sliderBackImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+} 
+
+.sliderrightCatch .cathcCardComp{
+  position: absolute;
+  top: 175px;
+  left: 187px;
+  /* right: 17px; */
+  width: 150px;
+  height: 144px;
+  background: #fff;
+  border-radius: 8px 8px 0px 0px;
+  background: var(--l-grey-02, #f6f6f6);
+  .topSide{
+    border-radius: 8px 8px 0px 0px;
+    background: var(--l-grey-02, #f6f6f6);
+    .imgCatch {
+      width: 120px;
+      height: 120px;
+      margin: 12px 15px;
+    }
+  }
+  .bottomSide {
+    padding: 10px;
+    text-align: start;
+    background: #fff;
+    .leftProductInfos ._catchInfos_1j6zo_1 {
+      h2 {
+        color: var(--black-01, #0b0f0e);
+        font-feature-settings: "clig" off, "liga" off;
+        font-family: Clash Grotesk;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: -0.2px;
+      }
+      p {
+        color: var(--grey-01, #818b9c);
+        font-feature-settings: "clig" off, "liga" off;
+        font-family: Clash Grotesk;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+      }
+    }
+    .leftProductInfos .rating {
+      .starSide {
+        img {
+          width: 12px;
+        }
+        span {
+          color: var(--black-01, #0b0f0e);
+          font-feature-settings: "clig" off, "liga" off;
+          font-family: Clash Grotesk;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 160%;
+        }
+      }
+      .soldCount {
+        color: var(--black-01, #0b0f0e);
+        font-feature-settings: "clig" off, "liga" off;
+        font-family: Clash Grotesk;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+      }
+     
+    }
+    .rightPrice{
+      display: none;
+    }
+  }
+  .wishIcon {
+    right: 9px;
+    top: 9px;
+    padding: 5px;
+  }
+}

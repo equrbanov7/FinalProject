@@ -1,0 +1,72 @@
+.catchFilterAll {
+  // width: 25%;
+  border-radius: 12px;
+  border: 1px solid var(--d-grey-01, #e4e9ee);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  max-width: 278px;
+    width: 100%;
+
+  .lineBlockFlter {
+    width: 100%;
+    height: 2px;
+    background: #e4e9ee;
+  }
+}
+.catchFilterAll .nameOfTitle {
+  h2 {
+    color: var(--black-01, #0b0f0e);
+    font-family: Clash Grotesk;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+  }
+}
+
+.catchFilterAll .FilterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .MuiPaper-root {
+    box-shadow: none;
+  }
+  .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
+    opacity: 0;
+  }
+  .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+    padding: 0;
+  }
+  .css-15v22id-MuiAccordionDetails-root {
+    padding: 0;
+  }
+  .spesfikInfoTitle {
+    color: var(--black-01, #0b0f0e);
+    font-family: Clash Grotesk;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+  }
+  .CatchCheckBoxes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .ShowAll {
+      color: var(--dark-green-03, #1d9e34);
+
+      /* Paragraph / P1 / 16 Medium - Lh 160% */
+      font-family: Clash Grotesk;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%; /* 25.6px */
+    }
+  }
+}
