@@ -1,10 +1,10 @@
-import styles from "./button.module.scss"
+import "./button.scss"
 
 // eslint-disable-next-line react/prop-types
 const Button = ({btnData}) => {
    // console.log(btnData.btnData)
   return (
-        <button  className={styles.btn} >{btnData}  </button>
+        <button  className="btn" id="myButton" >{btnData}  </button>
   )
 }
 

@@ -23,14 +23,7 @@ const CatchPopularProductsHome = () => {
       {products?.data?.map(({ id, attributes }) => {
         return (
           
-          // <CardItem
-          //   key={id}
-          //   title={attributes.title}
-          //   desc={attributes.description}
-          //   rating={attributes.rating}
-          //   price={attributes.price}
-          //   image={`${import.meta.env.VITE_UPLOAD_IMAGE}${attributes?.images?.data[0].attributes.url}`}
-          // />
+         
           <NewCarditem
             key={id}
             title={attributes.title}

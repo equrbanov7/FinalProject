@@ -1,0 +1,32 @@
+.RelatedProducts {
+  ._titleitem_1nt0c_1 {
+    h1 {
+      color: var(--black-01, #0b0f0e);
+      font-family: Clash Grotesk;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.2px;
+    }
+    button {
+      color: var(--dark-green-01, #1e4c2f);
+      text-align: center;
+      font-family: Clash Grotesk;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.2px;
+    }
+  }
+
+  .catchRelatedProductUniversal {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    .cathcCardComp{
+        margin: auto;
+        margin-top: 37px;
+    }
+  }
+}

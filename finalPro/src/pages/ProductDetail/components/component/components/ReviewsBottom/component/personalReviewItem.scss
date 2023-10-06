@@ -1,0 +1,79 @@
+.PersonalReviewItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+
+  .leftPersonalReview {
+    .starsLike {
+      display: flex;
+      gap: 4px;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    ._catchInfos_1j6zo_1 {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 16px;
+      margin-bottom: 24px;
+      h2 {
+        color: var(--black-01, #0b0f0e);
+        font-family: Clash Grotesk;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: -0.2px;
+        text-align: inherit;
+      }
+      p {
+        color: var(--grey-01, #818b9c);
+        font-family: Clash Grotesk;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        text-align: inherit;
+      }
+    }
+    .catchAllThreeElements {
+      gap: 12px;
+      .leftImgLogo {
+        max-width: 32px;
+
+        width: 100%;
+        height: 100%;
+      }
+      .rightInfoLogo .rightInfosCatch h4 {
+        font-weight: 500;
+      }
+    }
+  }
+  .rightLikeDislikeBtns {
+    .btnes {
+      display: flex;
+      gap: 8px;
+      .ButtonImgUniverse {
+        padding: 12px;
+        border-radius: 4px;
+        border: 1px solid var(--d-grey-01, #e4e9ee);
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+        button {
+          color: var(--black-01, #0b0f0e);
+          font-family: Clash Grotesk;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.MerchantAll {
+  .titleOfSide {
+    color: var(--black-01, #0b0f0e);
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: Clash Grotesk;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 28px */
+    letter-spacing: -0.2px;
+  }
+  .merchantElmentsMiddle {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .btnCatchProduct {
+      display: flex;
+      gap: 16px;
+    }
+  }
+}

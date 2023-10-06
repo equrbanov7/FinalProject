@@ -2,7 +2,7 @@
 import Star from "../assets/icons/pages/Home/star.png";
 import Heart from "../assets/icons/pages/Home/heart.png";
 import TitleDescription from "./TitleDescription";
-import "./newCarditem.scss"
+import "./newCarditem.scss";
 
 const NewCarditem = ({ image, title, desc, price, rating }) => {
   return (
@@ -16,7 +16,7 @@ const NewCarditem = ({ image, title, desc, price, rating }) => {
         <div className="leftProductInfos">
           <TitleDescription
             title={title}
-            // eslint-disable-next-line react/prop-types
+        
             desc={desc?.slice(0, 12)}
           />
 

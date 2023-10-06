@@ -1,0 +1,52 @@
+.EachRatingLine {
+  display: flex;
+  gap: 23px;
+  align-items: center;
+
+  .leftStarRank {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    span {
+      color: var(--black-01, #0b0f0e);
+      font-family: Clash Grotesk;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      transform: translateY(-2px);
+    }
+  }
+  .totalStarInfo {
+    span {
+      color: var(--black-01, #0b0f0e);
+      font-family: Clash Grotesk;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%;
+    }
+  }
+  .linearStar {
+    border-radius: 8px;
+    background: var(--d-grey-01, #e4e9ee);
+    // width: 100%;
+    // max-width: 421px;
+    width: 421px;
+    min-width: 221px;
+    height: 8px;
+    position: relative;
+    .showRank {
+      position: absolute;
+      width: 0%;
+      height: initial;
+      background: #1d9e34;
+      height: inherit;
+      border-radius: inherit;
+    }
+  }
+}

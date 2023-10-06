@@ -1,0 +1,16 @@
+.SystemRequiredAll{
+    .titleOfRequired{
+        color: var(--black-01, #0B0F0E);
+
+        /* Heading/H2 - 18 Semi Bold -  Lh 140% */
+        font-family: Clash Grotesk;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%; /* 25.2px */
+        letter-spacing: -0.2px;
+    }
+    .catchEachSysRequireds{
+        margin-top: 16px;
+    }
+}
