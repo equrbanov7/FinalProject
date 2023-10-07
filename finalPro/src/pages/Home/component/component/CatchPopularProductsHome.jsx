@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 // import CardItem from "../../../../components/CardItem";
 import { getProducts } from "../../../../api/products";
@@ -5,19 +6,19 @@ import "./catchPopularProductsHome.scss"
 import NewCarditem from "../../../../components/NewCarditem";
 
 
-const CatchPopularProductsHome = () => {
+const CatchPopularProductsHome = ({count}) => {
   const [products, setProducts] = React.useState([]);
 
   React.useEffect(() => {
     async function getAllProducts() {
-      const obj  = {limit:8, start:0}
+      const obj  = {limit:count , start:0}
       const data = await getProducts(obj);
 
       setProducts(data);
       // console.log(data, "++++")
     }
     getAllProducts();
-  }, []);
+  }, [count]);
   return (
     <div className="catchPopularProducts">
       {products?.data?.map(({ id, attributes }) => {

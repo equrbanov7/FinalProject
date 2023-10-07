@@ -1,0 +1,146 @@
+.ProductInfoRightAll {
+    width: 50%;
+  .topInfoProduct {
+    .nameOfProduct {
+      color: var(--black-01, #0b0f0e);
+      font-family: Clash Grotesk;
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.2px;
+    }
+    .rankingProduct {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      margin-top: 8px;
+      .starSide {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+        span {
+          color: var(--black-01, #0b0f0e);
+          font-family: Clash Grotesk;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+          transform: translateY(1px);
+        }
+      }
+      .soldCount {
+        color: var(--black-01, #0b0f0e);
+        font-family: Clash Grotesk;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+      }
+    }
+    .productPrice {
+      h4 {
+        color: var(--dark-green-03, #1d9e34);
+        font-family: Clash Grotesk;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: -0.2px;
+      }
+    }
+  }
+
+  .middleDescription {
+    margin-top: 24px;
+    p {
+      color: var(--grey-01, #818b9c);
+      font-family: Clash Grotesk;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+    }
+  }
+  .lineBreak {
+    height: 1px;
+    width: 100%;
+    background: #e4e9ee;
+    margin: 24px auto;
+  }
+  .catchAllSelections {
+    margin-bottom: 52px;
+    .titleOfSide {
+      color: var(--black-01, #0b0f0e);
+      font-family: Clash Grotesk;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.2px;
+    }
+
+    .catchSlections {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 12px;
+      .selectOfProduct {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        h6 {
+          color: var(--black-01, #0b0f0e);
+
+          /* Paragraph/P1/16 Regular - Lh 160% */
+          font-family: Clash Grotesk;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%; /* 25.6px */
+        }
+      }
+      form .select {
+        color: var(--black-01, #0b0f0e);
+        font-family: Clash Grotesk;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+        border-radius: 8px;
+        border: 1px solid var(--d-grey-01, #e4e9ee);
+        padding: 11px 16px;
+        width: 140px;
+      }
+    }
+  }
+
+  .btnesOfProduct {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    .ButtonImgUniverse{
+        width: 100%;
+        button{
+            margin: auto;
+        }
+        img{
+            width: 24px;
+            height: 24px;
+        }
+    }
+  }
+  .btnesOfProduct .ButtonImgUniverse:nth-child(1){
+    border-radius: 8px;
+    background: var(--dark-green-01, #1E4C2F);
+    button{
+        color: #fff;
+    }
+  }
+}

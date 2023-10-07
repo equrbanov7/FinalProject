@@ -1,14 +1,16 @@
-import "./buttonImg.scss"
+import "./buttonImg.scss";
 
 // eslint-disable-next-line react/prop-types
-const ButtonImg = ({image,name}) => {
+const ButtonImg = ({ image, name }) => {
   return (
     <div className="ButtonImgUniverse">
-        {image?  <img src={image} alt="image" /> : "" }
-    
-      <button>{name}</button>
-    </div>
-  )
-}
+      <div className="btnCatch" >
+        {image ? <img src={image} alt="image" /> : ""}
 
-export default ButtonImg
+        <button>{name}</button>
+      </div>
+    </div>
+  );
+};
+
+export default ButtonImg;

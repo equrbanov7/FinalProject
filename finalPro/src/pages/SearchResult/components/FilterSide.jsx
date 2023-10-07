@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -5,21 +6,61 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CheckBox from "../../../components/CheckBox";
 
-import Star from "../../../assets/icons/pages/Home/star.png"
+import Star from "../../../assets/icons/pages/Home/star.png";
 import "./filterSide.scss";
 import CheckBoxPrice from "../../../components/CheckBoxPrice";
 import PriceRange from "./components/PriceRange";
 
-const FilterSide = () => {
+// eslint-disable-next-line react/prop-types
+const FilterSide = ({  title,dataFilter,priceActivate }) => {
+ 
+ 
   return (
     <div className="catchFilterAll">
       <div className="nameOfTitle">
-        <h2>Filter Option</h2>
+        <h2>{title}</h2>
       </div>
 
       <div className="lineBlockFlter"></div>
       <div className="FilterOptions">
-        <Accordion>
+        {dataFilter.map((filterCtg, index) => (
+          <>
+            <Accordion key={index}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography className="spesfikInfoTitle">
+                  {filterCtg.title}
+                </Typography>
+              </AccordionSummary>
+
+              <AccordionDetails key={index}>
+                <Typography>
+                  <div className="CatchCheckBoxes">
+                    {filterCtg.elements.map((filterElm) => (
+                      <>
+                        <CheckBox
+                          img={filterElm.star ? Star : ""}
+                          name={filterElm.name}
+                        />
+                      </>
+                    ))}
+                    {filterCtg.show && (
+                      <div className="ShowAll">
+                        <p>{filterCtg.show}</p>
+                      </div>
+                    )}
+                  </div>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <div className="lineBlockFlter"></div>
+          </>
+        ))}
+
+        {/* <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
@@ -50,14 +91,14 @@ const FilterSide = () => {
           <AccordionDetails>
             <Typography>
               <div className="CatchCheckBoxes">
-              <CheckBox  name={"Bandung"} />
+                <CheckBox name={"Bandung"} />
                 <CheckBox name={"Jakarta"} />
                 <CheckBox name={"Medan"} />
                 <CheckBox name={"Surabaya"} />
                 <CheckBox name={"Jogja"} />
 
                 <div className="ShowAll">
-                    <p>Show All</p>
+                  <p>Show All</p>
                 </div>
               </div>
             </Typography>
@@ -75,44 +116,49 @@ const FilterSide = () => {
           <AccordionDetails>
             <Typography>
               <div className="CatchCheckBoxes">
-              <CheckBox  name={"Electronic"} />
+                <CheckBox name={"Electronic"} />
                 <CheckBox name={"Fashion"} />
                 <CheckBox name={"Action Figure"} />
                 <CheckBox name={"Book"} />
                 <CheckBox name={"Gaming"} />
 
                 <div className="ShowAll">
-                    <p>Show All Categories All</p>
+                  <p>Show All Categories All</p>
                 </div>
               </div>
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <div className="lineBlockFlter"></div>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography className="spesfikInfoTitle">Price Range</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              <div className="CatchCheckBoxes">
-                <CheckBoxPrice purpose={"Minimum price"} />
-                <CheckBoxPrice purpose={"Maximum price"} />
-                <PriceRange start={"0"} stop={"200"} />
-                <PriceRange start={"200"} stop={"500"} />
-                <PriceRange start={"500"} stop={"1500"} />
-                
-              </div>
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <div className="lineBlockFlter"></div>
-     
-      
+        <div className="lineBlockFlter"></div> */}
+
+        {/*For Price       */}
+        {priceActivate && (
+          <>
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography className="spesfikInfoTitle">
+                  Price Range
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  <div className="CatchCheckBoxes">
+                    <CheckBoxPrice purpose={"Minimum price"} />
+                    <CheckBoxPrice purpose={"Maximum price"} />
+                    <PriceRange start={"0"} stop={"200"} />
+                    <PriceRange start={"200"} stop={"500"} />
+                    <PriceRange start={"500"} stop={"1500"} />
+                  </div>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+            <div className="lineBlockFlter"></div>
+          </>
+        )}
       </div>
     </div>
   );

@@ -16,15 +16,22 @@
     gap: 12px;
     margin-top: 16px;
     button {
-      color: var(--dark-green-03, #1d9e34);
+      color: var(--black-01, #0b0f0e);
       font-family: Clash Grotesk;
       font-size: 14px;
       font-style: normal;
       font-weight: 500;
       line-height: 160%;
       border-radius: 8px;
-      border: 1px solid var(--dark-green-03, #1d9e34);
+      border: 1px solid var(--d-grey-01, #e4e9ee);
       padding: 11px 16px;
+      cursor: pointer;
+    }
+    .buttonActive {
+      color: var(--dark-green-03, #1d9e34);
+      background-color: #fff;
+      border: 1px solid var(--dark-green-03, #1d9e34);
+   
     }
   }
   .ResultReview {
@@ -44,6 +51,8 @@
     margin-top: 52px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    justify-content: center;
     .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
       color: var(--dark-green-03, #1d9e34);
       text-align: center;
