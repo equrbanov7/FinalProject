@@ -5,18 +5,31 @@ import CatchPopularProductsHome from "./component/CatchPopularProductsHome";
 import "./popularProduct.scss";
 
 const PopularProduct = () => {
-  const [counter,setCounter]= React.useState(8)
-  let i=0;
-  // let counter=8;
-  const loadMore = () =>{
-      if(i<2){
+  const [counter, setCounter] = React.useState(8);
+  const [clickCount, setClickCount] = React.useState(0);
+  const [loadMode, setLoadMode] = React.useState(true); // Initialize to "Load More" mode
 
-        //counter=counter+8
-        setCounter( prev => prev+8)
-        //console.log(counter)
+  const loadMoreOrLess = () => {
+    if (loadMode) {
+      // "Load More" mode
+      if (clickCount < 2) {
+        setCounter(counter + 8);
+        setClickCount(prev => prev+1)
       }
-     i++;
-  }
+      else{
+        console.log(counter,"exm")
+        setLoadMode(!loadMode);
+      }
+    } else {
+      // "Load Less" mode
+      //setLoadMode(!loadMode);
+      setCounter(8);
+      setLoadMode(!loadMode);
+      setClickCount(0)
+    }
+    // Toggle the load mode
+   
+  };
 
   return (
     <div className="catchAllPopularProducts my-SpesficContainer ">
@@ -29,7 +42,11 @@ const PopularProduct = () => {
 
       <CatchPopularProductsHome count={counter} />
 
-        <Button btnData={"Load More"} handleClick={loadMore}/>
+      <Button
+        btnData={loadMode ? "Load More" : "Load Less"}
+        handleClick={loadMoreOrLess}
+      />
+      {/* <Button btnData={"Load Less"} handleClick={loadLess}/> */}
     </div>
   );
 };

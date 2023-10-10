@@ -1,25 +1,40 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 // import CardItem from "../../../../components/CardItem";
-import { getProducts } from "../../../../api/products";
+//import { getProducts } from "../../../../api/products";
 import "./catchPopularProductsHome.scss"
 import NewCarditem from "../../../../components/NewCarditem";
-
+import { useDispatch,useSelector } from "react-redux";
+import { getProducts } from "../../../../redux/actions/productAction";
 
 const CatchPopularProductsHome = ({count}) => {
-  const [products, setProducts] = React.useState([]);
+ 
+  const {products}=useSelector((state)=>state.products);
+ 
 
-  React.useEffect(() => {
-    async function getAllProducts() {
-      const obj  = {limit:count , start:0}
-      const data = await getProducts(obj);
+  const dispatch = useDispatch();
 
-      setProducts(data);
-      // console.log(data, "++++")
-    }
-    getAllProducts();
-  }, [count]);
+    React.useEffect(() => {
+     
+      dispatch(getProducts(count));
+ 
+  }, [count, dispatch]);
+ // console.log(count, "+++++Pro")
+
+  // const [products, setProducts] = React.useState([]);
+
+  // React.useEffect(() => {
+  //   async function getAllProducts() {
+  //     const obj  = {limit:count , start:0}
+  //     const data = await getProducts(obj);
+
+  //     setProducts(data);
+  //     // console.log(data, "++++")
+  //   }
+  //   getAllProducts();
+  // }, [count]);
   return (
+    
     <div className="catchPopularProducts">
       {products?.data?.map(({ id, attributes }) => {
         return (

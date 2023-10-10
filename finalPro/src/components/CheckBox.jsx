@@ -17,7 +17,7 @@ const CheckBox = ({ img, name }) => {
         <label htmlFor="vehicle1">{name} </label>
       </form>
     </div>
-  );
+  ); 
 };
 
 export default CheckBox;

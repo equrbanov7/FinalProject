@@ -11,7 +11,6 @@ const WayOfPage = () => {
   React.useEffect(() => {
     //Home / telephones / iphone
     const pathNames = location.pathname.split("/").filter(Boolean);
-    console.log(pathNames, "pathname");
     const breadcrumbsArray = pathNames.map((elm, i) => {
       return {
         path: `/${pathNames.slice(0, i + 1).join("/")}`,

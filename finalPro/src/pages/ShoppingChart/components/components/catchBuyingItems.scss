@@ -1,0 +1,16 @@
+.CatchBuyingItems {
+  border-radius: 12px;
+  border: 1px solid var(--d-grey-01, #e4e9ee);
+  background: var(--white-general, #fff);
+  width: 60%;
+  padding: 32px 24px;
+  // margin-left: 120px;
+  position: relative;
+  top: -32px;
+
+  .selectingItemsOfProducts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

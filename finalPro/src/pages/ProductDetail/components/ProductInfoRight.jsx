@@ -2,7 +2,7 @@
 import "./productInfoRight.scss";
 import Star from "../../../assets/icons/pages/Home/star.png";
 import React from "react";
-import SelectionofProduct from "./component/SelectionofProduct";
+import SelectionofProduct from "../../../components/SelectionofProduct";
 import ButtonImg from "../../../components/ButtonImg";
 
 import Basket from "../../../assets/icons/pages/detail product/shopping-cart.svg";

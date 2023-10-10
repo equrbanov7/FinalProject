@@ -20,7 +20,7 @@ const RelatedProducts = () => {
     getAllProducts();
   }, []);
   return (
-    <div className='RelatedProducts'>
+    <div className='RelatedProducts my-SpesficContainer '>
         <TitleItem titleInfo={"Related Product"} btnInfo={"View Detail"} />
         <div className="catchRelatedProductUniversal">
         {products?.data?.map(({ id, attributes }) => {

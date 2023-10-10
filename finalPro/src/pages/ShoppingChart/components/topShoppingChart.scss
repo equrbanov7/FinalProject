@@ -1,0 +1,45 @@
+.allTopShoppingChart{
+    background: var(--d-grey-03, #F7F7F7);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.TopShoppingChart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 120px;
+  max-width: 1600px;
+  width: 100%;
+
+  ._catchInfos_1j6zo_1 {
+    h2 {
+      color: var(--black-01, #0b0f0e);
+      font-family: Clash Grotesk;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.2px;
+      text-align: inherit;
+    }
+    p {
+      color: var(--grey-01, #818b9c);
+      font-family: Clash Grotesk;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      text-align: inherit;
+    }
+  }
+  .selectOfProduct {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    h6{
+        color: var(--grey-01, #818B9C);
+    };
+  }
+}

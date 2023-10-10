@@ -1,0 +1,22 @@
+.LeftShoppingChecking {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
+    font-size: 20px;
+  }
+  .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
+    font-size: 16px;
+  }
+  .catchAllThreeElements .rightInfoLogo .bottomInfosMerchant h5 {
+    color: var(--dark-green-03, #1d9e34);
+    font-family: Clash Grotesk;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    background-color: inherit;
+  }
+}

@@ -6,9 +6,9 @@ import Home from "./pages/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import SearchResult from "./pages/SearchResult/SearchResult";
 import Header from "./layout/Header/Header";
-import Ctg from "./pages/CategoryResult/Ctg";
-import Exm from "./pages/CategoryResult/Exm";
+
 import ProductsDetail from "./pages/ProductDetail/ProductsDetail";
+import ShoppingChart from "./pages/ShoppingChart/ShoppingChart";
 
 // import { getProducts } from "./api/products"
 
@@ -18,12 +18,12 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-
-        <Route path="/search" element={<SearchResult />} />
+        <Route path="/products" element={<SearchResult />} />
+        <Route path="/search/:search" element={<SearchResult />} />
         <Route path="/productdetail" element={<ProductsDetail />} />
+        <Route path="/shoppingChart" element={<ShoppingChart />} />
 
-        <Route path="/search/kenan/elvin" element={<Ctg />} />
-        <Route path="/search/kenan" element={<Exm />} />
+        
       </Routes>
     </>
   );

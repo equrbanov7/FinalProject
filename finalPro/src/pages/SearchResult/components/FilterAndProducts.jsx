@@ -2,7 +2,8 @@ import FilterSide from "./FilterSide"
 import FilteredProducts from "./FilteredProducts"
 import "./filterAndProducts.scss"
 
-const FilterAndProducts = () => {
+// eslint-disable-next-line react/prop-types
+const FilterAndProducts = ({searchId}) => {
   const dataFilter = [
     {
       title: "Best Filter",
@@ -39,7 +40,7 @@ const FilterAndProducts = () => {
   return (
     <div className="mergeBoth">
         <FilterSide dataFilter={dataFilter} priceActivate={true} title={"Filter Option"} />
-        <FilteredProducts />
+        <FilteredProducts searchId={searchId} /> 
     </div>
   )
 }
