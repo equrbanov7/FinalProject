@@ -15,3 +15,20 @@ export const getProducts = createAsyncThunk(
     }
   }
 );
+
+export const getOneProduct = createAsyncThunk(
+  "product/getOneProduct",
+  async (id, { rejectWithValue }) => {
+    try {
+
+    
+      const res = await instance.get(
+        `/products?populate=*&[filters][id][$eq]=${id} `
+      );
+
+      return res.data;
+    } catch (error) {
+      rejectWithValue(error);
+    }
+  }
+);

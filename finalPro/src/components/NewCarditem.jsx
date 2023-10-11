@@ -4,9 +4,12 @@ import Heart from "../assets/icons/pages/Home/heart.png";
 import TitleDescription from "./TitleDescription";
 import "./newCarditem.scss";
 
-const NewCarditem = ({ image, title, desc, price, rating }) => {
+const NewCarditem = ({ image, title, desc, price, rating, handleId }) => {
+
+
+
   return (
-    <div className="cathcCardComp">
+    <div className="cathcCardComp" onClick={handleId}>
       <div className="topSide">
         <div className="imgCatch">
           <img src={image} alt="product" />

@@ -1,21 +1,19 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+// import React from "react";
 import "./topShoppingChart.scss";
 import TitleDescription from "../../../components/TitleDescription";
 import SelectionofProduct from "../../../components/SelectionofProduct";
 
-const TopShoppingChart = () => {
-  const [sortType] = React.useState({
-    title: "Sort By",
-    elements: ["Latest Added", "New", "Past"],
-  });
+const TopShoppingChart = ({dataSelect, title,desc}) => {
+
   return (
     <div className="allTopShoppingChart">
       <div className="TopShoppingChart ">
         <TitleDescription
-          title={"Shopping Chart"}
-          desc={"Showing your choices product"}
+          title={title}
+          desc={desc}
         />
-        <SelectionofProduct dataType={sortType} />
+        {dataSelect?  <SelectionofProduct dataType={dataSelect} /> : ""} 
       </div>
     </div>
   );

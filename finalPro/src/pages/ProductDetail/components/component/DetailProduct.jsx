@@ -1,14 +1,49 @@
+/* eslint-disable react/prop-types */
 import TitleDescription from "../../../../components/TitleDescription";
 import CatchAllSides from "./components/CatchAllSides";
 import "./detailProduct.scss";
 
-const DetailProduct = () => {
+import { useDispatch, useSelector } from "react-redux";
+import { getOneProduct } from "../../../../redux/actions/productAction";
+import React from "react";
+const DetailProduct = ({infoId}) => {
+//console.log(infoId,"detailll");
+
+const dispatch = useDispatch();
+
+const { oneProduct } = useSelector((state) => state.products);
+
+React.useEffect(() => {
+  dispatch(getOneProduct(infoId));
+}, [dispatch, infoId]);
+
+
+
+const [productInfo, setProductInfo] = React.useState({
+  title:"",
+  description:"",
+ 
+});
+React.useEffect(() => {
+  if (oneProduct && oneProduct.data && oneProduct.data[0]) {
+    setProductInfo((prevProductInfo) => ({
+      ...prevProductInfo, 
+      title: oneProduct.data[0].attributes.title,
+      description:oneProduct.data[0].attributes.description,
+    
+    
+    })
+    
+    )
+  }
+}, [oneProduct]);
+
   return (
     <section className="detailProductCatch">
       <TitleDescription
-        title={"G502 X Lightspeed WirelessGaming Mouse"}
+        title={productInfo.title}
         desc={
-          "G502 X LIGHTSPEED is the latest addition to legendary G502 lineage. Featuring our first-ever LIGHTFORCE hybrid optical-mechanical switches and updated LIGHTSPEED wireless protocol with 68% faster response rate."
+       productInfo.description
         }
         
       />

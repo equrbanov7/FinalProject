@@ -17,33 +17,17 @@ const CatchFeaturedSliderItems = () => {
   }, [dispatch]);
 
 
-  // const dispatchOneItem = useDispatch();
-  //   React.useEffect(() => {
-  //     dispatchOneItem(getOneCategory(1));
 
-  // }, [dispatchOneItem]);
-
-  React.useEffect(()=>{
+  // React.useEffect(()=>{
     
 
-  },[])
+  // },[])
   function catchId(idx){
-    console.log(idx) 
+    //console.log(idx) 
     navigation(`/search/${idx}`)
   } 
 
-  //console.log(categories,"++++")
-  // const [categories, setCategories] = React.useState([]);
  
-  // React.useEffect(() => {
-  //   async function getAllCategories() {
-  //     const data = await getCategories();
-
-  //     setCategories(data);
-  //     // console.log(data, "++++")
-  //   }
-  //   getAllCategories();
-  // }, []);
   return (
   
     <div className="slideriTemsCatch">

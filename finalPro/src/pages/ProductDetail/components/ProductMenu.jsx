@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import * as React from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
@@ -43,7 +44,7 @@ function a11yProps(index) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-const ProductMenu = () => {
+const ProductMenu = ({catchId}) => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -81,7 +82,7 @@ const ProductMenu = () => {
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
-          <DetailProduct />
+          <DetailProduct infoId={catchId} />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
           <Merchant />

@@ -1,3 +1,5 @@
+/* eslint-disable no-const-assign */
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 import "./productInfoRight.scss";
 import Star from "../../../assets/icons/pages/Home/star.png";
@@ -6,10 +8,44 @@ import SelectionofProduct from "../../../components/SelectionofProduct";
 import ButtonImg from "../../../components/ButtonImg";
 
 import Basket from "../../../assets/icons/pages/detail product/shopping-cart.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { getOneProduct } from "../../../redux/actions/productAction";
 
 // eslint-disable-next-line react/prop-types
-const ProductInfoRight = () => {
+const ProductInfoRight = ({ infoId }) => {
   //{ name, rating, price, desc }
+
+  const dispatch = useDispatch();
+
+  const { oneProduct } = useSelector((state) => state.products);
+
+  React.useEffect(() => {
+    dispatch(getOneProduct(infoId));
+  }, [dispatch, infoId]);
+
+  
+
+  const [productInfo, setProductInfo] = React.useState({
+    title:"",
+    description:"",
+    price:0,
+    rating:0
+  });
+  React.useEffect(() => {
+    if (oneProduct && oneProduct.data && oneProduct.data[0]) {
+      setProductInfo((prevProductInfo) => ({
+        ...prevProductInfo, 
+        title: oneProduct.data[0].attributes.title,
+        description:oneProduct.data[0].attributes.description,
+        price:oneProduct.data[0].attributes.price,
+        rating:oneProduct.data[0].attributes.rating,
+      
+      })
+      
+      )
+    }
+  }, [oneProduct]);
+
   const [dataType] = React.useState({
     title: "Type",
     elements: ["Wireless", "Wired", "Premium"],
@@ -23,27 +59,25 @@ const ProductInfoRight = () => {
     <div className="ProductInfoRightAll">
       <div className="topInfoProduct">
         <h2 className="nameOfProduct">
-          G502 X Lightspeed Wireless Gaming Mouse{" "}
+        
+          {productInfo.title}
         </h2>
 
         <div className="rankingProduct">
           <div className="starSide">
             <img src={Star} alt="star" />
-            <span>4.8</span>
+            <span>{productInfo.rating}</span>
           </div>
           <p className="soldCount">1,238 Sold</p>
         </div>
         <div className="productPrice">
-          <h4>{`$139.99`}</h4>
+          <h4>{`$${productInfo.price}`}</h4>
         </div>
       </div>
 
       <div className="middleDescription">
         <p>
-          G502 X LIGHTSPEED is the latest addition to legendary G502 lineage.
-          Featuring our first-ever LIGHTFORCE hybrid optical-mechanical switches
-          and updated LIGHTSPEED wireless protocol with 68% faster response
-          rate.
+          {productInfo.description}
         </p>
       </div>
       <div className="lineBreak"></div>

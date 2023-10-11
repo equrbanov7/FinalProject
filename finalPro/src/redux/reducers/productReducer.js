@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getProducts } from '../actions/productAction'
+import { getProducts, getOneProduct } from '../actions/productAction'
 
 const initialState = {
   loading: false,
   pageObj:{start:0,limit:8 },
-  products:{}
+  products:{},
+  oneProduct:{}
  
 }
 
@@ -31,6 +32,24 @@ export const productSlice = createSlice({
          //   console.log(action.payload, "payloadd")
         });
         builder.addCase(getProducts.rejected,(state,action)=>{
+            state.loading=false;
+             //Api cavab error
+             console.log(action.payload)
+        });
+
+        // getOneProduct
+        builder.addCase(getOneProduct.pending,(state)=>{
+            state.loading=true
+        });
+        
+        builder.addCase(getOneProduct.fulfilled,(state,action)=>{
+            state.loading=false;
+           
+            //Api cavab
+            state.oneProduct=action.payload
+         //   console.log(action.payload, "payloadd")
+        });
+        builder.addCase(getOneProduct.rejected,(state,action)=>{
             state.loading=false;
              //Api cavab error
              console.log(action.payload)

@@ -9,6 +9,7 @@ import Header from "./layout/Header/Header";
 
 import ProductsDetail from "./pages/ProductDetail/ProductsDetail";
 import ShoppingChart from "./pages/ShoppingChart/ShoppingChart";
+import Checkout from "./pages/Checkout/Checkout";
 
 // import { getProducts } from "./api/products"
 
@@ -20,8 +21,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<SearchResult />} />
         <Route path="/search/:search" element={<SearchResult />} />
-        <Route path="/productdetail" element={<ProductsDetail />} />
+
+        <Route path="/productdetail/:id" element={<ProductsDetail />} />
+
+
         <Route path="/shoppingChart" element={<ShoppingChart />} />
+        <Route path="/checkout" element={<Checkout /> } />
 
         
       </Routes>

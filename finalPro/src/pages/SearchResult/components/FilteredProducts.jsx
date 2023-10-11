@@ -6,12 +6,15 @@ import { getProducts } from "../../../redux/actions/productAction";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { useDispatch, useSelector } from "react-redux";
-//import { getProducts } from "../../../api/products";
-// import CardItem from "../../../components/CardItem";
+
+import {useNavigate } from 'react-router-dom'
+
 import "./filteredProducts.scss";
 import NewCarditem from "../../../components/NewCarditem";
 
 const FilteredProducts = ({ searchId }) => {
+
+  const navigation =useNavigate();
   
   const dispatch = useDispatch();
 
@@ -20,6 +23,13 @@ const FilteredProducts = ({ searchId }) => {
   const { oneCategory } = useSelector((state) => state.categories);
 
   
+
+  function catchId(idx){
+    navigation(`/productdetail/${idx}`)
+   // console.log(idx)
+  }
+
+   
 
   React.useEffect(() => {
     if (searchId) {
@@ -32,7 +42,7 @@ const FilteredProducts = ({ searchId }) => {
   }, [dispatch, searchId]); 
 
 
-  console.log(oneCategory.data, 'uiiiiiiiElm');
+ // console.log(oneCategory.data, 'uiiiiiiiElm');
 
   
   return (
@@ -52,6 +62,7 @@ const FilteredProducts = ({ searchId }) => {
                   image={`${import.meta.env.VITE_UPLOAD_IMAGE}${
                     attributes?.images?.data[0].attributes.url
                   }`}
+                  handleId={()=> catchId(id)}
                 />
                 )
                 }

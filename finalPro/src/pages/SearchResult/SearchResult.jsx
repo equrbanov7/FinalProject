@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom"
 const SearchResult = () => {
   const {search}  =useParams()
 
-  console.log(search, '+++++++');
+  //console.log(search, '+++++++');
   
   return (
     <div className="searchResultMainCss my-SpesficContainer">
