@@ -32,7 +32,7 @@ const PopularProduct = () => {
   };
 
   return (
-    <div className="catchAllPopularProducts">
+    <div className="catchAllPopularProducts my-Margin-container">
       <div className="helperDivforModule">
       <TitleDescription
         title={"Popular Product on Lenny"}

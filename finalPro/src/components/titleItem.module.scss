@@ -12,3 +12,43 @@
     letter-spacing: -0.2px;
   }
 }
+
+//1024px
+@media (max-width: 1024px) {
+  .titleitem {
+    h1 {
+      font-size: 28px;
+    }
+    .btn {
+      font-size: 16px;
+    }
+  }
+}
+
+//778px
+@media (max-width: 778px) {
+  .titleitem {
+    h1 {
+      font-size: 18px;
+    }
+    .btn {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  }
+}
+
+//384px
+@media (max-width: 384px) {
+ 
+  
+    .titleitem {
+      h1 {
+        font-size: 16px;
+      }
+      .btn {
+        font-size: 12px;
+      }
+    }
+  
+}

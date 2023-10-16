@@ -9,7 +9,7 @@ const TitleItem = ({titleInfo, btnInfo}) => {
     <div className={styles.titleitem} >
         <h1>{titleInfo} </h1>
         <Button btnData={btnInfo} />
-    </div>
+    </div> 
   )
 }
 

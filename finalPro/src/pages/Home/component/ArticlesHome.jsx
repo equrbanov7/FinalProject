@@ -4,7 +4,7 @@ import CatchArticlesHome from "./component/CatchArticlesHome";
 
 const ArticlesHome = () => {
   return (
-    <div className="catchArticlesHome my-SpesficContainer ">
+    <div className="catchArticlesHome my-SpesficContainer my-Margin-container ">
       <TitleItem titleInfo={"Lenny’s Article"} btnInfo={"View Detail"} />
 
      <CatchArticlesHome />

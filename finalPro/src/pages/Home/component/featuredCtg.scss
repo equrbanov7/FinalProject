@@ -5,17 +5,15 @@
   flex-direction: column;
   gap: 52px;
 
-//   .slideriTemsCatch {
-//     display: flex;
-//     background: #fff;
-//     justify-content: space-between;
-//     gap: 24px;
-//   }
+  .swiper-slide {
+    background: inherit;
+    // width: 145px !important;
+  }
   .swiper-scrollbar {
     // opacity: 1;
 
     .swiper-scrollbar-drag {
-      width: 300px !important;
+      // width: 300px !important;
       height: 6px;
       border-radius: 30px;
       background: var(--dark-green-01, #1e4c2f);
@@ -25,26 +23,46 @@
     padding-bottom: 52px;
   }
 }
-/* Define breakpoints and adjust Swiper settings accordingly */
 
-/* Default styles */
-// .mySwiper {
-//   space-between: 6px;
-//   slides-per-view: 3;
-// }
+//1200px
+@media (max-width: 1200px) {
+  .FeaturedCtgAll {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+//1024px
+@media (max-width: 1024px) {
+  .FeaturedCtgAll {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
 
-// /* Adjust for smaller screens (e.g., tablets) */
-// @media (max-width: 768px) {
-//   .mySwiper {
-//     space-between: 4px;
-//     slides-per-view: 2;
-//   }
-// }
-
-// /* Adjust for even smaller screens (e.g., mobile) */
-// @media (max-width: 576px) {
-//   .mySwiper {
-//     space-between: 2px;
-//     slides-per-view: 1;
-//   }
-// }
+//778px
+@media (max-width: 778px) {
+  .FeaturedCtgAll {
+    margin-left: 40px;
+    margin-right: 40px;
+    ._catchElm_1wdg5_12 {
+      padding: inherit;
+    }
+  }
+}
+//568px
+@media (max-width: 568px) {
+  .FeaturedCtgAll {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+//384px
+@media (max-width: 384px) {
+  .FeaturedCtgAll {
+    margin-left: 10px;
+    margin-right: 10px;
+    ._catchElm_1wdg5_12 {
+      padding: inherit;
+    }
+  }
+}

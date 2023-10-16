@@ -10,11 +10,10 @@ export const getSelectedProducts = createAsyncThunk(
 
       for (let i = 0; i < products.length; i++) {
         query += `&filters[id][$in][${i}]=${products[i]}`;
-      }
-      
+      } 
+    
       const res = await instance.get(query);
-     // console.log(products, "aaaaaaaa");
-
+    
       return res.data;
     } catch (error) {
       rejectWithValue(error);

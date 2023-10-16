@@ -37,7 +37,7 @@ const ProductImageGallery = ({imageId}) => {
       <ImageGallery
         items={imagesApi}
         showPlayButton={false}
-        showFullscreenButton={true}
+        showFullscreenButton={false}
         slideInterval={3000}
         slideOnThumbnailOver={false}
         showIndex={false}

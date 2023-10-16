@@ -15,3 +15,27 @@
   border: 1px solid var(--dark-green-01, #1E4C2F);
   cursor: pointer;
 }
+
+//1024px
+@media (max-width: 1024px) {
+  .btn {
+    font-size: 16px;
+  }
+}
+
+//778px
+@media (max-width: 778px) {
+  .btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+//384px
+@media (max-width: 384px) {
+ 
+  .btn {
+    font-size: 12px;
+  }
+  
+}

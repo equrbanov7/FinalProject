@@ -18,8 +18,7 @@ const ProductInfoRight = ({ infoId }) => {
 
   const dispatch = useDispatch();
 
-  // const { productIds } = useSelector((state) => state.selectedProducts);
-  // console.log(productIds.length, "iddddd");
+  
 
   function collectProductId() {
     dispatch(addItem(infoId));

@@ -10,7 +10,7 @@ const SliderItem = ({image,title,handleId}) => {
     <div className={styles.allInfos} onClick={handleId}> 
         <div className={styles.catchElm} >
  
-            <div>
+            <div className={styles.imageCatch} >
                 <img src={image} alt="categoryIcon" />
             </div>
 
