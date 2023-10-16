@@ -1,6 +1,10 @@
-import BottomShoppingChart from "../ShoppingChart/components/BottomShoppingChart";
+// import BottomShoppingChart from "../ShoppingChart/components/BottomShoppingChart";
 import TopShoppingChart from "../ShoppingChart/components/TopShoppingChart";
+import CatchBuyingItems from "../ShoppingChart/components/components/CatchBuyingItems";
+import ProductSummary from "../ShoppingChart/components/components/ProductSummary";
 import "./checkout.scss";
+import Shipping from "./components/Shipping";
+
 
 const Checkout = () => {
   return (
@@ -9,7 +13,15 @@ const Checkout = () => {
         title={"Checkout"}
         desc={"Showing your choices product"}
       />
-      <BottomShoppingChart />
+
+      <div className="allcheckoutInfosItems my-SpesficContainer">
+        <div className="catchLeftItemandAddres"> 
+          <Shipping />
+          <CatchBuyingItems showShipping={true} />
+        </div>
+        <ProductSummary />
+      </div>
+    
     </div>
   );
 };

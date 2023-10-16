@@ -1,0 +1,17 @@
+.CheckoutAll{
+
+ 
+    .allcheckoutInfosItems{
+        display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    justify-content: center;
+    .catchLeftItemandAddres{
+        width: 60%;
+        .CatchBuyingItems {
+            width: 100%;
+            top: inherit;
+        }
+    }
+    }
+}

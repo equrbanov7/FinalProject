@@ -7,6 +7,8 @@ import "./newCarditem.scss";
 const NewCarditem = ({ image, title, desc, price, rating, handleId }) => {
 
 
+  
+
 
   return (
     <div className="cathcCardComp" onClick={handleId}>

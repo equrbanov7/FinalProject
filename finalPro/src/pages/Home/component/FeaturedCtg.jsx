@@ -25,7 +25,9 @@ const FeaturedCtg = () => {
               hide: false,
             }}
             modules={[Scrollbar]}
+          
             className="mySwiper"
+          
           >
             <SwiperSlide>
                 <CatchFeaturedSliderItems />

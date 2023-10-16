@@ -10,6 +10,7 @@ import ButtonImg from "../../../components/ButtonImg";
 import Basket from "../../../assets/icons/pages/detail product/shopping-cart.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneProduct } from "../../../redux/actions/productAction";
+import { addItem } from "../../../redux/reducers/cardReducer";
 
 // eslint-disable-next-line react/prop-types
 const ProductInfoRight = ({ infoId }) => {
@@ -17,32 +18,35 @@ const ProductInfoRight = ({ infoId }) => {
 
   const dispatch = useDispatch();
 
+  // const { productIds } = useSelector((state) => state.selectedProducts);
+  // console.log(productIds.length, "iddddd");
+
+  function collectProductId() {
+    dispatch(addItem(infoId));
+    // console.log(infoId)
+  }
+
   const { oneProduct } = useSelector((state) => state.products);
 
   React.useEffect(() => {
     dispatch(getOneProduct(infoId));
   }, [dispatch, infoId]);
 
-  
-
   const [productInfo, setProductInfo] = React.useState({
-    title:"",
-    description:"",
-    price:0,
-    rating:0
+    title: "",
+    description: "",
+    price: 0,
+    rating: 0,
   });
   React.useEffect(() => {
     if (oneProduct && oneProduct.data && oneProduct.data[0]) {
       setProductInfo((prevProductInfo) => ({
-        ...prevProductInfo, 
+        ...prevProductInfo,
         title: oneProduct.data[0].attributes.title,
-        description:oneProduct.data[0].attributes.description,
-        price:oneProduct.data[0].attributes.price,
-        rating:oneProduct.data[0].attributes.rating,
-      
-      })
-      
-      )
+        description: oneProduct.data[0].attributes.description,
+        price: oneProduct.data[0].attributes.price,
+        rating: oneProduct.data[0].attributes.rating,
+      }));
     }
   }, [oneProduct]);
 
@@ -58,11 +62,7 @@ const ProductInfoRight = ({ infoId }) => {
   return (
     <div className="ProductInfoRightAll">
       <div className="topInfoProduct">
-        <h2 className="nameOfProduct">
-        
-          {productInfo.title}
-        </h2>
-
+        <h2 className="nameOfProduct">{productInfo.title}</h2>
         <div className="rankingProduct">
           <div className="starSide">
             <img src={Star} alt="star" />
@@ -76,9 +76,7 @@ const ProductInfoRight = ({ infoId }) => {
       </div>
 
       <div className="middleDescription">
-        <p>
-          {productInfo.description}
-        </p>
+        <p>{productInfo.description}</p>
       </div>
       <div className="lineBreak"></div>
 
@@ -93,7 +91,11 @@ const ProductInfoRight = ({ infoId }) => {
 
       <div className="btnesOfProduct">
         <ButtonImg name={"Buy Now"} />
-        <ButtonImg name={"Add to Chart"} image={Basket} />
+        <ButtonImg
+          name={"Add to Chart"}
+          image={Basket}
+          handleId={collectProductId}
+        />
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
-import styles from "./sliderLeftSide.module.scss";
+import "./sliderLeftSide.scss";
 
 import TitleandBtnes from "../../../../components/TitleandBtnes";
 
 const SliderLeftSide = () => {
   return (
-    <div className={styles.leftofSlide}>
+    <div className="leftofSlide">
      
       <TitleandBtnes
         title={"Upgrade Your Wardrobe With Our Collection"}

@@ -9,13 +9,16 @@ const SliderRightItem = () => {
   return (
     <div className="sliderrightCatch">
       <img src={MainImg} alt="image" className="sliderBackImg" />
-      <NewCarditem
-        title={"Green Jacket V2"}
-        desc={"Cimahi, Bandung jkaskfjasfksjl"}
-        rating={"4.3"}
-        image={SliderImageHome}
-        price={20}
-      />
+
+      <div className="newCarditemContainer">
+        <NewCarditem
+          title={"Green Jacket V2"}
+          desc={"Cimahi, Bandung jkaskfjasfksjl"}
+          rating={"4.3"}
+          image={SliderImageHome}
+          price={20}
+        />
+      </div>
     </div>
   );
 };

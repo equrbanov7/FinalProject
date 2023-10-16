@@ -32,13 +32,16 @@ const PopularProduct = () => {
   };
 
   return (
-    <div className="catchAllPopularProducts my-SpesficContainer ">
+    <div className="catchAllPopularProducts">
+      <div className="helperDivforModule">
       <TitleDescription
         title={"Popular Product on Lenny"}
         desc={
           "Lorem ipsum dolor sit amet consectetur. Integer cursus cursus in"
         }
       />
+      </div>
+     
 
       <CatchPopularProductsHome count={counter} />
 

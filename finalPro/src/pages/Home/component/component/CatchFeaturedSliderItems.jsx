@@ -18,10 +18,6 @@ const CatchFeaturedSliderItems = () => {
 
 
 
-  // React.useEffect(()=>{
-    
-
-  // },[])
   function catchId(idx){
     //console.log(idx) 
     navigation(`/search/${idx}`)

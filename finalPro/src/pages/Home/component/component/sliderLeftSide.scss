@@ -1,0 +1,135 @@
+.leftofSlide {
+  width: 50%;
+  padding-top: 90px;
+  // padding-left: 100px;
+  padding-bottom: 90px;
+  transform: translateX(97px);
+  z-index: 3;
+}
+.leftofSlide div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  h2 {
+    text-align: start;
+    padding-right: 8px;
+    font-size: 58px;
+    // width: 100%;
+    width: 650px;
+  }
+  p {
+    text-align: start;
+
+    width: 100%;
+    max-width: 585px;
+    min-width: 315px;
+  }
+}
+
+.btnes {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  button {
+    max-width: 200px;
+    width: 100%;
+  }
+  button:nth-child(1) {
+    background: var(--dark-green-01, #1e4c2f);
+    color: #fff;
+  }
+}
+@media (max-width: 1110px) {
+  // for slider first slider item
+
+  .leftofSlide div:nth-child(1) {
+    h2 {
+      font-size: 34px;
+      // width: 100%;
+      width: 384px;
+    }
+    p {
+      max-width: 401px;
+      font-size: 16px;
+    }
+  }
+  .btnes {
+    button {
+      font-size: 16px;
+    }
+  }
+}
+
+//994px
+@media (max-width: 994px) {
+  // for slider first slider item
+  .leftofSlide {
+    transform: translateX(44px);
+    width: 40%;
+  }
+}
+
+//778px
+
+@media (max-width: 778px) {
+  .leftofSlide {
+    width: 100%;
+    transform: none;
+    padding-bottom: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .leftofSlide div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding-left: 24px;
+    // padding-right: 24px;
+
+    p {
+      max-width: inherit;
+      min-width: inherit;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+  .leftofSlide ._btnes_z8uh4_1 {
+    width: 100%;
+    flex-direction: column;
+    padding-left: 24px;
+    padding-right: 24px;
+    button {
+      width: 100%;
+      max-width: inherit;
+    }
+  }
+}
+
+//576px
+@media (max-width: 576px) {
+  .leftofSlide div:nth-child(1) {
+    h2 {
+      font-size: 28px;
+      padding-left: 24px;
+      padding-right: 24px;
+      min-width: inherit;
+      width: 100%;
+    }
+    p {
+      font-size: 14px;
+     width: 100%;
+      
+    }
+  }
+  .btnes {
+    button {
+      font-size: 14px;
+    }
+  }
+}

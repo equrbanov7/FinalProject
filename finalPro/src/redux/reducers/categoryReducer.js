@@ -22,13 +22,13 @@ export const categorySlice = createSlice({
     builder.addCase(getCategories.pending, (state) => {
       state.loading = true;
     });
-
     builder.addCase(getCategories.fulfilled, (state, action) => {
       state.loading = false;
       //Api cavab
       state.categories = action.payload;
       //  console.log(action.payload)
     });
+  
     builder.addCase(getCategories.rejected, (state, action) => {
       state.loading = false;
       //Api cavab error

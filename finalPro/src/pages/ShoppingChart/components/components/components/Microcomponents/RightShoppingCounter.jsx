@@ -14,9 +14,9 @@ const RightShoppingCounter = () => {
     
     function decrement() {
      
-      setCounter((prevCounter) => prevCounter - 1);
-      if(counter<2){
-        confirm("Do you want to delete?")
+    
+      if(counter>1){
+        setCounter((prevCounter) => prevCounter - 1);
        }
     }
 
