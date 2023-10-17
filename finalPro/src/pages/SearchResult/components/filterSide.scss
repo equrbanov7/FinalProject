@@ -70,3 +70,40 @@
     }
   }
 }
+
+//1200px
+@media (max-width: 1200px) {
+  .catchFilterAll .nameOfTitle {
+    h2 {
+    
+      font-size: 16px;
+    
+    }
+  }
+}
+//1024px
+@media (max-width: 1024px) {
+  .catchFilterAll{
+    padding: 24px 16px;
+  }
+ 
+}
+//778px
+@media (max-width: 778px) {
+  .catchFilterAll{
+  display: none;
+
+  }
+  .filterMobile{
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 175px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    min-width: calc(100% - 48px);
+    margin-inline: 24px;
+  }
+ 
+}

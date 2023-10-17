@@ -3,3 +3,16 @@
     align-items: flex-start;
     gap: 40px;
 }
+
+//1200px
+@media (max-width: 1200px) {
+    .mergeBoth{
+        gap: 20px;
+    }
+}
+//997px
+@media (max-width: 997px) {
+    .mergeBoth{
+        gap: 40px;
+    }
+}

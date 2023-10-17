@@ -3,7 +3,7 @@ import SearchIcon from "../assets/icons/header/search-normal.svg";
 
 const Selection = (data) => {
   //console.log(data.data);
-  return (
+  return ( 
     <div>
       <form className={styles.formCategory} >
         <select className={styles.select}>

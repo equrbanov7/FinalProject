@@ -43,3 +43,44 @@
     cursor: pointer;
   }
 }
+
+//1048px
+@media (max-width: 1048px) {
+  .catchFilteredPro {
+    gap: 20px;
+  }
+}
+//997px
+@media (max-width: 997px) {
+  .allElementsinSearch {
+    width: 100%;
+  }
+  .catchFilteredPro {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}
+//778px
+@media (max-width: 778px) {
+  .catchFilteredPro {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .catchFilteredPro .cathcCardComp{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+//662px
+@media (max-width: 662px) {
+  .catchFilteredPro {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+//345px
+@media (max-width: 345px) {
+  .catchFilteredPro {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+}

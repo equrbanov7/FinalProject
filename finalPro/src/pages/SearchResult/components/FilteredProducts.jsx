@@ -51,11 +51,26 @@ const FilteredProducts = ({ searchId }) => {
         {searchId
           ? oneCategory?.data?.map(
               ({ id, attributes }) => {
+                let truncatedTitle = attributes.title;
 
+                if (window.innerWidth > 778 && window.innerWidth <= 1024) {
+                  // Apply truncation logic for screen width less than or equal to 1024 pixels.
+                  truncatedTitle = attributes.title.slice(0, 23) + "...";
+                 // console.log("1178")
+                } else if (window.innerWidth <= 778) {
+                  // Apply truncation logic for screen width less than or equal to 778 pixels.
+                  truncatedTitle = attributes.title.slice(0, 15) + "...";
+                  //console.log("778")
+                }
+                 else if (window.innerWidth <= 572) {
+                  // Apply truncation logic for screen width less than or equal to 778 pixels.
+                  truncatedTitle = attributes.title.slice(0, 10) + "...";
+                  //console.log("778")
+                }
                 return (
                 <NewCarditem
                   key={id}
-                  title={attributes.title}
+                  title={truncatedTitle}
                   desc={attributes.description}
                   rating={attributes.rating}
                   price={attributes.price}

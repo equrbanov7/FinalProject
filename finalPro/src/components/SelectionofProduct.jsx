@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./selectionofProduct.scss"
+import "./selectionofProduct.scss" 
 
 // eslint-disable-next-line react/prop-types
 const SelectionofProduct = ({dataType}) => {
