@@ -1,3 +1,18 @@
+.allReviewTopResultsWrap {
+  .titleOfSide {
+    color: var(--black-01, #0b0f0e);
+
+    /* Extra Heading/Eh6 - 20 Semi Bold -  Lh 130% */
+    font-family: Clash Grotesk;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 28px */
+    letter-spacing: -0.2px;
+    margin-bottom: 24px;
+  }
+}
+
 .ReviewTopResults {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -29,5 +44,47 @@
 .ReviewTopResults .rightReviewRank .EachRatingLine:nth-child(5) {
   .leftStarRank {
     gap: 7.3px;
+  }
+}
+
+//994px
+@media (max-width: 994px) {
+  .ReviewTopResults {
+    .leftReviewScore .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
+      font-size: 14px;
+    }
+  }
+}
+
+//778px
+@media (max-width: 778px) {
+  .allReviewTopResultsWrap{
+    .titleOfSide{
+      font-size: 16px;
+    }
+  }
+  .ReviewTopResults {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    width: 100%;
+    .catchAllThreeElements .leftImgLogo {
+      width: 64px;
+      height: 64px;
+      max-width: inherit;
+      min-width: inherit;
+      max-height: inherit;
+      min-height: inherit;
+    }
+    .leftReviewScore .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
+      font-size: 12px;
+    }
+    .rightReviewRank {
+      margin-left: inherit;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
   }
 }

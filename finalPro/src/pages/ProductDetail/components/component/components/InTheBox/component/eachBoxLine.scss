@@ -14,3 +14,12 @@
     line-height: 160%; /* 25.6px */
   }
 }
+
+//994px
+@media (max-width: 994px) {
+  .EachBoxLine {
+    p {
+      font-size: 14px;
+    }
+  }
+}

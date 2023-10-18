@@ -1,12 +1,24 @@
-.Specification{
-    width: 100%;
-    max-width: 410px;
-    min-width: 191px;
+.Specification {
+  width: 100%;
+  max-width: 410px;
+  min-width: 191px;
+
+  .spesficTitleTop {
+    color: var(--black-01, #0b0f0e);
+
+    /* Heading/H2 - 18 Semi Bold -  Lh 140% */
+    font-family: Clash Grotesk;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 25.2px */
+    letter-spacing: -0.2px;
+  }
 }
 .specificationTable {
   border-collapse: collapse;
   width: 100%;
-  margin-top: 16px
+  margin-top: 16px;
 }
 .eachLineTable {
   .spesficTitle {
@@ -34,9 +46,26 @@
 td,
 th {
   text-align: left;
- padding: 10px;
+  padding: 10px;
 }
 
 tr:nth-child(odd) {
-    background: var(--l-grey-03, #F9F9F9);
+  background: var(--l-grey-03, #f9f9f9);
+}
+
+//994px
+@media (max-width: 994px) {
+  .Specification {
+    .spesficTitleTop {
+      font-size: 16px;
+    }
+  }
+  .eachLineTable {
+    .spesficTitle {
+      font-size: 14px;
+    }
+    .resultTd {
+      font-size: 14px;
+    }
+  }
 }

@@ -55,7 +55,7 @@
   .rightLikeDislikeBtns {
     .btnes {
       display: flex;
-      gap: 8px;
+      gap: 16px;
       .ButtonImgUniverse {
         padding: 12px;
         border-radius: 4px;
@@ -74,6 +74,89 @@
           line-height: 160%;
         }
       }
+    }
+  }
+}
+
+//997px
+@media (max-width: 997px) {
+  .PersonalReviewItem {
+    .leftPersonalReview {
+      .starsLike {
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      ._catchInfos_1j6zo_1 {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        h2 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+      .catchAllThreeElements {
+        .rightInfoLogo .rightInfosCatch h4 {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .rightLikeDislikeBtns {
+    .btnes {
+      gap: 12px;
+    }
+    .ButtonImgUniverse button {
+      font-size: 14px;
+    }
+  }
+}
+//554px
+@media (max-width: 554px) {
+  .PersonalReviewItem {
+    .leftPersonalReview {
+      .starsLike {
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      ._catchInfos_1j6zo_1 {
+        margin-top: 12px;
+
+        h2 {
+          font-size: 14px;
+          width: max-content;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+      .catchAllThreeElements {
+        gap: 8px;
+        .rightInfoLogo .rightInfosCatch h4 {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .rightLikeDislikeBtns {
+    .btnes {
+      gap: 8px;
+      .ButtonImgUniverse {
+        padding: 10px !important;
+      }
+    }
+    
+    .ButtonImgUniverse button {
+      font-size: 12px;
     }
   }
 }

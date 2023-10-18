@@ -20,3 +20,56 @@
     }
   }
 }
+
+//1048px
+@media (max-width: 1048px) {
+  .MerchantAll {
+    .merchantElmentsMiddle {
+      .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
+        font-size: 16px;
+      }
+      .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
+        font-size: 14px;
+      }
+    }
+    .ButtonImgUniverse button {
+      font-size: 14px;
+    }
+  }
+}
+//772px
+@media (max-width: 772px) {
+  .MerchantAll {
+    .merchantElmentsMiddle {
+      flex-direction: column;
+      gap: 24px;
+      align-items: flex-start;
+      .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
+        font-size: 14px;
+      }
+      .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
+        font-size: 12px;
+      }
+      .catchAllThreeElements .rightInfoLogo .bottomInfosMerchant h5 {
+        font-size: 12px;
+      }
+      .btnCatchProduct{
+        width: 100%;
+        .ButtonImgUniverse{
+          width: 100%;
+        }
+      }
+    }
+
+    .ButtonImgUniverse button {
+      font-size: 14px;
+    }
+  }
+}
+
+//384px
+@media (max-width: 384px) {
+  .MerchantAll .ButtonImgUniverse button {
+    width: max-content;
+  }
+}

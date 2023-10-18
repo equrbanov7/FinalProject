@@ -16,7 +16,7 @@ const RelatedProducts = () => {
 
       setProducts(data);
       // console.log(data, "++++")
-    }
+    } 
     getAllProducts();
   }, []);
   return (

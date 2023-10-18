@@ -11,14 +11,14 @@ import Person1 from "../../../../../../../assets/images/people/Man_1.png";
 import Person2 from "../../../../../../../assets/images/people/Man_2.png";
 import Person3 from "../../../../../../../assets/images/people/Man_3.png";
 import Person4 from "../../../../../../../assets/images/people/Man_4.png";
+import Filter from "../../../../../../../assets/icons/pages/search/filter.svg";
 
 const ReviewsRightItems = () => {
- // const [isActive, setIsActive] = React.useState(false);
- 
+  // const [isActive, setIsActive] = React.useState(false);
+
   const handleClick = (e) => {
-  
     const selectBtn = document.querySelectorAll(".btn");
-    selectBtn[0].classList.add("buttonActive")
+    selectBtn[0].classList.add("buttonActive");
     for (let i = 0; i < selectBtn.length; i++) {
       selectBtn[i].classList.remove("buttonActive");
     }
@@ -26,25 +26,27 @@ const ReviewsRightItems = () => {
     // setIsActive(!isActive);
   };
 
+  function showFilter() {
+    const showingElement = document.querySelector(".catchFilterAll");
+    showingElement.classList.toggle("filterMobile");
+    // console.log(showingElement,"aaaaaaaaaaaaaa")
+    const overlayElm = document.querySelector(".ovarley");
+    overlayElm.classList.toggle("changeOpacity")
+  }
+
   return (
     <div className="ReviewsRightItems">
       <h3 className="titleReviewList">Review Lists</h3>
-      <div className="btnesReview">
-        <Button
-          btnData={"All Reviews"}
-          handleClick={handleClick}
-        
-        />
-        <Button
-          btnData={"With Photo & Video"}
-          handleClick={handleClick}
-       
-        />
-        <Button
-          btnData={"With Description"}
-          handleClick={handleClick}
-        
-        />
+      <div className="forResponsiveDivCatch">
+        <div className="btnesReview">
+          <Button btnData={"All Reviews"} handleClick={handleClick} />
+          <Button btnData={"With Photo & Video"} handleClick={handleClick} />
+          <Button btnData={"With Description"} handleClick={handleClick} />
+        </div>
+
+        <div className="filterIconSide" onClick={showFilter}>
+          <img src={Filter} alt="filtering" />
+        </div>
       </div>
 
       <div className="ResultReview">

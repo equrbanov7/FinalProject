@@ -37,3 +37,29 @@
   line-height: 160%; /* 28.8px */
   text-transform: inherit;
 }
+
+//994px
+@media (max-width: 994px) {
+  .catchMenuAllItems {
+    .menuNameProduct {
+      font-size: 16px;
+    }
+    .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
+      font-size: 16px;
+    }
+  }
+  
+}
+//574px
+@media (max-width: 574px) {
+  .catchMenuAllItems {
+    .menuNameProduct {
+      font-size: 14px;
+      width: 45px;
+    }
+    .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
+      font-size: 14px;
+    }
+  }
+  
+}

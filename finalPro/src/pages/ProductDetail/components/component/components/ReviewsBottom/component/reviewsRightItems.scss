@@ -11,10 +11,30 @@
     line-height: 140%; /* 28px */
     letter-spacing: -0.2px;
   }
+  .forResponsiveDivCatch {
+    margin-top: 16px;
+    .filterIconSide {
+      border-radius: 8px;
+      border: 1px solid var(--d-grey-01, #e4e9ee);
+
+      width: 44px;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: none;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        padding: 10px;
+      }
+    }
+  }
   .btnesReview {
     display: flex;
     gap: 12px;
-    margin-top: 16px;
+
     button {
       color: var(--black-01, #0b0f0e);
       font-family: Clash Grotesk;
@@ -31,7 +51,6 @@
       color: var(--dark-green-03, #1d9e34);
       background-color: #fff;
       border: 1px solid var(--dark-green-03, #1d9e34);
-   
     }
   }
   .ResultReview {
@@ -79,5 +98,35 @@
       line-height: 160%; /* 22.4px */
       padding: 16px 18px !important;
     }
+  }
+}
+
+
+//778px
+@media (max-width: 778px) {
+  .ReviewsRightItems {
+    .forResponsiveDivCatch {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+        .filterIconSide{
+          display: flex;
+          cursor: pointer;
+        }
+      .btnesReview {
+        flex-wrap: wrap;
+        width: 300px;
+        button{
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+//778px
+@media (max-width: 778px) {
+  .ResultReview{
+    gap: 24px;
   }
 }

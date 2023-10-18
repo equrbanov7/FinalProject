@@ -21,7 +21,7 @@ const Merchant = () => {
       <h2 className="titleOfSide">Merchant Information</h2>
       <div className="merchantElmentsMiddle">
         <ThreeElements
-          image={Logo}
+          image={Logo} 
           dataCreator={dataCreator}
           dataBottom={dataBottom}
         />

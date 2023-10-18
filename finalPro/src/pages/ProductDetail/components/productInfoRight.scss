@@ -1,5 +1,5 @@
 .ProductInfoRightAll {
-    width: 50%;
+  width: 50%;
   .topInfoProduct {
     .nameOfProduct {
       color: var(--black-01, #0b0f0e);
@@ -90,7 +90,6 @@
       align-items: center;
       gap: 16px;
       margin-top: 12px;
-   
     }
   }
 
@@ -99,22 +98,85 @@
     align-items: center;
     gap: 16px;
     width: 100%;
-    .ButtonImgUniverse{
-        width: 100%;
-        button{
-            margin: auto;
-        }
-        img{
-            width: 24px;
-            height: 24px;
-        }
+
+    .ButtonImgUniverse {
+      width: 100%;
+      button {
+        margin: auto;
+      }
+      img {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
-  .btnesOfProduct .ButtonImgUniverse:nth-child(1){
+  .btnesOfProduct .ButtonImgUniverse:nth-child(1) {
     border-radius: 8px;
-    background: var(--dark-green-01, #1E4C2F);
-    button{
-        color: #fff;
+    background: var(--dark-green-01, #1e4c2f);
+    button {
+      color: #fff;
+    }
+  }
+}
+
+//1200px
+@media (max-width: 1200px) {
+  .ProductInfoRightAll {
+    .topInfoProduct {
+      .nameOfProduct {
+        font-size: 24px;
+      }
+      .rankingProduct {
+        .starSide {
+          span {
+            font-size: 14px;
+          }
+        }
+        .soldCount {
+          font-size: 14px;
+        }
+      }
+      .productPrice {
+        h4 {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .middleDescription {
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .catchAllSelections {
+      margin-bottom: 32px;
+    }
+
+    .btnesOfProduct {
+      .ButtonImgUniverse {
+        .btnCatch {
+          gap: 3px;
+        }
+        button {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+//1048px
+@media (max-width: 1048px) {
+  .ProductInfoRightAll {
+    width: 100%;
+
+    .btnesOfProduct {
+      flex-direction: column;
+      .ButtonImgUniverse {
+        .btnCatch {
+          gap: 8px;
+        }
+      }
     }
   }
 }

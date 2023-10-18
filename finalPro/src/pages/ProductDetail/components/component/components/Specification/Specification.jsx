@@ -3,7 +3,7 @@ import "./specification.scss";
 const Specification = () => {
   return (
     <div className="Specification">
-      <h3>Specification</h3>
+      <h3 className="spesficTitleTop">Specification</h3>
 
       <table className="specificationTable">
       

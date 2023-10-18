@@ -27,7 +27,7 @@ const ReviewBottomResult = () => {
       show: null,
     },
     
-  ];
+  ]; 
   return (
     <div className="ReviewBottomResult">
         <FilterSide dataFilter={dataFilter} title={"Reviews Filter"} />

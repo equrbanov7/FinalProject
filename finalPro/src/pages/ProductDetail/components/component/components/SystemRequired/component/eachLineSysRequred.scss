@@ -10,3 +10,12 @@
     line-height: 160%; /* 25.6px */
   }
 }
+
+//994px
+@media (max-width: 994px) {
+  .EachLineSysRequred {
+    .sysItem {
+      font-size: 14px;
+    }
+  }
+}

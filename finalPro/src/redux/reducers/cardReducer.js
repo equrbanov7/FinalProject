@@ -3,7 +3,7 @@ import {getSelectedProducts} from "../actions/cardAction";
 
 const initialState = {
     loading: false,
-    productIds: [],
+    productIds: [], 
     selectedProducts:{}
     
   };

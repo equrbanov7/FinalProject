@@ -31,7 +31,7 @@ const ProductImageGallery = ({imageId}) => {
       setImagesApi(newImagesApi);
     }
   }, [oneProduct]);
- 
+  
   return (
     <div className="imageGalleryProduct">
       <ImageGallery

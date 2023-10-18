@@ -30,3 +30,31 @@
     }
   }
 }
+
+//994px
+@media (max-width: 994px) {
+  .RelatedProducts{
+
+    .catchRelatedProductUniversal{
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+//554px
+@media (max-width: 554px) {
+  .RelatedProducts{
+
+    .catchRelatedProductUniversal{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+//384px
+@media (max-width: 384px) {
+  .RelatedProducts{
+
+    .catchRelatedProductUniversal{
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

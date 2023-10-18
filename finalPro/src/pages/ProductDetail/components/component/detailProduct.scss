@@ -29,3 +29,29 @@ section.detailProductCatch {
     }
   }
 }
+//994px
+@media (max-width: 994px) {
+  section.detailProductCatch {
+    ._catchInfos_1j6zo_1 {
+      h2 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+//574px
+@media (max-width: 574px) {
+  section.detailProductCatch {
+    ._catchInfos_1j6zo_1 {
+      h2 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -50,3 +50,36 @@
     }
   }
 }
+
+//994px
+@media (max-width: 994px) {
+  .EachRatingLine {
+    .leftStarRank span {
+      font-size: 14px;
+    }
+    .linearStar {
+      width: 250px;
+    }
+    .totalStarInfo span {
+      font-size: 14px;
+    }
+  }
+}
+
+//778px
+@media (max-width: 778px) {
+.EachRatingLine{
+  width: 100%;
+  gap: 12px;
+  .leftStarRank span {
+    font-size: 12px;
+  }
+  .linearStar {
+    width: 100%;
+    min-width: inherit;
+  }
+  .totalStarInfo span {
+    font-size: 12px;
+  }
+}
+}

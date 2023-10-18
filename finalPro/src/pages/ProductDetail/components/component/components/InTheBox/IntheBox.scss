@@ -4,6 +4,9 @@
   justify-content: center;
   gap: 12px;
   margin-top: 16px;
+ 
+}
+.catchAllIntheBox{
   .titleOfInthebox {
     color: var(--black-01, #0b0f0e);
 
@@ -14,5 +17,16 @@
     font-weight: 600;
     line-height: 140%; /* 25.2px */
     letter-spacing: -0.2px;
+  }
+}
+
+//994px
+@media (max-width: 994px) {
+  .catchAllIntheBox{
+    .titleOfInthebox {
+    
+      font-size: 15px;
+   
+    }
   }
 }
