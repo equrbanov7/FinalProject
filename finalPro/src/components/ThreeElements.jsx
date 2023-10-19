@@ -1,9 +1,9 @@
 import "./threeElements.scss";
 // import Logo from "../assets/icons/pages/detail product/LogiTech.svg";
 // eslint-disable-next-line react/prop-types
-const ThreeElements = ({ image, dataCreator, dataBottom, imageSecond }) => {
+const ThreeElements = ({ image, dataCreator, dataBottom, imageSecond,handleId }) => {
   return (
-    <div className="catchAllThreeElements">
+    <div className="catchAllThreeElements" onClick={handleId}>
       <div className="leftImgLogo">
         <img src={image} alt="logo" />
       </div>

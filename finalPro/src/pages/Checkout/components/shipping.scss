@@ -53,6 +53,7 @@
         }
       }
       .addressNameofPerson {
+        margin-left: 39px;
         h5 {
           color: var(--grey-01, #818b9c);
           font-family: Clash Grotesk;
@@ -80,3 +81,79 @@
     }
   }
 }
+
+//1048px
+@media (max-width: 1048px) {
+  .Shipping {
+    .titleSection h1 {
+      font-size: 20px;
+    }
+
+    .catchAllInfosAddres {
+      .leftMapAddress {
+        .mapElementsAddres {
+          .catchAllThreeElements {
+            .rightInfoLogo .rightInfosCatch h4 {
+              font-size: 16px;
+            }
+            .rightInfoLogo .rightInfosCatch h3 {
+              font-size: 12px;
+            }
+          }
+        }
+        .addressNameofPerson {
+          h5 {
+            font-size: 14px;
+          }
+        }
+      }
+      .rightOtherAddres {
+        .btn {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+//554px
+@media (max-width: 554px) {
+  .Shipping {
+    .titleSection h1 {
+      font-size: 16px;
+    }
+
+    .catchAllInfosAddres {
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      .leftMapAddress {
+        width: 100%;
+        .mapElementsAddres {
+          width: 100%;
+          .catchAllThreeElements {
+            .rightInfoLogo .rightInfosCatch h4 {
+              font-size: 14px;
+            }
+            .rightInfoLogo .rightInfosCatch h3 {
+              font-size: 12px;
+            }
+          }
+        }
+        .addressNameofPerson {
+          h5 {
+            font-size: 12px;
+          }
+        }
+      }
+      .rightOtherAddres {
+        width: 100%;
+        .btn {
+          font-size: 12px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+

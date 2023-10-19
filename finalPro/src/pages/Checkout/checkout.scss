@@ -1,17 +1,73 @@
-.CheckoutAll{
-
- 
-    .allcheckoutInfosItems{
-        display: flex;
+.CheckoutAll {
+  .allcheckoutInfosItems {
+    display: flex;
     align-items: flex-start;
     gap: 32px;
     justify-content: center;
-    .catchLeftItemandAddres{
-        width: 60%;
-        .CatchBuyingItems {
-            width: 100%;
-            top: inherit;
-        }
+    .catchLeftItemandAddres {
+      width: 60%;
+      .CatchBuyingItems {
+        width: 100%;
+        top: inherit;
+      }
     }
+  }
+}
+
+//1048px
+@media (max-width: 1048px) {
+  .CheckoutAll {
+    ._catchInfos_1j6zo_1 {
+      h2 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+      }
     }
+  }
+}
+
+//997px
+@media (max-width: 997px) {
+  .CheckoutAll {
+    .allcheckoutInfosItems {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-inline: 80px;
+
+      .catchLeftItemandAddres {
+        width: 100%;
+      }
+    }
+  }
+}
+
+//997px
+@media (max-width: 778px) {
+  .CheckoutAll {
+    .allcheckoutInfosItems {
+      padding-inline: 40px;
+    }
+  }
+}
+
+//554px
+@media (max-width: 554px) {
+  .CheckoutAll {
+    .allcheckoutInfosItems {
+      padding-inline: 24px;
+    }
+
+    ._catchInfos_1j6zo_1 {
+      h2 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
 }

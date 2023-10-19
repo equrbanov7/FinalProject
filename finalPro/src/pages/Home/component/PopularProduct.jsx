@@ -4,10 +4,12 @@ import TitleDescription from "../../../components/TitleDescription";
 import CatchPopularProductsHome from "./component/CatchPopularProductsHome";
 import "./popularProduct.scss";
 
+
 const PopularProduct = () => {
   const [counter, setCounter] = React.useState(8);
   const [clickCount, setClickCount] = React.useState(0);
   const [loadMode, setLoadMode] = React.useState(true); // Initialize to "Load More" mode
+ 
 
   const loadMoreOrLess = () => {
     if (loadMode) {

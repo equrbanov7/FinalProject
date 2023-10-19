@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  cursor: pointer;
   .topSide {
     border-radius: 8px;
     background: var(--l-grey-02, #f6f6f6);

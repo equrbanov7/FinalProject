@@ -56,3 +56,66 @@
     font-size: 16px;
   }
 }
+
+//1048px
+@media (max-width: 1048px) {
+  .ShippingBottom {
+    .titleOfCargo {
+      font-size: 16px;
+    }
+
+    .catchShippingAddres {
+      padding: 20px 16px;
+    }
+    .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
+      font-size: 14px;
+    }
+    .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
+      font-size: 12px;
+    }
+    .catchShippingAddres.priceSide {
+      .price {
+        font-size: 14px;
+      }
+    }
+    .catchAllThreeElements .leftImgLogo {
+      max-width: 84px;
+
+      max-height: 44px;
+    }
+  }
+}
+//554px
+@media (max-width: 554px) {
+  .ShippingBottom {
+    .catchShippingAddres {
+      padding: 14px 12px;
+
+      .catchAllThreeElements {
+        gap: 12px;
+      }
+    }
+    .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
+      font-size: 12px;
+    }
+    .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
+      font-size: 10px;
+    }
+    .catchShippingAddres .priceSide {
+      gap: 8px;
+      .price {
+        font-size: 12px;
+      }
+      .iconDown {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .catchAllThreeElements .leftImgLogo {
+      max-width: 63px;
+
+      max-height: 32px;
+    }
+  }
+}

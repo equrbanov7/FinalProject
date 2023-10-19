@@ -5,7 +5,7 @@ import ProductSummary from "../ShoppingChart/components/components/ProductSummar
 import "./checkout.scss";
 import Shipping from "./components/Shipping";
 
-
+ 
 const Checkout = () => {
   return (
     <div className="CheckoutAll">

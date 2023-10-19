@@ -26,7 +26,7 @@ const ProductImageGallery = ({imageId}) => {
       const newImagesApi = oneProduct.data[0].attributes?.images?.data?.map((image) => ({
         original: `${import.meta.env.VITE_UPLOAD_IMAGE}${image?.attributes?.url}`,
         thumbnail:`${import.meta.env.VITE_UPLOAD_IMAGE}${image?.attributes?.url}`,
-      }));
+      })) || [];
       
       setImagesApi(newImagesApi);
     }

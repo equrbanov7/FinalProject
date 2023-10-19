@@ -24,8 +24,8 @@ const CatchBuyingItems = ({ showShipping }) => {
       </div>
 
       <div className="selectingItemsOfProducts">
-        {selectedProducts?.data?.map((product, id) => (
-          <ShoppingCardItem key={id} product={product} />
+        {selectedProducts?.data?.map((product,id) => (
+          <ShoppingCardItem key={id} product={product}/>
         ))}
 
         {showShipping ? <ShippingBottom /> : ""}

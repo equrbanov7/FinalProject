@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home";
 // import { Route, Routes } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import SearchResult from "./pages/SearchResult/SearchResult";
-// import Header from "./layout/Header/Header";
+ import Header from "./layout/Header/Header";
 
 import ProductsDetail from "./pages/ProductDetail/ProductsDetail";
 import ShoppingChart from "./pages/ShoppingChart/ShoppingChart";
@@ -16,7 +16,7 @@ import Checkout from "./pages/Checkout/Checkout";
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<SearchResult />} />

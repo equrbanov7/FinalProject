@@ -53,3 +53,30 @@
     width: 100%;
   }
 }
+
+//554px
+@media (max-width: 554px) {
+  .CatchBuyingItems {
+
+   
+    .nameOfcompany {
+      .catchAllThreeElements {
+        gap: 8px;
+        .leftImgLogo {
+          min-width: inherit;
+          min-height: inherit;
+          max-width: inherit;
+          max-height: inherit;
+          width: 46px;
+          height: 46px;
+        }
+        .rightInfoLogo .rightInfosCatch h4 {
+          font-size: 14px;
+        }
+        .rightInfoLogo .rightInfosCatch h3 {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
