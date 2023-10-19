@@ -17,21 +17,22 @@ const Merchant = () => {
   const dataBottom = ["Top Rated Merchant", "Best Merchant"];
 
   return (
-    <div className="MerchantAll">
-      <h2 className="titleOfSide">Merchant Information</h2>
-      <div className="merchantElmentsMiddle">
-        <ThreeElements
-          image={Logo} 
-          dataCreator={dataCreator}
-          dataBottom={dataBottom}
-        />
-        <div className="btnCatchProduct">
-          <ButtonImg image={Chatt} name={"Chat"} />
-          <ButtonImg image={ShopMerchant} name={"Visit Merchant"} />
-          
+    <>
+      <div className="MerchantAll">
+        <h2 className="titleOfSide">Merchant Information</h2>
+        <div className="merchantElmentsMiddle">
+          <ThreeElements
+            image={Logo}
+            dataCreator={dataCreator}
+            dataBottom={dataBottom}
+          />
+          <div className="btnCatchProduct">
+            <ButtonImg image={Chatt} name={"Chat"} />
+            <ButtonImg image={ShopMerchant} name={"Visit Merchant"} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -6,20 +6,25 @@ import "./shoppingChart.scss";
 
 const ShoppingChart = () => {
   const [sortType] = React.useState({
-    title: "Sort By",
+    title: "Sort By:",
     elements: ["Latest Added", "New", "Past"],
   });
+
+  
+
   return (
-    <div className="ShoppingChartAll">
-      <div className="ShoppingChart ">
-        <TopShoppingChart
-          dataSelect={sortType}
-          title={"Shopping Chart"}
-          desc={"Showing your choices product"}
-        />
-        <BottomShoppingChart />
+    <div className="spesficStyleForShopping">
+      <div className="ShoppingChartAll my-Margin-container">
+        <div className="ShoppingChart ">
+          <TopShoppingChart
+            dataSelect={sortType}
+            title={"Shopping Chart"}
+            desc={"Showing your choices product"}
+          />
+          <BottomShoppingChart />
+        </div>
+        <RelatedPoduct />
       </div>
-      <RelatedPoduct />
     </div>
   );
 };

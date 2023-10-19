@@ -1,18 +1,51 @@
 .RightShoppingCounter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .forWishCard {
+    display: none;
+    h5 {
+      color: var(--grey-01, #818b9c);
+      font-family: Clash Grotesk;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+    }
+  }
+  .showingAllProcess {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 16px;
+
+    .deleteItem {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      border-radius: 8px;
+      border: 1px solid var(--d-grey-01, #e4e9ee);
+      img {
+        margin: 8px;
+        width: 24px;
+        height: 24px;
+        object-fit: cover;
+      }
+    }
+  }
   .counterItem {
     border-radius: 8px;
     border: 1px solid var(--d-grey-01, #e4e9ee);
     display: flex;
     align-items: center;
     gap: 8px;
+    height: 42px;
     button#myButton {
       border: none;
       font-size: 20px;
     }
-    
+
     span {
       color: var(--black-01, #0b0f0e);
       text-align: center;
@@ -26,10 +59,57 @@
     }
   }
 
-  .counterItem .btn:nth-child(1){
+  .counterItem .btn:nth-child(1) {
     color: var(--grey-01, #818b9c);
   }
-  .counterItem .btn:nth-child(3){
-   color: var(--dark-green-03, #1d9e34);
+  .counterItem .btn:nth-child(3) {
+    color: var(--dark-green-03, #1d9e34);
+  }
+}
+
+//1048px
+@media (max-width: 1048px) {
+  .RightShoppingCounter {
+    .counterItem {
+      height: 34px;
+      span {
+        font-size: 14px;
+      }
+    }
+    .showingAllProcess {
+      .deleteItem {
+        img {
+          width: 20px;
+          height: 20px;
+          margin: 6px;
+        }
+      }
+    }
+  }
+}
+
+//554px
+@media (max-width: 554px) {
+  .RightShoppingCounter {
+    justify-content: space-between;
+    width: 100%;
+    .counterItem{
+      height: 30px;
+      span {
+        font-size: 12px;
+      }
+    }
+    .showingAllProcess {
+      .deleteItem {
+        img {
+          width: 16px;
+          height: 16px;
+          margin: 6px;
+        }
+      }
+    }
+    .forWishCard {
+      display: flex;
+    }
   }
 }

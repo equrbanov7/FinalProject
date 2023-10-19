@@ -4,7 +4,7 @@ import ProductSummary from "./components/ProductSummary"
 
 const BottomShoppingChart = () => {
   return (
-    <div className="BottomShoppingChart my-SpesficContainer ">
+    <div className="BottomShoppingChart">
         <CatchBuyingItems />
         <ProductSummary />
     </div>

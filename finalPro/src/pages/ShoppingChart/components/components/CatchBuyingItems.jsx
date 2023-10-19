@@ -7,16 +7,10 @@ import ShoppingCardItem from "./components/ShoppingCardItem";
 import ShippingBottom from "../../../Checkout/components/ShippingBottom";
 
 import { useSelector } from "react-redux";
-// import React from "react";
-// import { getSelectedProducts } from "../../../../redux/actions/cardAction";
-//import { getSelectedProducts } from "../../../../redux/actions/cardAction";
+
 
 const CatchBuyingItems = ({ showShipping }) => {
-  //const dispatch = useDispatch();
-
-  // React.useEffect(()=>{
-  //   dispatch(getSelectedProducts)
-  // },[])
+ 
 
   const { selectedProducts } = useSelector((state) => state.selectedProducts);
   //console.log(selectedProducts, "selectt");

@@ -19,4 +19,72 @@
     letter-spacing: -0.2px;
     background-color: inherit;
   }
+
+  .catchAllThreeElements .leftImgLogo {
+    border-radius: 8px;
+    background: var(--l-grey-02, #f6f6f6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: inherit;
+    min-width: inherit;
+    max-height: inherit;
+    min-height: inherit;
+    width: auto;
+    img {
+      width: 84px;
+      height: 84px;
+      margin: 8px;
+      object-fit: cover;
+    }
+  }
+}
+
+//1048px
+@media (max-width: 1048px) {
+  .LeftShoppingChecking {
+    .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
+      font-size: 14px;
+    }
+    .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
+      font-size: 14px;
+    }
+    .catchAllThreeElements .rightInfoLogo .bottomInfosMerchant h5 {
+      font-size: 16px;
+    }
+    .catchAllThreeElements .leftImgLogo {
+      img {
+        width: 64px;
+        height: 64px;
+        margin: 10px;
+      }
+    }
+  }
+}
+//554px
+@media (max-width: 554px) {
+  .LeftShoppingChecking {
+    gap: 16px;
+    width: 100%;
+
+    .catchAllThreeElements {
+      gap: 12px;
+    }
+    .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
+      font-size: 12px;
+    }
+    .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
+      font-size: 10px;
+    }
+    .catchAllThreeElements .rightInfoLogo .bottomInfosMerchant h5 {
+      font-size: 12px;
+    }
+    .catchAllThreeElements .leftImgLogo {
+      img {
+        width: 38px;
+        height: 38px;
+        margin: 9px;
+      }
+    }
+  }
 }

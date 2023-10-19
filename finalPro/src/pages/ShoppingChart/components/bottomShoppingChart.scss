@@ -1,6 +1,17 @@
-.BottomShoppingChart{
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
+.BottomShoppingChart {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  justify-content: center;
+}
+
+//997px
+@media (max-width: 997px) {
+  .BottomShoppingChart {
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-inline: 24px;
+  }
 }
