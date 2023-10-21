@@ -1,14 +1,22 @@
-import "./bottomShoppingChart.scss"
-import CatchBuyingItems from "./components/CatchBuyingItems"
-import ProductSummary from "./components/ProductSummary"
-
+import "./bottomShoppingChart.scss";
+import CatchBuyingItems from "./components/CatchBuyingItems";
+import ProductSummary from "./components/ProductSummary";
+import { useSelector } from "react-redux";
 const BottomShoppingChart = () => {
+  const { productIds } = useSelector((state) => state.selectedProducts);
+  //console.log(productIds, "aaaadkjas");
   return (
     <div className="BottomShoppingChart">
-        <CatchBuyingItems />
-        <ProductSummary />
+      {productIds.length > 1 ? (
+        <>
+          <CatchBuyingItems />
+          <ProductSummary />
+        </>
+      ) : (
+        ""
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default BottomShoppingChart
+export default BottomShoppingChart;

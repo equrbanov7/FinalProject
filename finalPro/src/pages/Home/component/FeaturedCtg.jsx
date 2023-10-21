@@ -1,13 +1,9 @@
 /* eslint-disable no-undef */
-// import SliderItem from "../../../../components/SliderItem";
+
 import TitleItem from "../../../components/TitleItem";
 import "./featuredCtg.scss";
 import React from "react";
-//Swiper
-// import React, { useRef, useState } from 'react';
-// Import Swiper React components
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/scrollbar";
 
@@ -15,7 +11,7 @@ import "swiper/css/scrollbar";
 
 import { Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-//import CatchFeaturedSliderItems from "./component/CatchFeaturedSliderItems";
+
 import SliderItem from "../../../components/SliderItem";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

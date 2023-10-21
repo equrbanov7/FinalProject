@@ -8,12 +8,13 @@ import ShippingBottom from "../../../Checkout/components/ShippingBottom";
 
 import { useSelector } from "react-redux";
 
-
 const CatchBuyingItems = ({ showShipping }) => {
- 
-
   const { selectedProducts } = useSelector((state) => state.selectedProducts);
-  //console.log(selectedProducts, "selectt");
+  const { exampleIdCount } = useSelector((state) => state.selectedProducts);
+  //console.log(exampleIdCount, "examppp");
+  const { result } = useSelector((state) => state.selectedProducts);
+  //console.log(result,"countttttt")
+  //console.log(selectedProducts.data[0], "selectt");
 
   const data = ["Logitech Indonesia", "Central Jakarta"];
 
@@ -24,9 +25,28 @@ const CatchBuyingItems = ({ showShipping }) => {
       </div>
 
       <div className="selectingItemsOfProducts">
-        {selectedProducts?.data?.map((product,id) => (
+        {/* {selectedProducts?.data?.map((product,id) => (
           <ShoppingCardItem key={id} product={product}/>
-        ))}
+        ))} */}
+        {selectedProducts?.data?.map((product, id) => {
+          // Find the corresponding count from your data
+          const countData = result.find((item) => item.id == product.id);
+          const count = countData ? countData.count : 0;
+
+          const checkingItem = exampleIdCount.find(
+            (item) => item.id == product.id
+          );
+          // console.log(checkingItem.checking,"itjejkeh")
+
+          return (
+            <ShoppingCardItem
+              key={id}
+              product={product}
+              count={count}
+              checking={checkingItem? checkingItem.checking:false}
+            />
+          );
+        })}
 
         {showShipping ? <ShippingBottom /> : ""}
       </div>

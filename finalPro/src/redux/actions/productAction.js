@@ -8,13 +8,15 @@ export const getProducts = createAsyncThunk(
       const res = await instance.get(
         `/products?populate=*&pagination[start]=${0}&pagination[limit]=${obj}`
       );
-
+ 
       return res.data;
     } catch (error) {
       rejectWithValue(error);
     }
   }
 );
+
+
 
 export const getOneProduct = createAsyncThunk(
   "product/getOneProduct",

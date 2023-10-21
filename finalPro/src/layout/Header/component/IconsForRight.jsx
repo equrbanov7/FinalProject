@@ -45,7 +45,7 @@ const IconsForRight = () => {
     <ul className={styles.icons}>
       <li className={styles.basket} onClick={getElements} >
         <IconButton aria-label="cart">
-          <StyledBadge badgeContent={productIds.length} color="secondary"> {/* Gelecek cardlarr  */ }
+          <StyledBadge badgeContent={productIds.length>1?productIds.length-1 :0  } color="secondary"> {/* Gelecek cardlarr  */ }
           <img src={Basket} alt="icon" />
           </StyledBadge>
         </IconButton>

@@ -14,7 +14,7 @@ const CatchPopularProductsHome = ({ count }) => {
   const navigation = useNavigate();
   function catchId(idx) {
     navigation(`/productdetail/${idx}`);
-
+ 
     // console.log(idx)
   }
   const { products } = useSelector((state) => state.products);

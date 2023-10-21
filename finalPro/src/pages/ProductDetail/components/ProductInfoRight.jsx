@@ -10,7 +10,7 @@ import ButtonImg from "../../../components/ButtonImg";
 import Basket from "../../../assets/icons/pages/detail product/shopping-cart.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneProduct } from "../../../redux/actions/productAction";
-import { addItem } from "../../../redux/reducers/cardReducer";
+import { addItem,selectingIdCount } from "../../../redux/reducers/cardReducer";
 
 // eslint-disable-next-line react/prop-types
 const ProductInfoRight = ({ infoId }) => {
@@ -19,13 +19,18 @@ const ProductInfoRight = ({ infoId }) => {
   const dispatch = useDispatch();
 
   
-
+  var i=0;
   function collectProductId() {
+    
+    console.log(i++)
     dispatch(addItem(infoId));
+    dispatch(selectingIdCount({id:infoId,count:i,checking:false}))
     // console.log(infoId)
   }
 
   const { oneProduct } = useSelector((state) => state.products);
+  const {exampleIdCount}=useSelector((state) => state.selectedProducts);
+  console.log(exampleIdCount,"oneeeeeeee")
 
   React.useEffect(() => {
     dispatch(getOneProduct(infoId));
@@ -93,7 +98,7 @@ const ProductInfoRight = ({ infoId }) => {
         <ButtonImg
           name={"Add to Chart"}
           image={Basket}
-          handleId={collectProductId}
+          handleId={()=> collectProductId()}
         />
       </div>
     </div>
