@@ -16,7 +16,10 @@ const IconsForRight = () => {
    const dispatch = useDispatch();
   const { productIds } = useSelector((state) => state.selectedProducts);
  // console.log(productIds.length, "iddddd");
+ const uniqueItems = [...new Set(productIds)];
 
+
+ console.log(uniqueItems,"unikkk");
   
     React.useEffect(()=>{
       dispatch(getSelectedProducts(productIds))
@@ -45,7 +48,7 @@ const IconsForRight = () => {
     <ul className={styles.icons}>
       <li className={styles.basket} onClick={getElements} >
         <IconButton aria-label="cart">
-          <StyledBadge badgeContent={productIds.length>1?productIds.length-1 :0  } color="secondary"> {/* Gelecek cardlarr  */ }
+          <StyledBadge badgeContent={uniqueItems.length>1?uniqueItems.length-1 :0  } color="secondary"> {/* Gelecek cardlarr  */ }
           <img src={Basket} alt="icon" />
           </StyledBadge>
         </IconButton>

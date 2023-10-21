@@ -8,6 +8,7 @@ const initialState = {
   exampleIdCount: [{ id: 0, count: 0, checking: false }],
   selectedProducts: {},
   result: [],
+
   total: 0,
   count: 0,
   clickedProduct: false,
@@ -114,7 +115,7 @@ export const selectedProductCard = createSlice({
     //   state.clickedProduct=ac
     // }
     toggleCheck(state, action) {
-      state.exampleIdCount=action.payload
+      state.exampleIdCount = action.payload;
     },
   },
 

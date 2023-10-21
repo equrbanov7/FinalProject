@@ -21,16 +21,19 @@ const ProductInfoRight = ({ infoId }) => {
   
   var i=0;
   function collectProductId() {
-    
-    console.log(i++)
+    const isChecked = exampleIdCount.some(
+      (item) => item.id == infoId && item.checking
+    );
+    console.log(i++, isChecked)
     dispatch(addItem(infoId));
-    dispatch(selectingIdCount({id:infoId,count:i,checking:false}))
+
+    dispatch(selectingIdCount({id:infoId,count:i,checking:isChecked}))
     // console.log(infoId)
   }
 
   const { oneProduct } = useSelector((state) => state.products);
   const {exampleIdCount}=useSelector((state) => state.selectedProducts);
-  console.log(exampleIdCount,"oneeeeeeee")
+  //console.log(exampleIdCount,"oneeeeeeee")
 
   React.useEffect(() => {
     dispatch(getOneProduct(infoId));

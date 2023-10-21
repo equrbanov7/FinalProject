@@ -6,6 +6,7 @@ import PromoCode from "../../../../assets/icons/pages/shoppingChart/promoCode.sv
 import Button from "../../../../components/Button";
 import { useSelector } from "react-redux";
 import React from "react";
+import { Link } from "react-router-dom";
 const ProductSummary = () => {
   const { selectedProducts } = useSelector((state) => state.selectedProducts);
   const { exampleIdCount } = useSelector((state) => state.selectedProducts);
@@ -72,7 +73,7 @@ const ProductSummary = () => {
 
       <div className="lineBreakBox"></div>
       <div className="totalPriceItems">
-        <TitleDescription title={"Total Price"} desc={`$${0}`} />
+        <TitleDescription title={"Total Price"} desc={`$${total}`} />
       </div>
 
       <div className="usingPromocode">
@@ -82,10 +83,11 @@ const ProductSummary = () => {
         />
         <AiOutlineRight />
       </div>
-
-      <div className="checkoutCLick">
-        <Button btnData={"Checkout"} />
-      </div>
+      <Link to={"/checkout"}>
+        <div className="checkoutCLick">
+          <Button btnData={"Checkout"} />
+        </div>
+      </Link>
     </div>
   );
 };
