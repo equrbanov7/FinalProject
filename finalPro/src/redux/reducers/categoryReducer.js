@@ -25,7 +25,7 @@ export const categorySlice = createSlice({
     setObjFilter: (state, action) => {
       //function 
       state.filterObj[action.payload.name]=action.payload.value
-      console.log(action.payload);
+      //console.log(action.payload);
     },
   },
 
