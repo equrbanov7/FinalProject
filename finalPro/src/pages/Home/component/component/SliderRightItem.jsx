@@ -10,7 +10,7 @@ const SliderRightItem = () => {
 
   const navigation = useNavigate();
   function catchId(idx) {
-    navigation(`/productdetail/${idx}`);
+    navigation(`/Fashion/2/shirt/${idx}`);
 
     // console.log(idx)
   }

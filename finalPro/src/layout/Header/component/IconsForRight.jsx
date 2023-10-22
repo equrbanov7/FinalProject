@@ -8,7 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import { useDispatch,useSelector } from "react-redux";
 import {useNavigate } from 'react-router-dom'
 import { getSelectedProducts } from "../../../redux/actions/cardAction";
-import styles from "./IconsForRight.module.scss";
+import  "./IconsForRight.scss";
 import React from "react";
 const IconsForRight = () => {
   const navigation = useNavigate()
@@ -19,7 +19,7 @@ const IconsForRight = () => {
  const uniqueItems = [...new Set(productIds)];
 
 
- console.log(uniqueItems,"unikkk");
+ //console.log(uniqueItems,"unikkk");
   
     React.useEffect(()=>{
       dispatch(getSelectedProducts(productIds))
@@ -44,17 +44,27 @@ const IconsForRight = () => {
       background: 'var(--red-1, #E04124)', // Use quotes for property values
     },
   }));
+
+  function showSign() {
+    const showingElement = document.querySelector(".SignUpIn");
+    console.log(showingElement)
+     showingElement.classList.toggle("signUpInShowing");
+    // // console.log(showingElement,"aaaaaaaaaaaaaa")
+     const overlayElm = document.querySelector(".ovarley");
+     overlayElm.classList.toggle("changeOpacity")
+  }
+
   return (
-    <ul className={styles.icons}>
-      <li className={styles.basket} onClick={getElements} >
+    <ul className="icons">
+      <li className="basket" onClick={getElements} >
         <IconButton aria-label="cart">
           <StyledBadge badgeContent={uniqueItems.length>1?uniqueItems.length-1 :0  } color="secondary"> {/* Gelecek cardlarr  */ }
           <img src={Basket} alt="icon" />
           </StyledBadge>
         </IconButton>
       </li>
-      <li className={styles.line}></li>
-      <li className={styles.person}>
+      <li className="line"></li>
+      <li className="person" onClick={showSign}>
         <img src={User} alt="user" />
       </li>
     </ul>

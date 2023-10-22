@@ -1,10 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCategories, getOneCategory } from "../actions/categoryAction";
+import { getCategories, getOneCategory,getProductsByCategoryId } from "../actions/categoryAction";
 
 const initialState = {
   loading: false,
   categories: {},
   oneCategory: {},
+
+  // filteredProd:[],
+  filterObj:{
+    color:"",
+    page:"",
+    price:["",""],
+    type:"",
+    sort:"",
+    rating:"",
+    id:""
+  }
 };
 
 export const categorySlice = createSlice({
@@ -12,7 +23,8 @@ export const categorySlice = createSlice({
   initialState,
   reducers: {
     setObjFilter: (state, action) => {
-      //function
+      //function 
+      state.filterObj[action.payload.name]=action.payload.value
       console.log(action.payload);
     },
   },
@@ -51,10 +63,30 @@ export const categorySlice = createSlice({
       //Api cavab error
       console.log(action.payload);
     });
+
+    // getFilteredProducts
+    builder.addCase(getProductsByCategoryId.pending, (state) => {
+      state.loading = true;
+    });
+
+    builder.addCase(getProductsByCategoryId.fulfilled, (state, action) => {
+      state.loading = false;
+      //Api cavab
+      state.oneCategory=action.payload
+
+    });
+    builder.addCase(getProductsByCategoryId.rejected, (state, action) => {
+      state.loading = false;
+      //Api cavab error
+      console.log(action.payload);
+    });
+
+
+
   },
 });
 
 // Action creators are generated for each case reducer function
-//export const {} = categoryReducer.actions
+export const {setObjFilter} = categorySlice.actions
 
 export const categoryReducer = categorySlice.reducer;

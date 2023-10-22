@@ -25,3 +25,39 @@ export const getOneCategory = createAsyncThunk(
   }
 
 );
+
+//FilterObj
+
+export const getProductsByCategoryId = createAsyncThunk(
+  "categories/getProductsByCategoryId",
+  async (
+     {
+      id,
+      page,
+      rating,
+      color,
+      price,
+      type,
+      sort
+    },
+    thunkApi
+  ) => {
+    try {
+      const res = await instance.get(
+        `/products?populate=*&[filters][categories][id][$eq]=${
+          id
+        }&[filters][rating][$gte]=${rating ? "4" : ""}${
+          color && `&[filters][color][$eq]=${color}`
+        }${type && `&[filters][type][$eq]=${type}`}${
+          price[0] && `&[filters][price][$gte]=${price[0]}`
+        }${
+          price[1] && `&[filters][price][$lte]=${price[1]}`
+        }${sort && `&sort=price:${sort}`}&pagination[page]=${page}&pagination[pageSize]=12`
+      );
+      return res.data;
+    } catch (error) {
+      console.log(error);
+      thunkApi.rejectWithValue(error);
+    }
+  }
+)

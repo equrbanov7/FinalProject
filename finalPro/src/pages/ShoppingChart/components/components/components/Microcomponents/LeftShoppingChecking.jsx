@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleCheck } from "../../../../../../redux/reducers/cardReducer";
 
 // eslint-disable-next-line react/prop-types
-const LeftShoppingChecking = ({ productInfo, priceCount,productCheck }) => {
+const LeftShoppingChecking = ({ productInfo, priceCount, productCheck }) => {
   // const {count} =useSelector((state)=> state.selectedProducts)
   // console.log(count,"summaryy")
   const dispatch = useDispatch();
@@ -15,18 +15,24 @@ const LeftShoppingChecking = ({ productInfo, priceCount,productCheck }) => {
 
   const dataPrice = [`$${productInfo.attributes.price * priceCount}`];
   const navigation = useNavigate();
-  function catchId(idx) {
-    navigation(`/productdetail/${idx}`);
-
+  function catchId(idx, ctg, name,ctgId) {
+   // navigation(`/productdetail/${idx}`);
+    navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
+   // navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
     //  console.log(idx)
+   // console.log(productInfo.attributes.categories.data[0].id)
   }
-  
+  // console.log( productInfo.id,
+  //   productInfo.attributes?.categories?.data[0]?.attributes?.title, title
+  //   productInfo.attributes?.title,
+
+  // );
+ 
   const { exampleIdCount } = useSelector((state) => state.selectedProducts);
 
   const handleCheckboxChange = (id) => {
     const updatedExampleIdCount = exampleIdCount.map((item) => {
       if (item.id == id) {
-      
         return {
           ...item,
           checking: !item.checking,
@@ -35,26 +41,19 @@ const LeftShoppingChecking = ({ productInfo, priceCount,productCheck }) => {
       return item;
     });
     //console.log('Updated exampleIdCount:', updatedExampleIdCount);
-  
+
     // Dispatch the updated array
     dispatch(toggleCheck(updatedExampleIdCount));
-  
+
     // Add your event handling logic here
     // console.log("Checkbox clicked", id);
   };
-
-  
-  
-  
-  
-  
-  
 
   return (
     <div className="LeftShoppingChecking">
       <form>
         <Checkbox
-         checked={productCheck}
+          checked={productCheck}
           sx={{ "& .MuiSvgIcon-root": { fontSize: 24 } }}
           onChange={() => handleCheckboxChange(productInfo.id)}
         />
@@ -65,7 +64,16 @@ const LeftShoppingChecking = ({ productInfo, priceCount,productCheck }) => {
         }`}
         dataCreator={dataExm}
         dataBottom={dataPrice}
-        handleId={() => catchId(productInfo.id)}
+        handleId={() =>
+          catchId(
+            productInfo.id,
+            productInfo.attributes?.categories?.data[0]?.attributes?.title,
+            productInfo.attributes?.title,
+            
+            productInfo.attributes.categories.data[0].id
+           
+          )
+        }
       />
     </div>
   );

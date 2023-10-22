@@ -5,7 +5,7 @@ import "./catchBothSidesTop.scss"
 
 const CatchBothSidesTop = ({searchId}) => {
 
-  console.log(searchId, "searchhh")
+  //console.log(searchId, "searchhh")
   return (
     <div className="CatchBothSidesTop">
         <ProductImageGallery imageId={searchId} />

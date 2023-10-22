@@ -1,5 +1,5 @@
 import "./wayOfPage.scss";
-import { Breadcrumbs, Typography } from "@mui/material";
+import { Breadcrumbs } from "@mui/material";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -20,37 +20,33 @@ const WayOfPage = () => {
     setBreadcrumbs(breadcrumbsArray);
   }, [location.pathname]);
 
-  // console.log(breadcrumbs);
+  //console.log(breadcrumbs);
   return (
-    <Breadcrumbs separator=">">
-      <Link to="/">Home</Link>
+    <Breadcrumbs separator=">" className="allBreadCrumbss my-Margin-container">
+      <Link to="/" className="eachBreadCrumbs">
+        Home
+      </Link>
       {breadcrumbs &&
         breadcrumbs.map((elm, i) => {
+          const cleanLabel = elm.label.replace(/%20/g, " "); // Replace percent signs with spaces
+          if (Number(elm.label)) {
+            return null;
+          }
+          const isLastItem = i === breadcrumbs.length - 2;
+          if (isLastItem) {
+            return (
+              <div key={i} className="lastBreadCrumbs">
+                {cleanLabel}
+              </div>
+            );
+          }
+
           return (
-            <Link key={i} to={elm.path}>
-              {elm.label}
+            <Link key={i} to={`${elm.path}/${breadcrumbs[1].label}`} className="eachBreadCrumbs">
+              {Number(elm.label) ? null : cleanLabel}
             </Link>
           );
         })}
-      {/* {breadcrumbs &&
-        breadcrumbs.map((elm, i) => {
-
-          if (i !== breadcrumbs.length - 1) {
-            // console.log(elm, "+++")
-            // console.log(breadcrumbs)
-            return (
-              <Link  to={` /${elm}`} key={i}>
-                {elm[0].toUpperCase() + elm.slice(1)}{" "}
-              </Link>
-            );
-          } else {
-            return (
-              <Typography key={i} fontSize={"20px"}>
-                {elm[0].toUpperCase() + elm.slice(1)}
-              </Typography>
-            );
-          }
-        })} */}
     </Breadcrumbs>
   );
 };

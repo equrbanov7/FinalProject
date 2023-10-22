@@ -4,18 +4,19 @@ import "./relatedProducts.scss";
 import TitleItem from "./TitleItem";
 import { getProducts } from "../api/products";
 import NewCarditem from "./NewCarditem";
-import {useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 const RelatedProducts = () => {
   const [products, setProducts] = React.useState([]);
-  const navigation =useNavigate();
-  function catchId(idx){
-    navigation(`/productdetail/${idx}`)
-  
-   // console.log(idx)
+  const navigation = useNavigate();
+  function catchId(idx, ctg, name,ctgId) {
+    //navigation(`/productdetail/${idx}`);
+    //navigation(`/${ctg}/${name}/${idx}`);
+    navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
+    // console.log(idx)
   }
 
   React.useEffect(() => {
-    async function getAllProducts() {
+    async function getAllProducts() { 
       const obj = { limit: 4, start: 0 };
       const data = await getProducts(obj);
 
@@ -25,8 +26,6 @@ const RelatedProducts = () => {
     getAllProducts();
   }, []);
 
-
-   
   return (
     <>
       <div className="RelatedProducts my-SpesficContainer ">
@@ -34,7 +33,6 @@ const RelatedProducts = () => {
         <div className="catchRelatedProductUniversal">
           {products?.data?.map(({ id, attributes }) => {
             return (
-
               <NewCarditem
                 key={id}
                 title={attributes.title}
@@ -44,7 +42,14 @@ const RelatedProducts = () => {
                 image={`${import.meta.env.VITE_UPLOAD_IMAGE}${
                   attributes?.images?.data[0].attributes.url
                 }`}
-                handleId={()=> catchId(id)}
+                handleId={() =>
+                  catchId(
+                    id,
+                    attributes?.categories?.data[0]?.attributes?.title,
+                    attributes.title,
+                    attributes?.categories?.data[0]?.id
+                  )
+                }
               />
             );
           })}

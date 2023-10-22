@@ -1,3 +1,4 @@
+import WayOfPage from "../../components/WayOfPage";
 import CatchBothSidesTop from "./components/CatchBothSidesTop";
 import ProductMenu from "./components/ProductMenu";
 import "./productDetail.scss";
@@ -11,7 +12,9 @@ const ProductsDetail = () => {
 
   return (
     <div className="forSpesficClass">
+       {/* <WayOfPage /> */}
       <div className="my-SpesficContainer my-Margin-container">
+      <WayOfPage />
         <CatchBothSidesTop searchId={id} />
         <ProductMenu catchId={id} />
        

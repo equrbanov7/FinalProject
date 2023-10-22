@@ -20,10 +20,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<SearchResult />} />
-        <Route path="/search/:search" element={<SearchResult />} />
+        {/* <Route path="/search/:search" element={<SearchResult />} /> */}
+
+        <Route path="/:ctg/:search" element={<SearchResult />} />
 
         <Route path="/productdetail/:id" element={<ProductsDetail />} />
-
+        {/* <Route path="/:ctg/:name/:id" element={<ProductsDetail />} /> */}
+        <Route path="/:ctg/:ctgId/:name/:id" element={<ProductsDetail />} />
 
         <Route path="/shoppingChart" element={<ShoppingChart />} />
         <Route path="/checkout" element={<Checkout /> } />

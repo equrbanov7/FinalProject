@@ -6,6 +6,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneProduct } from "../../../redux/actions/productAction";
+import LoadingItems from "../../../components/LoadingItems";
 
 
 const ProductImageGallery = ({imageId}) => {
@@ -15,6 +16,7 @@ const ProductImageGallery = ({imageId}) => {
   const dispatch = useDispatch();
 
   const {oneProduct} = useSelector((state) => state.products);
+  const {loading} = useSelector((state) => state.products);
   
   React.useEffect( ()=>{
     dispatch(getOneProduct(imageId));
@@ -34,6 +36,10 @@ const ProductImageGallery = ({imageId}) => {
   
   return (
     <div className="imageGalleryProduct">
+    {loading ? (
+      // Show loading state while data is being fetched
+      <LoadingItems loading={loading} size={40} />
+    ) : (
       <ImageGallery
         items={imagesApi}
         showPlayButton={false}
@@ -42,7 +48,9 @@ const ProductImageGallery = ({imageId}) => {
         slideOnThumbnailOver={false}
         showIndex={false}
       />
-    </div>
+    )}
+  </div>
+  
   );
 };
 

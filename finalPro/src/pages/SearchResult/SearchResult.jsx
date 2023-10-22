@@ -1,4 +1,4 @@
-//import WayOfPage from "../../components/WayOfPage"
+import WayOfPage from "../../components/WayOfPage"
 import FilterAndProducts from "./components/FilterAndProducts"
 
 import SearchHeadInfo from "./components/SearchHeadInfo"
@@ -21,7 +21,7 @@ const SearchResult = () => {
   
   return (
     <div className="searchResultMainCss my-SpesficContainer my-Margin-container ">
-      {/* <WayOfPage /> */}
+      <WayOfPage />
       <SearchHeadInfo />
       <FilterAndProducts searchId={search} />
       <div className="ovarley" onClick={closeFilter}></div>

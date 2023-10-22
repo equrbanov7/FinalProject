@@ -6,8 +6,10 @@ import MenuBar from "../../../assets/icons/pages/search/menuBar.svg";
 import Menu from "../../../assets/icons/pages/search/menu.svg";
 import FilterIcon from "../../../assets/icons/pages/search/filter.svg";
 import "./searchHeadInfo.scss";
-
+// import {useSelector } from "react-redux";
 const SearchHeadInfo = () => {
+
+  
   const [objData, setObjData] = React.useState({
     title: "Relevant Products",
     elements: ["Electronics", "Fashion", "Book"],
