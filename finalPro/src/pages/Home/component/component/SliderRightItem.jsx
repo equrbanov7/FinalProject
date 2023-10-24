@@ -5,9 +5,10 @@ import MainImg from "../../../../assets/images/MainImg.png";
 import SliderImageHome from "../../../../assets/images/shirtgreen.png";
 import NewCarditem from "../../../../components/NewCarditem";
 import { useNavigate } from "react-router-dom";
+import TopCrcle from "../../../../assets/icons/header/topCircle.svg";
+import BottomDots from "../../../../assets/icons/header/dottedImg.svg";
 
 const SliderRightItem = () => {
-
   const navigation = useNavigate();
   function catchId(idx) {
     navigation(`/Fashion/2/shirt/${idx}`);
@@ -19,6 +20,15 @@ const SliderRightItem = () => {
       <img src={MainImg} alt="image" className="sliderBackImg" />
 
       <div className="newCarditemContainer">
+        <div className="lineSign">
+          <div className="tppCircle">
+            {" "}
+            <img src={TopCrcle} alt="img" />
+          </div>
+          <div className="bttDotss">
+            <img src={BottomDots} alt="img" />
+          </div>
+        </div>
         <NewCarditem
           title={"Green Jacket V2"}
           desc={"Cimahi, Bandung jkaskfjasfksjl"}

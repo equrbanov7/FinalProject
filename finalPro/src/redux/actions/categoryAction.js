@@ -29,7 +29,7 @@ export const getOneCategory = createAsyncThunk(
 //FilterObj
 
 export const getProductsByCategoryId = createAsyncThunk(
-  "categories/getProductsByCategoryId",
+  "categoriesss/getProductsByCategoryId",
   async (
      {
       id,
@@ -54,6 +54,7 @@ export const getProductsByCategoryId = createAsyncThunk(
           price[1] && `&[filters][price][$lte]=${price[1]}`
         }${sort && `&sort=price:${sort}`}&pagination[page]=${page}&pagination[pageSize]=12`
       );
+    
       return res.data;
     } catch (error) {
       console.log(error);

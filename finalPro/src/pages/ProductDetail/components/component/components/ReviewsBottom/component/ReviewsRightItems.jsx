@@ -24,14 +24,14 @@ const ReviewsRightItems = () => {
     }
     e.target.classList.toggle("buttonActive");
     // setIsActive(!isActive);
-  };
+  }; 
 
-  function showFilter() {
-    const showingElement = document.querySelector(".catchFilterAll");
-    showingElement.classList.toggle("filterMobile");
+  function showFilterReview() {
+    const showingElementt = document.querySelector(".catchFilterAll");
+    showingElementt.classList.toggle("filterMobileReview");
     // console.log(showingElement,"aaaaaaaaaaaaaa")
-    const overlayElm = document.querySelector(".ovarley");
-    overlayElm.classList.toggle("changeOpacity")
+    const overlayElmm = document.querySelector(".ovarleyReview");
+    overlayElmm.classList.toggle("changeOpacityReview")
   }
 
   return (
@@ -44,7 +44,7 @@ const ReviewsRightItems = () => {
           <Button btnData={"With Description"} handleClick={handleClick} />
         </div>
 
-        <div className="filterIconSide" onClick={showFilter}>
+        <div className="filterIconSide" onClick={showFilterReview}>
           <img src={Filter} alt="filtering" />
         </div>
       </div>

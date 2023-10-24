@@ -11,9 +11,9 @@ const SearchResult = () => {
   function closeFilter(){
     
     const showingElement=document.querySelector(".catchFilterAll");
-    showingElement.classList.remove("filterMobile");
-    const overlayElm= document.querySelector(".ovarley")
-    overlayElm.classList.toggle("changeOpacity")
+    showingElement.classList.remove("filterMobile1");
+    const overlayElm= document.querySelector(".ovarley1")
+    overlayElm.classList.toggle("changeOpacity1")
     
    // console.log("ovarleyyy")
   }
@@ -24,7 +24,7 @@ const SearchResult = () => {
       <WayOfPage />
       <SearchHeadInfo />
       <FilterAndProducts searchId={search} />
-      <div className="ovarley" onClick={closeFilter}></div>
+      <div className="ovarley1" onClick={closeFilter}></div>
     </div> 
   )
 }

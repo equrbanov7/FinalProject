@@ -3,11 +3,11 @@ import ReviewBottomResult from "./components/ReviewsBottom/ReviewBottomResult";
 import "./review.scss";
 
 const Review = () => {
-  function closeFilter() {
-    const showingElement = document.querySelector(".catchFilterAll");
-    showingElement.classList.remove("filterMobile");
-    const overlayElm = document.querySelector(".ovarley");
-    overlayElm.classList.toggle("changeOpacity");
+  function closeFilterReview() {
+    const showingElementt = document.querySelector(".catchFilterAll");
+    showingElementt.classList.remove("filterMobileReview");
+    const overlayElmm = document.querySelector(".ovarleyReview");
+    overlayElmm.classList.toggle("changeOpacityReview");
 
     // console.log("ovarleyyy")
   }
@@ -16,7 +16,7 @@ const Review = () => {
       <div className="forSpesficCatchAllReviewOve">
         <ReviewTopResults />
         <ReviewBottomResult />
-        <div className="ovarley" onClick={closeFilter}></div>
+        <div className="ovarleyReview" onClick={closeFilterReview}></div>
       </div>
     </>
   );

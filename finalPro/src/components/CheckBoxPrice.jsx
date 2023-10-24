@@ -11,7 +11,7 @@ const CheckBoxPrice = ({purpose}) => {
           <option value="tl">TL</option>
         </select>
         <div className="lineSelect">data</div>
-        <input type="number"  placeholder={purpose} />
+        <input type="number"  placeholder={purpose}  />
       </form>
     </div>
   );

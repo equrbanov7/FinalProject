@@ -20,9 +20,11 @@ const CatchBuyingItems = ({ showShipping }) => {
 
   return (
     <div className="CatchBuyingItems">
-      <div className="nameOfcompany">
-        <ThreeElements image={LogiTechC} dataCreator={data} />
-      </div>
+      {selectedProducts?.data?.length > 0 && (
+        <div className="nameOfcompany">
+          <ThreeElements image={LogiTechC} dataCreator={data} />
+        </div>
+      )}
 
       <div className="selectingItemsOfProducts">
         {/* {selectedProducts?.data?.map((product,id) => (
@@ -43,7 +45,7 @@ const CatchBuyingItems = ({ showShipping }) => {
               key={id}
               product={product}
               count={count}
-              checking={checkingItem? checkingItem.checking:false}
+              checking={checkingItem ? checkingItem.checking : false}
             />
           );
         })}

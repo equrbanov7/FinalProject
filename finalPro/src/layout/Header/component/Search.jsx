@@ -17,36 +17,50 @@ const Search = () => {
   const { searchedData } = useSelector((state) => state.searching);
   const dataResultRef = React.useRef();
   const inputChannge = React.useRef();
+  const middleSearchRef = React.useRef();
 
   const navigation = useNavigate();
-  function catchId(idx, ctg, name,ctgId) {
+
+  React.useEffect(() => {
+    function handleDocumentClick(event) {
+      if (
+        middleSearchRef.current &&
+        !middleSearchRef.current.contains(event.target)
+      ) {
+        dataResultRef.current.style.display = "none";
+        // console.log("innerr")
+      }
+    }
+
+    //addingg
+    document.addEventListener("click", handleDocumentClick);
+
+    //removingg
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+  function catchId(idx, ctg, name, ctgId) {
     //navigation(`/productdetail/${idx}`);
     navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
     dataResultRef.current.style.display = "none";
     inputChannge.current.value = "";
-    // const overlayElm = document.querySelector(".ovarley");
-    // overlayElm.classList.toggle("changeOpacity")
-    // console.log(ctgId)
   }
- 
 
   function searchIngBar(e) {
-    
-    if (e != " ") {
+    //console.log(e.length, "sadjk")
+    if (e?.length > 0 && searchedData?.data?.length != 0) {
       dataResultRef.current.style.display = "flex";
-    } else if(e == "") {
+    } else if (searchedData?.data?.length == 0) {
+      dataResultRef.current.style.display = "none";
+    } else {
       dataResultRef.current.style.display = "none";
     }
     dispatch(getSearchingData(e));
-    
-    const overlayElm = document.querySelector(".ovarley");
-    overlayElm.classList.add("changeOpacity")
-   
-    console.log(searchedData.data.length, "valuee");
   }
 
   return (
-    <div className="middleSearch">
+    <div className="middleSearch" ref={middleSearchRef}>
       <div className="searchSide">
         <Selection data={objData} />
         <div className="line"></div>
@@ -59,29 +73,29 @@ const Search = () => {
               onChange={(event) => searchIngBar(event.target.value)}
             />
           </div>
-        
-            <div className="dataResult" ref={dataResultRef}>
-              {searchedData?.data?.map(({ id, attributes }) => {
-                return (
-                  <ThreeElements
-                    key={id}
-                    dataCreator={[attributes.title, attributes.description]}
-                    image={`${import.meta.env.VITE_UPLOAD_IMAGE}${
-                      attributes.images.data[0].attributes.url
-                    }`}
-                    handleId={() =>
-                      catchId(
-                        id,
-                        attributes?.categories?.data[0]?.attributes?.title,
-                        attributes.title,
-                        attributes?.categories?.data[0]?.id
-                      )
-                    }
-                  />
-                );
-              })}
-            </div>
-          
+
+          <div className="dataResult" ref={dataResultRef}>
+            {searchedData?.data?.map(({ id, attributes }) => {
+              return (
+                <ThreeElements
+                  key={id}
+                  dataCreator={[attributes.title]}
+                  dataBottom={[`$${attributes.price}`]}
+                  image={`${import.meta.env.VITE_UPLOAD_IMAGE}${
+                    attributes.images.data[0].attributes.url
+                  }`}
+                  handleId={() =>
+                    catchId(
+                      id,
+                      attributes?.categories?.data[0]?.attributes?.title,
+                      attributes.title,
+                      attributes?.categories?.data[0]?.id
+                    )
+                  }
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

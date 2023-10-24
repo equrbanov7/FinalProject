@@ -165,3 +165,27 @@ header {
     }
   }
 }
+
+//778px
+@media (max-width: 778px) {
+
+  header{
+    .container{
+      margin: auto 30px;
+    }
+    .container .linkLogo{
+      display: none;
+    }
+  }
+
+}
+//554px
+@media (max-width: 554px) {
+
+  header {
+
+    .container{
+      margin: auto 24px;
+    }
+  }
+}

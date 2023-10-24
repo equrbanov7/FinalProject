@@ -3,8 +3,16 @@
 }
 
 .spesficStyleForShopping .ShoppingChartAll .RelatedProducts{
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+//1400px
+@media (max-width: 1400px) {
+  
+  .spesficStyleForShopping .ShoppingChartAll .RelatedProducts{
+      margin-left: 40px;
+      margin-right: 40px;
+  }
 }
 
 //1200px
@@ -24,8 +32,8 @@
         }
       }
       .spesficStyleForShopping .ShoppingChartAll .RelatedProducts{
-        margin-left: 60px;
-        margin-right: 60px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 //997px
@@ -37,7 +45,7 @@
         }
       }
       .spesficStyleForShopping .ShoppingChartAll .RelatedProducts{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }

@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <header>
       <div className="container">
-        <Link to={"/"}>
+        <Link to={"/"}  className="linkLogo">
           <div className="leftLogo">
             <img src={Logo} alt="logo" />
           </div>

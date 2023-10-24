@@ -24,7 +24,7 @@ function App() {
 
         <Route path="/:ctg/:search" element={<SearchResult />} />
 
-        <Route path="/productdetail/:id" element={<ProductsDetail />} />
+        {/* <Route path="/productdetail/:id" element={<ProductsDetail />} /> */}
         {/* <Route path="/:ctg/:name/:id" element={<ProductsDetail />} /> */}
         <Route path="/:ctg/:ctgId/:name/:id" element={<ProductsDetail />} />
 

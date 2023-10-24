@@ -45,10 +45,10 @@ const SearchHeadInfo = () => {
 
   function showFilter() {
     const showingElement = document.querySelector(".catchFilterAll");
-    showingElement.classList.toggle("filterMobile");
+    showingElement.classList.toggle("filterMobile1");
     // console.log(showingElement,"aaaaaaaaaaaaaa")
-    const overlayElm = document.querySelector(".ovarley");
-    overlayElm.classList.toggle("changeOpacity")
+    const overlayElm = document.querySelector(".ovarley1");
+    overlayElm.classList.toggle("changeOpacity1")
   }
 
   return (

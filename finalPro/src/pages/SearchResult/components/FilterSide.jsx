@@ -44,6 +44,8 @@ const FilterSide = ({  title,dataFilter,priceActivate }) => {
                         <CheckBox
                           img={filterElm.star ? Star : ""}
                           name={filterElm.name}
+                          value={filterCtg.title}
+                          ctgId={filterElm.id}
                         />
                       </>
                     ))}

@@ -33,6 +33,12 @@ const ProductSummary = () => {
     setTotal(newTotal);
   }, [exampleIdCount, selectedProducts, result]);
 
+  //non selected alert
+
+  function alertCustomer(){
+    alert("You don't select any items!")
+  }
+
   return (
     <div className="ProductSummary">
       <h1 className="titleOfCheckBox">Product Summary</h1>
@@ -83,11 +89,20 @@ const ProductSummary = () => {
         />
         <AiOutlineRight />
       </div>
-      <Link to={"/checkout"}>
-        <div className="checkoutCLick">
-          <Button btnData={"Checkout"} />
-        </div>
-      </Link>
+
+      {exampleIdCount.some((item) => item.checking) ? (
+        <Link to={"/checkout"}>
+          <div className="checkoutCLick">
+            <Button btnData={"Checkout"} />
+          </div>
+        </Link>
+      ) : (
+        <Link className="notSelectedCheckout" onClick={alertCustomer}>
+          <div className="checkoutCLick">
+            <Button btnData={"Checkout"} />
+          </div>
+        </Link>
+      )}
     </div>
   );
 };

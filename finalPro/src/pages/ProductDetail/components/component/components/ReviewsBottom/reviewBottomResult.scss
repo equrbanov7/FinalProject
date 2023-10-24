@@ -3,8 +3,17 @@
     gap: 40px;
     margin-top: 24px;
     align-items: flex-start;
-    .filterMobile{
-        top: inherit;
-        bottom: 50%;
+    .filterMobileReview{
+        top: 32%;
+        // bottom: 50%;
+        z-index: 2;
+        position: absolute;
+        left: 0;
+ 
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        min-width: calc(100% - 48px);
+        margin-inline: 24px;
     }
-}
+} 
