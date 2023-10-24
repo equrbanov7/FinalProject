@@ -11,7 +11,7 @@
 
 .sliderrightCatch .newCarditemContainer {
   position: absolute;
-  top: 49%;
+  top: 34%;
   right: 49%;
 
   transform: translate(8%, -38%);
@@ -97,6 +97,17 @@
   }
 }
 
+//1200px
+@media (max-width: 1200px) {
+  .sliderrightCatch{
+    .newCarditemContainer {
+   
+      top: 41% ;
+     
+    }
+  }
+}
+
 //994px
 @media (max-width: 994px) {
   // for slider first slider item
@@ -172,6 +183,13 @@
       }
     }
   }
+  .sliderrightCatch{
+    .newCarditemContainer {
+   
+      top: 50% ;
+     
+    }
+  }
 }
 //445px
 
@@ -215,6 +233,13 @@
           font-size: 9px;
         }
       }
+    }
+  }
+  .sliderrightCatch{
+    .newCarditemContainer {
+   
+      top: 42% ;
+     
     }
   }
 }

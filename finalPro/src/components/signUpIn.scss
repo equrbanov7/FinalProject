@@ -9,13 +9,24 @@
 }
 .signUpInShowing{
     z-index: 3;
-    position: absolute;
-    left: 0;
-    top: 125px;
-    // width: 100%;
-    transform: translate(100%,2%);
+    // position: absolute;
+    // left: 0;
+    // top: 125px;
+    // // width: 100%;
+    // transform: translate(100%,2%);
     background-color: #fff;
     display: flex;
-    //  min-width: calc(100% - 48px);
-    margin-inline: 24px;
+    
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 10%);
   }
+
+  //778px
+@media (max-width: 778px) {
+    .SignUpIn{
+        width: 327px;
+    }
+}
