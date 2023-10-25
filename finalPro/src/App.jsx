@@ -10,6 +10,7 @@ import SearchResult from "./pages/SearchResult/SearchResult";
 import ProductsDetail from "./pages/ProductDetail/ProductsDetail";
 import ShoppingChart from "./pages/ShoppingChart/ShoppingChart";
 import Checkout from "./pages/Checkout/Checkout";
+import NotFound from "./components/NotFound";
 //import Footer from "./layout/Footer";
 
 // import { getProducts } from "./api/products"
@@ -31,6 +32,7 @@ function App() {
 
         <Route path="/shoppingChart" element={<ShoppingChart />} />
         <Route path="/checkout" element={<Checkout /> } />
+        <Route path="*" element={<NotFound /> } />
 
         
       </Routes>

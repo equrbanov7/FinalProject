@@ -75,6 +75,7 @@ const ProductInfoRight = ({ infoId }) => {
             <img src={Star} alt="star" />
             <span>{productInfo.rating}</span>
           </div>
+          <span  className="dotSpace"></span>
           <p className="soldCount">1,238 Sold</p>
         </div>
         <div className="productPrice">

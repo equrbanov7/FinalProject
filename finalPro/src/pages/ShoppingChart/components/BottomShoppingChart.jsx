@@ -1,3 +1,4 @@
+import EmptyCardInfo from "../../../components/EmptyCardInfo";
 import LoadingItems from "../../../components/LoadingItems";
 import "./bottomShoppingChart.scss";
 import CatchBuyingItems from "./components/CatchBuyingItems";
@@ -19,7 +20,7 @@ const BottomShoppingChart = () => {
           <ProductSummary />
         </>
       ) : (
-        ""
+        <EmptyCardInfo />
       )}
     </div>
   );

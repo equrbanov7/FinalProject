@@ -12,7 +12,7 @@ const persistConfig = {
   key: 'root',
   storage,
 }
- 
+   
 const persistedReducer = persistReducer(persistConfig, cardReducer)
  
 

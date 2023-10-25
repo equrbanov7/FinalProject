@@ -1,0 +1,42 @@
+.EmptyCardInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 32px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--d-grey-01, #E4E9EE);
+    background: var(--white-general, #FFF);
+    padding: 32px 24px;
+    .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4{
+        width: max-content;
+    }
+    .catchAllThreeElements .leftImgLogo{
+        max-width: inherit;
+        min-width: inherit;
+        max-height: inherit;
+        min-height: inherit;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+// 554px
+@media (max-width: 554px) {
+    .EmptyCardInfo{
+        .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4{
+            width: auto;
+                font-size: 14px;
+
+        }
+        .catchAllThreeElements .leftImgLogo{
+            max-width: inherit;
+            min-width: inherit;
+            max-height: inherit;
+            min-height: inherit;
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+}
