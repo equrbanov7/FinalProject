@@ -4,8 +4,12 @@ import { productReducer } from "./reducers/productReducer";
 import { cardReducer } from "./reducers/cardReducer";
 import { searchReducer } from "./reducers/searchReducer";
 
+import {AuthReducer} from "./reducers/index"
+
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+
+
 
  
 const persistConfig = {
@@ -14,6 +18,7 @@ const persistConfig = {
 }
    
 const persistedReducer = persistReducer(persistConfig, cardReducer)
+const persistedAuthReducer = persistReducer(persistConfig, AuthReducer)
  
 
 export const store = configureStore({
@@ -21,7 +26,8 @@ export const store = configureStore({
     categories: categoryReducer,
     products: productReducer, 
     selectedProducts: persistedReducer,
-    searching: searchReducer
+    searching: searchReducer,
+    auth:persistedAuthReducer
     // Place it inside the reducer object
   }
 });

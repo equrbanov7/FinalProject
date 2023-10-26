@@ -13,3 +13,8 @@
     flex-direction: row;
     gap: $gap;
 }
+@mixin size_color ($color: null, $size: null, $weight: null) {
+    color: map-get($colors, $color);
+    font-size: map-get($fonts, $size);
+    font-weight: map-get($fonts, $weight);
+}

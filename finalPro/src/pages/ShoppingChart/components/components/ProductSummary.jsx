@@ -7,10 +7,17 @@ import Button from "../../../../components/Button";
 import { useSelector } from "react-redux";
 import React from "react";
 import { Link } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
 const ProductSummary = () => {
   const { selectedProducts } = useSelector((state) => state.selectedProducts);
   const { exampleIdCount } = useSelector((state) => state.selectedProducts);
   const { result } = useSelector((state) => state.selectedProducts);
+
+  const location = useLocation();
+  const pathNames = location.pathname.split("/");
+  console.log(pathNames[1], "loccc");
+
   //console.log(exampleIdCount, "selectedd")
   const [total, setTotal] = React.useState(0);
 
@@ -35,8 +42,15 @@ const ProductSummary = () => {
 
   //non selected alert
 
-  function alertCustomer(){
-    alert("You don't select any items!")
+  function alertCustomer() {
+    alert("You don't select any items!");
+  }
+
+  //Login token
+  const { token, status } = useSelector((state) => state.auth);
+
+  function alertLoginCustomer(){
+    alert("You have to login for payment!");
   }
 
   return (
@@ -93,13 +107,37 @@ const ProductSummary = () => {
       {exampleIdCount.some((item) => item.checking) ? (
         <Link to={"/checkout"}>
           <div className="checkoutCLick">
-            <Button btnData={"Checkout"} />
+            {pathNames[1] === "shoppingChart" ? (
+              <>
+                <Button btnData={"Checkout"} />
+              </>
+            ) : (
+              <>
+                {token && status == "success" ? (
+                  <>
+                    <Button btnData={"Payment"} />
+                  </>
+                ) : (
+                  <>
+                    <Button btnData={"Payment"} handleClick={alertLoginCustomer} />
+                  </>
+                )}
+              </>
+            )}
           </div>
         </Link>
       ) : (
         <Link className="notSelectedCheckout" onClick={alertCustomer}>
           <div className="checkoutCLick">
-            <Button btnData={"Checkout"} />
+            {pathNames[1] === "shoppingChart" ? (
+              <>
+                <Button btnData={"Checkout"} />
+              </>
+            ) : (
+              <>
+                <Button btnData={"Payment"} />
+              </>
+            )}
           </div>
         </Link>
       )}

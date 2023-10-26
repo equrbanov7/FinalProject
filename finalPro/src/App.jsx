@@ -11,6 +11,7 @@ import ProductsDetail from "./pages/ProductDetail/ProductsDetail";
 import ShoppingChart from "./pages/ShoppingChart/ShoppingChart";
 import Checkout from "./pages/Checkout/Checkout";
 import NotFound from "./components/NotFound";
+import Footer from "./layout/Footer";
 //import Footer from "./layout/Footer";
 
 // import { getProducts } from "./api/products"
@@ -36,6 +37,7 @@ function App() {
 
         
       </Routes>
+      <Footer />
       {/* <Footer /> */}
     </> 
   );

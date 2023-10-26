@@ -6,20 +6,23 @@ import Search from "./component/Search";
 import React from "react";
 //import FacebookIcon from "../../assets/icons/header/Facebook.svg";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  fetchAuthLogin,
+  fetchAuthRegister,
+} from "../../redux/reducers/auth/authThunk";
 
 //Style
 import "./header.scss";
 import SignUpIn from "../../components/SignUpIn";
 
-
 //React-Form
 
 import { useForm } from "react-hook-form";
 
-
 const Header = () => {
   //SignUpIn controllerr
-  const [showContent, setShowContent] = React.useState(false);
+  const [showContent, setShowContent] = React.useState(false); // change false !!!
   const handleClick = () => {
     setShowContent(!showContent);
   };
@@ -36,19 +39,31 @@ const Header = () => {
 
   //SignUpIn  HookForm Getting Value
 
+   //const {token} = useSelector((state) => state.auth )
 
+ // console.log(token,"tokennnnLoginn")
 
-  //console.log(userDatas)
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  
+
+  //Register Submit
   const onSubmit = (data) => {
-  
-    console.log(data)
-    
+    dispatch(fetchAuthRegister(data));
+    console.log(data, "aaaaaa");
+  };
+
+  // Login Submit
+  const onLoginSubmit = (data) => {
+    const logObjj = {
+      identifier: data.email,
+      password: data.password,
+    }; 
+    console.log(data.email, data.password, "loginnnn");
+    dispatch(fetchAuthLogin(logObjj));
   };
   // console.log(watch('password'))
   return (
@@ -74,7 +89,7 @@ const Header = () => {
 
               <div className="formCatch">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                  {/*Username  */}  
+                  {/*Username  */}
                   <div className="nameSidef allInput ">
                     <label htmlFor="username">Name</label>
                     <input
@@ -144,7 +159,6 @@ const Header = () => {
                   </div>
                   <div className="SubmitButton allInput">
                     <input type="submit" value="Sign Up" />
-
                   </div>
                 </form>
               </div>
@@ -154,7 +168,7 @@ const Header = () => {
               {/*Sign In side  */}
               <h1 className="titleOSign">Sign In</h1>
               <div className="formCatch">
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onLoginSubmit)}>
                   {/*Email or Phone   */}
                   <div className="emailOrPhoneside allInput">
                     <label htmlFor="email">Phone Number or Email</label>
