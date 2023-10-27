@@ -12,6 +12,7 @@ const CheckBoxPrice = ({purpose}) => {
         </select>
         <div className="lineSelect">data</div>
         <input type="number"  placeholder={purpose}  />
+        <button>Submit</button> {/*Elvin sil bunu none */}
       </form>
     </div>
   );

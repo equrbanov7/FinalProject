@@ -1,9 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { getOneCategory } from "../../../redux/actions/categoryAction";
+import {
+  // getOneCategory,
+  getProductsByCategoryId,
+} from "../../../redux/actions/categoryAction";
 import { getProducts } from "../../../redux/actions/productAction";
 //Material Ui
-import Pagination from "@mui/material/Pagination";
+//import Pagination from "@mui/material/Pagination";
+import { Pagination } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -12,20 +16,23 @@ import { useNavigate } from "react-router-dom";
 import "./filteredProducts.scss";
 import NewCarditem from "../../../components/NewCarditem";
 import LoadingItems from "../../../components/LoadingItems";
+import { setObjFilter } from "../../../redux/reducers/categoryReducer";
 
 const FilteredProducts = ({ searchId }) => {
+  const [page, setPage] = React.useState(1);
   const navigation = useNavigate();
 
   const dispatch = useDispatch();
 
   const { products } = useSelector((state) => state.products);
 
-  const { oneCategory } = useSelector((state) => state.categories);
+  const { oneCategory, filterObj } = useSelector((state) => state.categories);
+
   const { loading } = useSelector((state) => state.categories);
 
   //console.log(oneCategory.data[0].attributes.categories.data[0].id, "aaaaaaa");
 
-  function catchId(idx, ctg, name,ctgId) {
+  function catchId(idx, ctg, name, ctgId) {
     //navigation(`/productdetail/${idx}`);
     navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
 
@@ -34,15 +41,25 @@ const FilteredProducts = ({ searchId }) => {
 
   React.useEffect(() => {
     if (searchId) {
-      dispatch(getOneCategory(searchId));
+      dispatch(setObjFilter({ name: "page", value: page }));
+     // dispatch(getOneCategory(searchId));
+      dispatch(getProductsByCategoryId({ ...filterObj, id: searchId }));
     } else {
       dispatch(getProducts(12));
       // getAllProducts();
       // dispatch(getProducts(12));
     }
-  }, [dispatch, searchId]);
+  }, [ filterObj, page, searchId]);
 
   // console.log(oneCategory.data.attributes, 'uiiiiiiiElm');
+
+  // Pagination
+
+  function handlePagination(e, p) {
+    setPage(p);
+    //console.log(p, "safdasf")
+  }
+  console.log(oneCategory, "oneee");
 
   return (
     <div className="allElementsinSearch">
@@ -105,7 +122,12 @@ const FilteredProducts = ({ searchId }) => {
           </div>
           <div className="paginationCatch">
             <Stack spacing={2}>
-              <Pagination count={3} variant="outlined" shape="rounded" />
+              <Pagination
+                onChange={handlePagination}
+                count={oneCategory?.meta?.pagination?.pageCount}
+                variant="outlined"
+                shape="rounded"
+              />
             </Stack>
           </div>
         </>

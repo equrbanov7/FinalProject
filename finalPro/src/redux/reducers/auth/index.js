@@ -5,19 +5,33 @@ const initialState = {
   userDatas: {},
   error: "",
   status: "nothing",
+  regStatus:"nothing",
+  showContent:"false"
 };
 
 export const authReducer = createSlice({
   name: "auth",
   initialState,
+  reducers:{
+    changeShowContent(state) {
+        state.showContent=!state.showContent
+    } ,
+    changeRegistrationStatus(state){
+        state.regStatus="nothing";
+        state.showContent=!state.showContent
+    },
+    changeRegistrationDefault(state){
+      state.regStatus="pending"
+    }
+  },
   extraReducers: (builder) => {
 
     //Registerr
     builder.addCase(fetchAuthRegister.pending, (state) => {
-      state.status = "pending";
+      state.regStatus = "pending";
     });
     builder.addCase(fetchAuthRegister.fulfilled, (state, action) => {
-      state.status = "success";
+      state.regStatus = "success";
       //Api cavab
     //   state.userDatas= action.payload.user;
     //   state.token=action.payload.jwt
@@ -27,7 +41,7 @@ export const authReducer = createSlice({
     });
 
     builder.addCase(fetchAuthRegister.rejected, (state, action) => {
-      state.status = "error";
+      state.regStatus = "error";
       state.error= action.payload
       //Api cavab error
       console.log(action.payload);
@@ -58,4 +72,9 @@ export const authReducer = createSlice({
   },
 });
 
+export const {
+  changeShowContent,
+  changeRegistrationStatus,
+  changeRegistrationDefault
+}= authReducer.actions
 export default authReducer.reducer;

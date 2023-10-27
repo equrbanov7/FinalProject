@@ -14,28 +14,34 @@ const CheckBox = ({ img, name, value,ctgId }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
  //console.log(ctgId,"sdas")
  
-  // arr.push("a")
+  // arr.push("a") 
 
   function checkEdValue(event) {
-    const { value } = event.target; //color, category
+    const { value,checked } = event.target; //color, category
     let lowerValue = value.toLowerCase();
-
+    console.log(checked,"checkkk")
     if (lowerValue == "category") {
       //  console.log(lowerValue,"llll")
       lowerValue = "type";
-     // dispatch(setObjFilter({name:"type", value:name, id:"5" }))
+    
       dispatch(setObjFilter({ name: "type", value: name }));
       dispatch(setObjFilter({ name: "id", value: ctgId }));
       
       //console.log(name,lowerValue,ctgId)
     
     } else if (lowerValue == "color") {
-      dispatch(setObjFilter({name:"color", value:name }))
+      if(checked){
+        dispatch(setObjFilter({name:"color", value:name }))
+      }
+      else{
+        dispatch(setObjFilter({name:"color", value:"" }))
+      }
+      
      // console.log("reng", name, lowerValue);
     }
-    console.log(filterObj,"ctgg");
+   
   }
-
+  //console.log(filterObj,"ctgg");
 
   return (
     <div className="catchFormCheck">

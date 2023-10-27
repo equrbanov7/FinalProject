@@ -39,6 +39,8 @@ const FilterAndProducts = ({searchId}) => {
       show: "Show All Categories Al",
     },
   ];
+
+  
   return (
     <div className="mergeBoth">
         <FilterSide dataFilter={dataFilter} priceActivate={true} title={"Filter Option"} />

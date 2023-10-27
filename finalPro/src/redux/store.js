@@ -16,9 +16,15 @@ const persistConfig = {
   key: 'root',
   storage,
 }
+
+// Configuration for authentication data with a different key
+const authPersistConfig = {
+  key: 'auth', // Use a different key for authentication storage
+  storage,
+};
    
 const persistedReducer = persistReducer(persistConfig, cardReducer)
-const persistedAuthReducer = persistReducer(persistConfig, AuthReducer)
+const persistedAuthReducer = persistReducer(authPersistConfig, AuthReducer)
  
 
 export const store = configureStore({
