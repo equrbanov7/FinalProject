@@ -24,16 +24,14 @@ import { changeShowContent } from "../../redux/reducers/auth";
 //Import Image Notify
 import SuccesImg from "../../assets/icons/header/tick-circle.svg";
 import ErrorImg from "../../assets/icons/header/ErrorTick.png";
+import UserModal from "./component/UserModal";
 
 const Header = () => {
-  //SignUpIn controllerr
-  //const [showContent, setShowContent] = React.useState(false); // change false !!!
-
   const { regStatus, showContent, status, token } = useSelector(
     (state) => state.auth
   );
 
-  console.log(showContent, "showww");
+  // console.log(showContent, "showww");
 
   const handleClick = () => {
     // setShowContent(!showContent);
@@ -109,11 +107,13 @@ const Header = () => {
                 </>
               ) : regStatus === "error" ? (
                 <>
-                  <UserNotificationSign image={ErrorImg}
-                  title={"Account Creation Failed"}
-                    description={"There was an error creating your account. Please try again."}
+                  <UserNotificationSign
+                    image={ErrorImg}
+                    title={"Account Creation Failed"}
+                    description={
+                      "There was an error creating your account. Please try again."
+                    }
                   />
-                   
                 </>
               ) : (
                 //Sign Up Againn
@@ -272,17 +272,17 @@ const Header = () => {
                       const showingElement =
                         document.querySelector(".signUpInShowing");
                       if (showingElement) {
-                     
                         closeFilter();
                       }
-                    
                     })()}
                 </>
               )}
-            </> 
+            </>
           )}
         </div>
       </SignUpIn>
+
+      <UserModal />
       <div className="ovarley" onClick={closeFilter}></div>
     </header>
   );

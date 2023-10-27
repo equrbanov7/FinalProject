@@ -14,7 +14,10 @@ import SmsBox from "../../../assets/icons/header/smsBox.svg";
 import Notification from "../../../assets/icons/header/notification.svg";
 import Person from "../../../assets/icons/header/userImg.svg";
 
+
+
 import React from "react";
+
 const IconsForRight = () => {
   const navigation = useNavigate();
 
@@ -50,11 +53,17 @@ const IconsForRight = () => {
 
   function showSign() {
     const showingElement = document.querySelector(".SignUpIn");
-    console.log(showingElement);
+   // console.log(showingElement);
     showingElement.classList.toggle("signUpInShowing");
     // // console.log(showingElement,"aaaaaaaaaaaaaa")
     const overlayElm = document.querySelector(".ovarley");
     overlayElm.classList.toggle("changeOpacity");
+  }
+
+  function showLoginedPersonInfo(){
+      const showingPersonInfo = document.querySelector(".UserModal");
+      showingPersonInfo.classList.toggle("showUserPersonModal")
+      //  console.log(showingPersonInfo,"adsa")
   }
 
   return (
@@ -92,8 +101,8 @@ const IconsForRight = () => {
       {/*Control Registration   */}
       {token && status == "success" ? (
         <>
-          <li className="personLogined forDesignControl">
-            <img src={Person} alt="user" />
+          <li className="personLogined forDesignControl" onClick={showLoginedPersonInfo}>
+            <img src={Person} alt="user" className="selectedUserPicture" />
           </li>
         </>
       ) : (
@@ -103,6 +112,8 @@ const IconsForRight = () => {
           </li>
         </>
       )}
+        {/*User Information Show and Close  */}
+        {/* <UserModal /> */}
     </ul>
   );
 };

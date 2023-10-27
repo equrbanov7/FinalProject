@@ -12,9 +12,8 @@ import ShoppingChart from "./pages/ShoppingChart/ShoppingChart";
 import Checkout from "./pages/Checkout/Checkout";
 import NotFound from "./components/NotFound";
 import Footer from "./layout/Footer";
-//import Footer from "./layout/Footer";
 
-// import { getProducts } from "./api/products"
+
 
 function App() {
   return (
@@ -33,6 +32,8 @@ function App() {
 
         <Route path="/shoppingChart" element={<ShoppingChart />} />
         <Route path="/checkout" element={<Checkout /> } />
+
+       
         <Route path="*" element={<NotFound /> } />
 
         

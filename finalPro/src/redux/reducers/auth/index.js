@@ -22,7 +22,17 @@ export const authReducer = createSlice({
     },
     changeRegistrationDefault(state){
       state.regStatus="pending"
+    },
+    signOutAct(state) {
+      state.token = "";
+      state.userDatas = {};
+      state.error = "";
+      state.status = "nothing";
+      state.regStatus = "nothing";
+      state.showContent = false;
     }
+    
+    
   },
   extraReducers: (builder) => {
 
@@ -75,6 +85,7 @@ export const authReducer = createSlice({
 export const {
   changeShowContent,
   changeRegistrationStatus,
-  changeRegistrationDefault
+  changeRegistrationDefault,
+  signOutAct
 }= authReducer.actions
 export default authReducer.reducer;

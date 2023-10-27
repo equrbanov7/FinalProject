@@ -117,6 +117,9 @@ export const selectedProductCard = createSlice({
     toggleCheck(state, action) {
       state.exampleIdCount = action.payload;
     },
+    signOutUserDatas(){
+      return initialState;
+    }
   },
 
   extraReducers: (builder) => {
@@ -147,5 +150,6 @@ export const {
   selectingIdCount,
   mergingData,
   toggleCheck,
+  signOutUserDatas
 } = selectedProductCard.actions;
 export const cardReducer = selectedProductCard.reducer;
