@@ -8,26 +8,51 @@ import Settings from "../../../assets/icons/header/settins.svg";
 import SignOut from "../../../assets/icons/header/logout.svg";
 
 import ThreeElements from "../../../components/ThreeElements";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { signOutAct } from "../../../redux/reducers/auth";
 import React from "react";
 import { signOutUserDatas } from "../../../redux/reducers/cardReducer";
 const UserModal = () => {
   const { userDatas } = useSelector((state) => state.auth);
-  console.log(userDatas)
+  console.log(userDatas);
 
-// Sign Out
-const modalRef = React.useRef(null);
-const dispatch = useDispatch()
-function SignOutUser(){
-    dispatch(signOutAct())
-    dispatch(signOutUserDatas())
+  // Sign Out
+  const modalRef = React.useRef(null);
+  const dispatch = useDispatch();
+  function SignOutUser() {
+    dispatch(signOutAct());
+    dispatch(signOutUserDatas());
     //modalRef.current.style.display="none"
-    modalRef.current.classList.toggle("showUserPersonModal")
-}
+    modalRef.current.classList.toggle("showUserPersonModal");
+  }
+
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      //console.log(event.target.classList.contains("personLogined"));
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target) &&
+        modalRef.current.classList.contains("showUserPersonModal") &&
+        !event.target.classList.contains("personLogined") &&
+        !event.target.classList.contains("selectedUserPicture")
+      ) {
+        // Click occurred outside the control component, so close it
+        modalRef.current.classList.remove("showUserPersonModal");
+      } else {
+      //  console.log(event.target, "outer");
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      // Clean up the event listener when the component unmounts
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="UserModal" ref={modalRef} >
+    <div className="UserModal" ref={modalRef}>
       <div className="innerUserModal">
         <div className="forUserInformation">
           <ThreeElements
@@ -87,7 +112,7 @@ function SignOutUser(){
 
         <div className="lineForbridge"></div>
 
-        <div className="SignOutUser forAllItems" onClick={SignOutUser} >
+        <div className="SignOutUser forAllItems" onClick={SignOutUser}>
           <ThreeElements image={SignOut} dataCreator={["Sign Out"]} />
         </div>
       </div>

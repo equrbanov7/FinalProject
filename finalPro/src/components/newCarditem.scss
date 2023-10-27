@@ -70,6 +70,12 @@
     align-items: center;
     gap: 16px;
     margin-top: auto;
+    .dotSpaceCard{
+      width: 4px;
+      height: 4px;
+      background-color: #E4E9EE;
+      border-radius: 50%;
+    }
     .starSide {
       display: flex;
       align-items: center;

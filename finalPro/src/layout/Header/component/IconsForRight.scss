@@ -11,6 +11,9 @@
     z-index: 9;
     cursor: pointer;
   }
+  .burgerMenuTop{
+    display: none !important;
+  }
   .forDesignControl{
     width: 24px;
     height: 24px;
@@ -64,4 +67,23 @@
     }
     }
   }
+}
+
+//554px
+@media (max-width: 554px){
+  .icons{
+    .burgerMenuTop{
+      display: flex !important;
+      width: 24px;
+      height: 24px;
+    }
+    .desktopInfoTopMenu{
+      display: none !important;
+    }
+    .notification{
+      margin-inline: 12px;
+    }
+    
+  }
+ 
 }

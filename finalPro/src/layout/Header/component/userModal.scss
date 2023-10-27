@@ -135,6 +135,9 @@
     }
   }
 }
+.forUserShowScreen{
+  display: none;
+}
 
 .showUserPersonModal{
     position: absolute;
@@ -144,4 +147,15 @@
     z-index: 3;
 
 }
+//554px
+@media (max-width: 554px) {
+  .UserModal{
+    width: 327px;
+    height: auto;
 
+    .innerUserModal{
+      gap: 18px;
+    }
+  }
+
+}

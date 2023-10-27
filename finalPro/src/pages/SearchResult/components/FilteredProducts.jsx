@@ -49,7 +49,7 @@ const FilteredProducts = ({ searchId }) => {
       // getAllProducts();
       // dispatch(getProducts(12));
     }
-  }, [ filterObj, page, searchId]);
+  }, [dispatch, filterObj, page, searchId]);
 
   // console.log(oneCategory.data.attributes, 'uiiiiiiiElm');
 
@@ -127,7 +127,8 @@ const FilteredProducts = ({ searchId }) => {
                 count={oneCategory?.meta?.pagination?.pageCount}
                 variant="outlined"
                 shape="rounded"
-              />
+                page={page}
+              /> 
             </Stack>
           </div>
         </>

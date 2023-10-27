@@ -13,7 +13,7 @@ import "./IconsForRight.scss";
 import SmsBox from "../../../assets/icons/header/smsBox.svg";
 import Notification from "../../../assets/icons/header/notification.svg";
 import Person from "../../../assets/icons/header/userImg.svg";
-
+import MenuBurger from "../../../assets/icons/header/menu.svg"
 
 
 import React from "react";
@@ -101,9 +101,14 @@ const IconsForRight = () => {
       {/*Control Registration   */}
       {token && status == "success" ? (
         <>
-          <li className="personLogined forDesignControl" onClick={showLoginedPersonInfo}>
+          <li className="personLogined forDesignControl desktopInfoTopMenu" onClick={showLoginedPersonInfo}>
             <img src={Person} alt="user" className="selectedUserPicture" />
           </li>
+
+          <li className="personLogined forDesignControl burgerMenuTop" onClick={showLoginedPersonInfo}>
+            <img src={MenuBurger} alt="user" className="selectedUserPicture" />
+          </li>
+
         </>
       ) : (
         <>

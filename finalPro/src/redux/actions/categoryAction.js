@@ -53,7 +53,7 @@ export const getProductsByCategoryId = createAsyncThunk(
           price[0] && `&[filters][price][$gte]=${price[0]}`
         }${
           price[1] && `&[filters][price][$lte]=${price[1]}`
-        }${sort && `&sort=price:${sort}`}&pagination[page]=${page}&pagination[pageSize]=4  `
+        }${sort && `&sort=price:${sort}`}&pagination[page]=${page}&pagination[pageSize]=12`
       );
     
       return res.data;

@@ -30,6 +30,7 @@ const NewCarditem = ({ image, title, desc, price, rating, handleId }) => {
               <img src={Star} alt="star" />
               <span>{rating}</span>
             </div>
+            <span className="dotSpaceCard"></span>
             <p className="soldCount">1,238 Sold</p>
           </div>
         </div>

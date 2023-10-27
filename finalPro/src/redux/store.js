@@ -23,13 +23,20 @@ const authPersistConfig = {
   storage,
 };
    
+const filterSet = {
+  key: 'filter', // Use a different key for authentication storage
+  storage,
+  whitelist: ['filterObj']
+};
+   
 const persistedReducer = persistReducer(persistConfig, cardReducer)
 const persistedAuthReducer = persistReducer(authPersistConfig, AuthReducer)
+const persistedCtgReducer = persistReducer(filterSet, categoryReducer)
  
 
 export const store = configureStore({
   reducer: {
-    categories: categoryReducer,
+    categories: persistedCtgReducer,
     products: productReducer, 
     selectedProducts: persistedReducer,
     searching: searchReducer,
