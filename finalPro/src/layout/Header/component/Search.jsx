@@ -84,7 +84,7 @@ const Search = () => {
                   image={`${import.meta.env.VITE_UPLOAD_IMAGE}${
                     attributes.images.data[0].attributes.url
                   }`}
-                  handleId={() =>
+                  handleId={() => 
                     catchId(
                       id,
                       attributes?.categories?.data[0]?.attributes?.title,

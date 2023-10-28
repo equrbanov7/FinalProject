@@ -40,7 +40,7 @@ export const getProductsByCategoryId = createAsyncThunk(
       price,
       type,
       sort
-    },
+    }, 
     thunkApi
   ) => {
     try {

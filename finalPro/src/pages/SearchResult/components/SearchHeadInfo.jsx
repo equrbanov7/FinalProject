@@ -12,7 +12,7 @@ const SearchHeadInfo = () => {
   
   const [objData, setObjData] = React.useState({
     title: "Relevant Products",
-    elements: ["Electronics", "Fashion", "Book"],
+    elements: ["DESC", "ASC"],
   });
 
   // Function to update the title when the screen size is 778px or smaller

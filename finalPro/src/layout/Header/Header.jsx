@@ -19,7 +19,7 @@ import SignUpIn from "../../components/SignUpIn";
 
 import { useForm } from "react-hook-form";
 import UserNotificationSign from "../../components/UserNotificationSign";
-import { changeShowContent } from "../../redux/reducers/auth";
+import { changeShowContent, changeSignInStatus } from "../../redux/reducers/auth";
 
 //Import Image Notify
 import SuccesImg from "../../assets/icons/header/tick-circle.svg";
@@ -31,7 +31,13 @@ const Header = () => {
     (state) => state.auth
   );
 
-  // console.log(showContent, "showww");
+   console.log(status, "error handler");
+
+   function signInError(){
+    dispatch(changeSignInStatus())
+    alert("Please write correct email or password");
+   
+   }
 
   const handleClick = () => {
     // setShowContent(!showContent);
@@ -280,7 +286,10 @@ const Header = () => {
             </>
           )}
         </div>
+        
       </SignUpIn>
+
+      {status === "error" && signInError() }
 
       <UserModal />
       <div className="ovarley" onClick={closeFilter}></div>

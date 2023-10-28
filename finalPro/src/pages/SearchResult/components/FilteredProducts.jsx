@@ -59,7 +59,7 @@ const FilteredProducts = ({ searchId }) => {
     setPage(p);
     //console.log(p, "safdasf")
   }
-  console.log(oneCategory, "oneee");
+  console.log(oneCategory, "filterr");
 
   return (
     <div className="allElementsinSearch">

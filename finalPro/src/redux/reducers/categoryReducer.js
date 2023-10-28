@@ -14,8 +14,10 @@ const initialState = {
     type:"",
     sort:"",
     rating:"",
-    id:""
-  }
+    id:"",
+    check:false
+  },
+  checkFilterControl:[{checkedName:"", checking:false}]
 };
 
 export const categorySlice = createSlice({
@@ -27,6 +29,9 @@ export const categorySlice = createSlice({
       state.filterObj[action.payload.name]=action.payload.value
       //console.log(action.payload);
     },
+    controlChecked(state,action){
+      state.checkFilterControl.push(action.payload)
+    }
   },
 
   extraReducers: (builder) => {
@@ -87,6 +92,6 @@ export const categorySlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const {setObjFilter} = categorySlice.actions
+export const {setObjFilter,controlChecked} = categorySlice.actions
 
 export const categoryReducer = categorySlice.reducer;

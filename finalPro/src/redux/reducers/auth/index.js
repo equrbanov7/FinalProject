@@ -30,6 +30,9 @@ export const authReducer = createSlice({
       state.status = "nothing";
       state.regStatus = "nothing";
       state.showContent = false;
+    },
+    changeSignInStatus(state){
+      state.status="nothing"
     }
     
     
@@ -86,6 +89,7 @@ export const {
   changeShowContent,
   changeRegistrationStatus,
   changeRegistrationDefault,
-  signOutAct
+  signOutAct,
+  changeSignInStatus
 }= authReducer.actions
 export default authReducer.reducer;
