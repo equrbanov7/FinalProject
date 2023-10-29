@@ -8,8 +8,8 @@ import { controlChecked, setObjFilter } from "../redux/reducers/categoryReducer"
 
 
 // eslint-disable-next-line react/prop-types
-const CheckBox = ({ img, name, value,ctgId }) => {
- // const { filterObj } = useSelector((state) => state.categories);
+const CheckBox = ({ img, name, value,ctgId,checking }) => {
+  //const { filterObj,checkFilterControl } = useSelector((state) => state.categories);
   const dispatch = useDispatch();
  
 
@@ -28,25 +28,28 @@ const CheckBox = ({ img, name, value,ctgId }) => {
       
       //console.log(name,"fff")
     
-    } else if (lowerValue == "color") {
-      console.log(value,name,checked)
-      
-      if(checked){
-        dispatch(setObjFilter({name:"color", value:name }))
-        dispatch(controlChecked({name:name, value:checked }))
-      }
-      else{
-        dispatch(setObjFilter({name:"color", value:"" }))
-        dispatch(controlChecked({name:name, value:checked }))
-      }
+    }
+     else if (lowerValue == "color") {
+
+    
+     // console.log(value,name,checked)
+      const controlPayload = {
+        checkedName: name,
+        checking: checked,
+      };
+    
+      dispatch(setObjFilter({ name: "color", value: checked ? name : "" }));
+      dispatch(controlChecked(controlPayload));
      
     }else if(value == "Best Filter" && name ==="4 stars or upper"  ){
-      console.log(name,"clickk")
-      if(checked){
-        dispatch(setObjFilter({name:"rating", value:4 }))
-      }else{
-        dispatch(setObjFilter({name:"rating", value:"" }))
-      }
+     // console.log(name,"clickk")
+     
+      const controlPayload = {
+        checkedName: name,
+        checking: checked,
+      };
+      dispatch(setObjFilter({ name: "rating", value: checked ? 4 : "" }));
+      dispatch(controlChecked(controlPayload));
      
     }
    
@@ -60,7 +63,7 @@ const CheckBox = ({ img, name, value,ctgId }) => {
           value={value}
           sx={{ "& .MuiSvgIcon-root": { fontSize: 24 } }}
           onChange={(event) => checkEdValue(event)}
-          // checked={true}
+           checked={checking}
         />
         {img ? <img src={Star} alt="star" /> : ""}
         <label htmlFor="vehicle1">{name} </label>

@@ -17,6 +17,7 @@ import "./filteredProducts.scss";
 import NewCarditem from "../../../components/NewCarditem";
 import LoadingItems from "../../../components/LoadingItems";
 import { setObjFilter } from "../../../redux/reducers/categoryReducer";
+import EmptyProductInfo from "./components/EmptyProductInfo";
 
 const FilteredProducts = ({ searchId }) => {
   const [page, setPage] = React.useState(1);
@@ -42,7 +43,7 @@ const FilteredProducts = ({ searchId }) => {
   React.useEffect(() => {
     if (searchId) {
       dispatch(setObjFilter({ name: "page", value: page }));
-     // dispatch(getOneCategory(searchId));
+      // dispatch(getOneCategory(searchId));
       dispatch(getProductsByCategoryId({ ...filterObj, id: searchId }));
     } else {
       dispatch(getProducts(12));
@@ -51,7 +52,7 @@ const FilteredProducts = ({ searchId }) => {
     }
   }, [dispatch, filterObj, page, searchId]);
 
-  // console.log(oneCategory.data.attributes, 'uiiiiiiiElm');
+  //console.log(oneCategory.data.length, "uiiiiiiiElm");
 
   // Pagination
 
@@ -59,7 +60,7 @@ const FilteredProducts = ({ searchId }) => {
     setPage(p);
     //console.log(p, "safdasf")
   }
-  console.log(oneCategory, "filterr");
+  // console.log(oneCategory, "filterr");
 
   return (
     <div className="allElementsinSearch">
@@ -120,19 +121,23 @@ const FilteredProducts = ({ searchId }) => {
                   />
                 ))}
           </div>
-          <div className="paginationCatch">
-            <Stack spacing={2}>
-              <Pagination
-                onChange={handlePagination}
-                count={oneCategory?.meta?.pagination?.pageCount}
-                variant="outlined"
-                shape="rounded"
-                page={page}
-              /> 
-            </Stack>
-          </div>
+          {oneCategory?.data?.length !== 0 && (
+            <div className="paginationCatch">
+              <Stack spacing={2}>
+                <Pagination
+                  onChange={handlePagination}
+                  count={oneCategory?.meta?.pagination?.pageCount}
+                  variant="outlined"
+                  shape="rounded"
+                  page={page}
+                />
+              </Stack>
+            </div>
+          )}
         </>
       )}
+
+      {oneCategory?.data?.length === 0 && <EmptyProductInfo />}
     </div>
   );
 };

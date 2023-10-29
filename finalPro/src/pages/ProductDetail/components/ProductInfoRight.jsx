@@ -24,7 +24,8 @@ const ProductInfoRight = ({ infoId }) => {
     const isChecked = exampleIdCount.some(
       (item) => item.id == infoId && item.checking
     );
-    console.log(i++, isChecked)
+    i++
+    //console.log(i++, isChecked) // Islemese Card  bunu yoxla!!!
     dispatch(addItem(infoId));
 
     dispatch(selectingIdCount({id:infoId,count:i,checking:isChecked}))

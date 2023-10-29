@@ -31,7 +31,7 @@ const Header = () => {
     (state) => state.auth
   );
 
-   console.log(status, "error handler");
+   //console.log(status, "error handler");
 
    function signInError(){
     dispatch(changeSignInStatus())

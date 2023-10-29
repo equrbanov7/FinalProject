@@ -12,6 +12,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { signOutAct } from "../../../redux/reducers/auth";
 import React from "react";
 import { signOutUserDatas } from "../../../redux/reducers/cardReducer";
+import { signOutUserFilters } from "../../../redux/reducers/categoryReducer";
 const UserModal = () => {
   const { userDatas } = useSelector((state) => state.auth);
   console.log(userDatas);
@@ -19,9 +20,11 @@ const UserModal = () => {
   // Sign Out
   const modalRef = React.useRef(null);
   const dispatch = useDispatch();
+  //sign out user
   function SignOutUser() {
     dispatch(signOutAct());
     dispatch(signOutUserDatas());
+    dispatch(signOutUserFilters())
     //modalRef.current.style.display="none"
     modalRef.current.classList.toggle("showUserPersonModal");
   }

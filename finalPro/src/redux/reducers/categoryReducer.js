@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCategories, getOneCategory,getProductsByCategoryId } from "../actions/categoryAction";
+import {
+  getCategories,
+  getOneCategory,
+  getProductsByCategoryId,
+} from "../actions/categoryAction";
 
 const initialState = {
   loading: false,
@@ -7,17 +11,18 @@ const initialState = {
   oneCategory: {},
 
   // filteredProd:[],
-  filterObj:{
-    color:"",
-    page:"",
-    price:["",""],
-    type:"",
-    sort:"",
-    rating:"",
-    id:"",
-    check:false
+  filterObj: {
+    color: "",
+    page: "",
+    price: ["", ""],
+    type: "",
+    sort: "",
+    rating: "",
+    id: "",
+    check: false,
   },
-  checkFilterControl:[{checkedName:"", checking:false}]
+  checkFilterControl: [{ checkedName: "", checking: false }],
+  checkPriceRangeControl: [{ checkedName: "", checking: false }],
 };
 
 export const categorySlice = createSlice({
@@ -25,13 +30,55 @@ export const categorySlice = createSlice({
   initialState,
   reducers: {
     setObjFilter: (state, action) => {
-      //function 
-      state.filterObj[action.payload.name]=action.payload.value
+      //function
+      state.filterObj[action.payload.name] = action.payload.value;
       //console.log(action.payload);
     },
-    controlChecked(state,action){
-      state.checkFilterControl.push(action.payload)
-    }
+    controlChecked: (state, action) => {
+      const { checkedName, checking } = action.payload;
+      const existingControl = state.checkFilterControl.find(
+        (item) => item.checkedName === checkedName
+      );
+
+      if (existingControl) {
+        existingControl.checking = checking;
+      } else {
+        state.checkFilterControl.push(action.payload);
+      }
+    },
+    controlPriceRange: (state, action) => {
+      const { checkedName, checking } = action.payload;
+      const existingControl = state.checkPriceRangeControl.find(
+        (item) => item.checkedName === checkedName
+      );
+
+      if (existingControl) {
+        existingControl.checking = checking;
+      } else {
+        state.checkPriceRangeControl.push(action.payload);
+      }
+    },
+    resetPriceRange: (state, action) => {
+      state.checkPriceRangeControl = action.payload;
+    },
+    signOutUserFilters: (state) => {
+      return {
+        ...state,
+        filterObj: {
+          color: "",
+          page: "",
+          price: ["", ""],
+          type: "",
+          sort: "",
+          rating: "",
+          id: "",
+          check: false,
+        },
+        checkFilterControl: [{ checkedName: "", checking: false }],
+        checkPriceRangeControl: [{ checkedName: "", checking: false }],
+      };
+    },
+    
   },
 
   extraReducers: (builder) => {
@@ -45,7 +92,7 @@ export const categorySlice = createSlice({
       state.categories = action.payload;
       //  console.log(action.payload)
     });
-  
+
     builder.addCase(getCategories.rejected, (state, action) => {
       state.loading = false;
       //Api cavab error
@@ -60,8 +107,7 @@ export const categorySlice = createSlice({
     builder.addCase(getOneCategory.fulfilled, (state, action) => {
       state.loading = false;
       //Api cavab
-      state.oneCategory = action.payload
-
+      state.oneCategory = action.payload;
     });
     builder.addCase(getOneCategory.rejected, (state, action) => {
       state.loading = false;
@@ -77,21 +123,23 @@ export const categorySlice = createSlice({
     builder.addCase(getProductsByCategoryId.fulfilled, (state, action) => {
       state.loading = false;
       //Api cavab
-      state.oneCategory=action.payload
-
+      state.oneCategory = action.payload;
     });
     builder.addCase(getProductsByCategoryId.rejected, (state, action) => {
       state.loading = false;
       //Api cavab error
       console.log(action.payload);
     });
-
-
-
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {setObjFilter,controlChecked} = categorySlice.actions
+export const {
+  setObjFilter,
+  controlChecked,
+  controlPriceRange,
+  resetPriceRange,
+  signOutUserFilters,
+} = categorySlice.actions;
 
 export const categoryReducer = categorySlice.reducer;
