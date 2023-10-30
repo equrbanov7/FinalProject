@@ -13,13 +13,14 @@ import "./IconsForRight.scss";
 import SmsBox from "../../../assets/icons/header/smsBox.svg";
 import Notification from "../../../assets/icons/header/notification.svg";
 import Person from "../../../assets/icons/header/userImg.svg";
-import MenuBurger from "../../../assets/icons/header/menu.svg"
-
+import MenuBurger from "../../../assets/icons/header/menu.svg";
 
 import React from "react";
 
 const IconsForRight = () => {
   const navigation = useNavigate();
+
+  const { searchFocus } = useSelector((state) => state.searching);
 
   //Login token
   const { token, status } = useSelector((state) => state.auth);
@@ -53,22 +54,42 @@ const IconsForRight = () => {
 
   function showSign() {
     const showingElement = document.querySelector(".SignUpIn");
-   // console.log(showingElement);
+    // console.log(showingElement);
     showingElement.classList.toggle("signUpInShowing");
     // // console.log(showingElement,"aaaaaaaaaaaaaa")
     const overlayElm = document.querySelector(".ovarley");
     overlayElm.classList.toggle("changeOpacity");
   }
 
-  function showLoginedPersonInfo(){
-      const showingPersonInfo = document.querySelector(".UserModal");
-      showingPersonInfo.classList.toggle("showUserPersonModal")
-      //  console.log(showingPersonInfo,"adsa")
+  function showLoginedPersonInfo() {
+    const showingPersonInfo = document.querySelector(".UserModal");
+    showingPersonInfo.classList.toggle("showUserPersonModal");
+    //  console.log(showingPersonInfo,"adsa")
   }
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 554);
+  React.useEffect(() => {
+    // Function to update isMobile based on window width
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 554);
+    };
 
+    // Add a window resize event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+ 
   return (
-    <ul className="icons">
-      <li className="basket forDesignControl" onClick={getElements}>
+    <ul className={`icons ${status !== "success" && "forNonRegistratedItems"}`}>
+      <li
+        className={`basket forDesignControl ${
+          status !== "success" && "forNonRegBasket"
+        } `}
+        onClick={getElements}
+      >
         <IconButton aria-label="cart">
           <StyledBadge
             badgeContent={uniqueItems.length > 1 ? uniqueItems.length - 1 : 0}
@@ -84,13 +105,19 @@ const IconsForRight = () => {
       {/*Control Registration   */}
       {token && status == "success" ? (
         <>
-          <li className="notification forDesignControl">
-            <img src={Notification} alt="notification" />
-          </li>
+          { isMobile &&  searchFocus ? (
+            <></>
+          ) : (
+            <>
+              <li className="notification forDesignControl">
+                <img src={Notification} alt="notification" />
+              </li>
 
-          <li className="message forDesignControl">
-            <img src={SmsBox} alt="smsBox" />
-          </li>
+              <li className="message forDesignControl">
+                <img src={SmsBox} alt="smsBox" />
+              </li>
+            </>
+          )}
         </>
       ) : (
         <></>
@@ -101,14 +128,20 @@ const IconsForRight = () => {
       {/*Control Registration   */}
       {token && status == "success" ? (
         <>
-          <li className="personLogined forDesignControl desktopInfoTopMenu" onClick={showLoginedPersonInfo}>
+          <li
+            className="personLogined forDesignControl desktopInfoTopMenu"
+            onClick={showLoginedPersonInfo}
+          
+          >
             <img src={Person} alt="user" className="selectedUserPicture" />
           </li>
 
-          <li className="personLogined forDesignControl burgerMenuTop" onClick={showLoginedPersonInfo}>
+          <li
+            className="personLogined forDesignControl burgerMenuTop"
+            onClick={showLoginedPersonInfo}
+          >
             <img src={MenuBurger} alt="user" className="selectedUserPicture" />
           </li>
-
         </>
       ) : (
         <>
@@ -117,8 +150,8 @@ const IconsForRight = () => {
           </li>
         </>
       )}
-        {/*User Information Show and Close  */}
-        {/* <UserModal /> */}
+      {/*User Information Show and Close  */}
+      {/* <UserModal /> */}
     </ul>
   );
 };

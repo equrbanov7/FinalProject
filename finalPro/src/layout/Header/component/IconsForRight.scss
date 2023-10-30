@@ -7,6 +7,9 @@
   li img {
     padding: 12px;
   }
+  .basket img{
+    padding: 6px;
+  }
   .person {
     z-index: 9;
     cursor: pointer;
@@ -40,6 +43,17 @@
     width: 1px;
     background: #e4e9ee;
   }
+
+  .person img:hover{
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.forNonRegistratedItems{
+  gap: 16px;
+}
+.forNonRegBasket{
+  transform: translateY(-2px);
 }
 
 //778px

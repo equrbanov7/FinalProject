@@ -12,18 +12,13 @@ import LoadingItems from "../../../../components/LoadingItems";
 const CatchPopularProductsHome = ({ count }) => {
   const navigation = useNavigate();
   function catchId(idx, ctg, name,ctgId) {
-    //navigation(`/productdetail/${idx}`);
-    //navigation(`/${ctg}/${name}/${idx}`);
+  
     navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
-    // console.log(idx)
+  
   }
   const { products } = useSelector((state) => state.products);
   const { loading } = useSelector((state) => state.products);
 
-  // console.log(
-  //   products?.data[0]?.attributes?.categories?.data[0]?.attributes?.title,
-  //   "prppp"
-  // );
   const dispatch = useDispatch();
 
   React.useEffect(() => {

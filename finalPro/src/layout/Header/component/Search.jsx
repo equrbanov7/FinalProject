@@ -5,16 +5,32 @@ import { getSearchingData } from "../../../redux/actions/searchAction";
 import "./search.scss";
 import ThreeElements from "../../../components/ThreeElements";
 import { useNavigate } from "react-router-dom";
+import { searchInputControl } from "../../../redux/reducers/searchReducer";
 const Search = () => {
   // eslint-disable-next-line no-unused-vars
-  const [objData, setObjData] = React.useState({
+  const { searchedData,searchFocus } = useSelector((state) => state.searching);
+  const [objData] = React.useState({
     title: "All Categories",
     elements: ["Electronics", "Fashion", "Book"],
   });
 
+ // const [isFocused, setIsFocused] = React.useState(false);
+ 
+
+  const handleFocus = () => {
+    dispatch(searchInputControl())
+    
+  };
+
+  const handleBlur = () => {
+    dispatch(searchInputControl())
+  };
+  console.log(searchFocus,"fooo")
+
+  //console.log(isFocused,"focusss")
   const dispatch = useDispatch();
 
-  const { searchedData } = useSelector((state) => state.searching);
+ 
   const dataResultRef = React.useRef();
   const inputChannge = React.useRef();
   const middleSearchRef = React.useRef();
@@ -71,6 +87,8 @@ const Search = () => {
               placeholder="Search on lenny..."
               ref={inputChannge}
               onChange={(event) => searchIngBar(event.target.value)}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
             />
           </div>
 
@@ -84,7 +102,7 @@ const Search = () => {
                   image={`${import.meta.env.VITE_UPLOAD_IMAGE}${
                     attributes.images.data[0].attributes.url
                   }`}
-                  handleId={() => 
+                  handleId={() =>
                     catchId(
                       id,
                       attributes?.categories?.data[0]?.attributes?.title,

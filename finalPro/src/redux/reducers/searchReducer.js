@@ -4,12 +4,17 @@ import { getSearchingData } from "../actions/searchAction";
 const initialState = {
   loading: false,
   searchedData: {},
+  searchFocus:false
 };
 
 export const searchSlice = createSlice({
   name: "search",
   initialState,
-  reducers: {},
+  reducers: {
+    searchInputControl:(state)=>{
+        state.searchFocus=!state.searchFocus
+    }
+  },
   extraReducers: (builder) => {
     //getSearchData
     builder.addCase(getSearchingData.pending, (state) => {
@@ -30,4 +35,5 @@ export const searchSlice = createSlice({
   },
 });
 
-export const searchReducer =  searchSlice.reducer;
+export const { searchInputControl } = searchSlice.actions;
+export const searchReducer = searchSlice.reducer;

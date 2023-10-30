@@ -5,23 +5,22 @@ import {
   removeItem,
   increment,
   decrement,
- mergingData
+  mergingData,
 } from "../../../../../../redux/reducers/cardReducer";
 import { useDispatch, useSelector } from "react-redux";
 import React from "react";
 // eslint-disable-next-line react/prop-types
-const RightShoppingCounter = ({ idSelect,counter }) => {
+const RightShoppingCounter = ({ idSelect, counter }) => {
   const dispatch = useDispatch();
   // const { count } = useSelector((state) => state.selectedProducts);
   const { exampleIdCount } = useSelector((state) => state.selectedProducts);
-  const {productIds}= useSelector((state) => state.selectedProducts);
-    //console.log(exampleIdCount,"counterrrr")
-//  const[size,setSize]=React.useState(1);
+  const { productIds } = useSelector((state) => state.selectedProducts);
+  //console.log(exampleIdCount,"counterrrr")
+  //  const[size,setSize]=React.useState(1);
 
-//console.log(productIds)
+  //console.log(productIds)
   const mergedData = {};
   exampleIdCount.forEach((item) => {
-   
     //console.log(item,"itemmmm")
     if (item.id in mergedData) {
       mergedData[item.id] += item.count;
@@ -30,7 +29,6 @@ const RightShoppingCounter = ({ idSelect,counter }) => {
     }
   });
 
- 
   // Convert the dictionary back to an array of objects
   const resultObj = Object.entries(mergedData).map(([id, count]) => ({
     id,
@@ -38,30 +36,23 @@ const RightShoppingCounter = ({ idSelect,counter }) => {
   }));
 
   //console.log(result,"resulttt");
-  React.useEffect(()=>{
-    dispatch(mergingData(resultObj))
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[dispatch])
-
+  React.useEffect(() => {
+    dispatch(mergingData(resultObj));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
   //console.log(result, "exampleee");
   function selectDeletingId() {
     dispatch(removeItem(idSelect));
     // console.log(idSelect, "idddd");
   }
- 
 
   function incrementClick() {
-    dispatch(increment({ id: idSelect, newCount: counter+1 }));
-   
-   
-    
-    // selectedProducts.data[0].count = 7
-    //  console.log("clicked")
+    dispatch(increment({ id: idSelect, newCount: counter + 1 }));
   }
 
   function decrementClick() {
-    dispatch(decrement({ id: idSelect, newCount: counter-1 }));
+    dispatch(decrement({ id: idSelect, newCount: counter - 1 }));
   }
 
   let countSize = 0;
@@ -70,8 +61,8 @@ const RightShoppingCounter = ({ idSelect,counter }) => {
       countSize++;
     }
   });
-  console.log(countSize)
-  
+  console.log(countSize);
+
   return (
     <div className="RightShoppingCounter">
       <div className="forWishCard">
@@ -81,7 +72,7 @@ const RightShoppingCounter = ({ idSelect,counter }) => {
       <div className="showingAllProcess">
         <div className="counterItem">
           <Button btnData={"-"} handleClick={decrementClick} />
-          <span>{ counter }</span>
+          <span>{counter}</span>
           <Button btnData={"+"} handleClick={incrementClick} />
         </div>
         <div className="deleteItem" onClick={() => selectDeletingId()}>

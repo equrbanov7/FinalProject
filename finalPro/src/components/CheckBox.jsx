@@ -3,13 +3,13 @@ import Star from "../assets/icons/pages/Home/star.png";
 import "./checkBox.scss";
 
 import Checkbox from "@mui/material/Checkbox";
-import { useDispatch } from "react-redux";
-import { controlChecked, setObjFilter } from "../redux/reducers/categoryReducer";
+import { useDispatch,useSelector } from "react-redux";
+import { controlCategory, controlChecked, setObjFilter } from "../redux/reducers/categoryReducer";
 
 
 // eslint-disable-next-line react/prop-types
-const CheckBox = ({ img, name, value,ctgId,checking }) => {
-  //const { filterObj,checkFilterControl } = useSelector((state) => state.categories);
+const CheckBox = ({ img, name, value,ctgId,checking, checkCtg }) => {
+  const { filterObj } = useSelector((state) => state.categories);
   const dispatch = useDispatch();
  
 
@@ -18,15 +18,25 @@ const CheckBox = ({ img, name, value,ctgId,checking }) => {
     let lowerValue = value.toLowerCase();
    // console.log(value,"checkkk")
     if (lowerValue == "category") {
-      //  console.log(lowerValue,"llll")
-      lowerValue = "type";
- 
+      
+      const controlPayload = {
+        checkedName: name,
+        checking: checked,
+      };
 
-      
-      dispatch(setObjFilter({ name: "type", value: name }));
+      if(checked){
+        dispatch(setObjFilter({ name: "categoryArray", value: [...filterObj.categoryArray, ctgId] }));
+      }
+      else{
+        const updatedCtgArray = filterObj.categoryArray.filter(ctg => ctg !== ctgId);
+
+       dispatch(setObjFilter({ name: "categoryArray", value: updatedCtgArray }));
+      }
+
+
       dispatch(setObjFilter({ name: "id", value: ctgId }));
-      
-      //console.log(name,"fff")
+      dispatch(controlCategory(controlPayload));
+    
     
     }
      else if (lowerValue == "color") {
@@ -37,8 +47,18 @@ const CheckBox = ({ img, name, value,ctgId,checking }) => {
         checkedName: name,
         checking: checked,
       };
+
+      if(checked){
+        dispatch(setObjFilter({ name: "colorArray", value: [...filterObj.colorArray, name] }));
+      }
+      else{
+        const updatedColorArray = filterObj.colorArray.filter(color => color !== name);
+
+       dispatch(setObjFilter({ name: "colorArray", value: updatedColorArray }));
+      }
     
       dispatch(setObjFilter({ name: "color", value: checked ? name : "" }));
+     
       dispatch(controlChecked(controlPayload));
      
     }else if(value == "Best Filter" && name ==="4 stars or upper"  ){
@@ -63,7 +83,7 @@ const CheckBox = ({ img, name, value,ctgId,checking }) => {
           value={value}
           sx={{ "& .MuiSvgIcon-root": { fontSize: 24 } }}
           onChange={(event) => checkEdValue(event)}
-           checked={checking}
+           checked={checking || checkCtg}
         />
         {img ? <img src={Star} alt="star" /> : ""}
         <label htmlFor="vehicle1">{name} </label>

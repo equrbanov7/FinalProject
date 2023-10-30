@@ -16,7 +16,7 @@ const ProductSummary = () => {
 
   const location = useLocation();
   const pathNames = location.pathname.split("/");
-  console.log(pathNames[1], "loccc");
+  //console.log(pathNames[1], "loccc");
 
   //console.log(exampleIdCount, "selectedd")
   const [total, setTotal] = React.useState(0);

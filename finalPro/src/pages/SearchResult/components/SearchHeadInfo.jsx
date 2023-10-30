@@ -6,7 +6,7 @@ import MenuBar from "../../../assets/icons/pages/search/menuBar.svg";
 import Menu from "../../../assets/icons/pages/search/menu.svg";
 import FilterIcon from "../../../assets/icons/pages/search/filter.svg";
 import "./searchHeadInfo.scss";
-// import {useSelector } from "react-redux";
+ import {useSelector } from "react-redux";
 const SearchHeadInfo = () => {
 
   
@@ -51,12 +51,15 @@ const SearchHeadInfo = () => {
     overlayElm.classList.toggle("changeOpacity1")
   }
 
+  const { oneCategory } = useSelector((state) => state.categories);
+
+ // console.log(oneCategory.data.length,"oneee")
   return (
     <div className="searchHeadInfoAll">
       <div className="leftInfos">
         <TitleDescription
-          title={"Showing product for “Gaming Gear”"}
-          desc={"Showing 1 - 60 Products"}
+          title={"Showing products"}
+          desc={`Showing ${oneCategory?.data?.length ?  `1 - ${oneCategory?.data?.length}`: "" }   Products`}
         />
       </div>
       <div className="rightInfos">

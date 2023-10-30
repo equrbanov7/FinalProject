@@ -10,7 +10,7 @@ const Selection = (data) => {
   const [selectedValue, setSelectedValue] = React.useState("all");
 
   const handleSelectChange = (event) => {
-    console.log(event.target.value)
+  //  console.log(event.target.value)
     setSelectedValue(event.target.value);
     if(event.target.value === "desc"){
       dispatch(setObjFilter({name:"sort", value:"desc" }))
@@ -20,7 +20,7 @@ const Selection = (data) => {
       dispatch(setObjFilter({name:"sort", value:"" }))
     }
   };
-  return (
+  return ( 
     <div>
       <form className={styles.formCategory}>
         <select
@@ -28,11 +28,12 @@ const Selection = (data) => {
           value={selectedValue}
           onChange={handleSelectChange}
         >
-          <option value="all">{data.data.title}</option>
+          <option value="all" >{data.data.title}</option>
           {data.data.elements.map((element, index) => (
             <option key={index} value={element.toLowerCase()}>
               {element}
-            </option>
+            </option> 
+            
           ))}
         </select>
 

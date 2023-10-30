@@ -26,7 +26,7 @@ const authPersistConfig = {
 const filterSet = {
   key: 'filter', // Use a different key for authentication storage
   storage,
-  whitelist: ['filterObj','checkFilterControl','checkPriceRangeControl']
+  whitelist: ['filterObj','checkFilterControl','checkPriceRangeControl','checkCategoryControl']
 };
    
 const persistedReducer = persistReducer(persistConfig, cardReducer)

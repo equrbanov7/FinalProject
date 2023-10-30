@@ -12,7 +12,7 @@ export const fetchAuthRegister = createAsyncThunk(
       return rejectWithValue("There is an problem");
     }
   }
-);
+); 
 
 //Login
 export const fetchAuthLogin = createAsyncThunk(

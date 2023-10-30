@@ -26,7 +26,7 @@ const FilterSide = ({ title, dataFilter, priceActivate }) => {
   ];
 
   const dispatch = useDispatch();
-  const { filterObj, checkFilterControl } = useSelector(
+  const { filterObj, checkFilterControl,checkCategoryControl } = useSelector(
     (state) => state.categories
   );
   // Define a function to handle the selection
@@ -58,11 +58,7 @@ const FilterSide = ({ title, dataFilter, priceActivate }) => {
       const startNumber = parseInt(parts[0].replace("$", ""), 10); // temizleme
       const endNumber = parseInt(parts[1].replace("$", ""), 10);
 
-      // make new array
-      // const arrayWithoutDollarSigns = parts.map((item) =>
-      //   item.replace(/\$/g, "")
-      // );
-    //  console.log(arrayWithoutDollarSigns, "tryy");
+    
       // Set the filter object with the selected range
       dispatch(
         setObjFilter({ name: "price", value: [String(startNumber), String(endNumber)] })
@@ -70,29 +66,7 @@ const FilterSide = ({ title, dataFilter, priceActivate }) => {
     }
   };
 
-  // React.useEffect(() => {
-  //   const priceRanges = document.querySelectorAll(".priceRanges");
-  //   let startNumbers = 0;
-  //   let endNumbers = 0;
-  //   priceRanges.forEach((item) => {
-  //     const parts = item.innerHTML.split(" - ");
-  //     startNumbers = parseInt(parts[0].replace("$", ""), 10);
-  //     endNumbers = parseInt(parts[1].replace("$", ""), 10);
-  //     //console.log(item)
-  //   //  console.log(startNumbers + endNumbers, checkPriceRangeControl, "ddd");
-  //     checkPriceRangeControl.forEach((elm) => {
-  //       if (startNumbers + endNumbers === elm.checkedName && elm.checking){
-  //         item.classList.add("selectedPriceRange");
-  //       }else{
-  //         item.classList.remove("selectedPriceRange");
-  //       }
-
-  //       //console.log(elm.checkedName);
-  //     });
-
-  //   });
-
-  // }, []);
+ 
 
   const handleChangePrice = (value, purpose) => {
     dispatch(
@@ -106,7 +80,7 @@ const FilterSide = ({ title, dataFilter, priceActivate }) => {
     );
   };
 
-  console.log(filterObj.price, "objjj");
+  //console.log(filterObj.price, "objjj");
   return (
     <div className="catchFilterAll">
       <div className="nameOfTitle">
@@ -136,6 +110,10 @@ const FilterSide = ({ title, dataFilter, priceActivate }) => {
                       const checkingItem = checkFilterControl.find(
                         (item) => item.checkedName === filterElm.name
                       );
+                      const checkingItemCtg = checkCategoryControl.find(
+                        (item) => item.checkedName === filterElm.name
+                      );
+
                       //console.log(checkingItem.checking)
                       return (
                         <CheckBox
@@ -147,6 +125,7 @@ const FilterSide = ({ title, dataFilter, priceActivate }) => {
                           checking={
                             checkingItem ? checkingItem.checking : false
                           }
+                          checkCtg={checkingItemCtg ? checkingItemCtg.checking : false   }
                         />
                       );
                     })}

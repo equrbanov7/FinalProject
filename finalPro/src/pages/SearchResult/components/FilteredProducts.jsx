@@ -27,32 +27,38 @@ const FilteredProducts = ({ searchId }) => {
 
   const { products } = useSelector((state) => state.products);
 
-  const { oneCategory, filterObj } = useSelector((state) => state.categories);
+  const { oneCategory, filterObj , checkCategoryControl} = useSelector((state) => state.categories);
 
   const { loading } = useSelector((state) => state.categories);
 
-  //console.log(oneCategory.data[0].attributes.categories.data[0].id, "aaaaaaa");
-
   function catchId(idx, ctg, name, ctgId) {
-    //navigation(`/productdetail/${idx}`);
     navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
-
-    // console.log(ctgId)
   }
 
   React.useEffect(() => {
     if (searchId) {
       dispatch(setObjFilter({ name: "page", value: page }));
       // dispatch(getOneCategory(searchId));
-      dispatch(getProductsByCategoryId({ ...filterObj, id: searchId }));
+      if (filterObj.id) {
+
+        const allCheckingsFalse = checkCategoryControl.every(item => item.checking === false) ;
+       // console.log(filterObj.id, "aaaa");
+       if(allCheckingsFalse){
+        dispatch(getProductsByCategoryId({ ...filterObj, id: searchId }));
+       }else{
+        dispatch(getProductsByCategoryId(filterObj));
+       }
+      
+      } else {
+        //console.log(searchId, "aaaa");
+        dispatch(getProductsByCategoryId({ ...filterObj, id: searchId }));
+      }
     } else {
       dispatch(getProducts(12));
-      // getAllProducts();
-      // dispatch(getProducts(12));
     }
-  }, [dispatch, filterObj, page, searchId]);
+  }, [checkCategoryControl, dispatch, filterObj, page, searchId]);
 
-  //console.log(oneCategory.data.length, "uiiiiiiiElm");
+  
 
   // Pagination
 
@@ -60,7 +66,7 @@ const FilteredProducts = ({ searchId }) => {
     setPage(p);
     //console.log(p, "safdasf")
   }
-  // console.log(oneCategory, "filterr");
+ 
 
   return (
     <div className="allElementsinSearch">
