@@ -19,6 +19,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../../../redux/actions/categoryAction";
 import LoadingItems from "../../../components/LoadingItems";
+import { signOutUserFilters } from "../../../redux/reducers/categoryReducer";
 
 const FeaturedCtg = () => {
   const breakpoints = {
@@ -65,7 +66,9 @@ const FeaturedCtg = () => {
 
   function catchId(idx,ctg) {
     //console.log(ctg)
+    dispatch(signOutUserFilters())
     navigation(`/${ctg}/${idx}`);
+   
   }
   return (
     <div className="FeaturedCtgAll my-SpesficContainer my-Margin-container ">

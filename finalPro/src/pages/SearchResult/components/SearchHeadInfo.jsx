@@ -53,7 +53,11 @@ const SearchHeadInfo = () => {
 
   const { oneCategory } = useSelector((state) => state.categories);
 
- // console.log(oneCategory.data.length,"oneee")
+ function changeGridStatus(){
+    const gridItems= document.querySelector(".catchFilteredPro")
+    gridItems.classList.toggle("gridStatusChangeControl");
+    console.log(gridItems)
+ }
   return (
     <div className="searchHeadInfoAll">
       <div className="leftInfos">
@@ -74,10 +78,10 @@ const SearchHeadInfo = () => {
           </div>
           <div className="lineBridge"></div>
           <div className="rightSideMenu">
-            <div className="firstIconBar icon">
+            <div className="firstIconBar icon" onClick={changeGridStatus}>
               <img src={MenuBar} alt="menuBar" />
             </div>
-            <div className="secondIconBar icon">
+            <div className="secondIconBar icon" >
               <img src={Menu} alt="menu" />
             </div>
           </div>

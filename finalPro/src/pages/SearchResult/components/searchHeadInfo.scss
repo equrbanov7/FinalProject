@@ -6,6 +6,12 @@
   margin-bottom: 52px;
 }
 
+.gridStatusChangeControl{
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  width: 100%;
+}
+
 .searchHeadInfoAll .leftInfos ._catchInfos_1j6zo_1 {
   display: flex;
   flex-direction: column;
@@ -138,6 +144,16 @@
   }
 }
 
+
+//997px
+@media (max-width: 997px){
+  .gridStatusChangeControl{
+    grid-template-columns: repeat(1, 1fr);
+    
+   
+  }
+}
+
 //778px
 @media (max-width: 778px) {
   .searchHeadInfoAll {
@@ -182,7 +198,22 @@
       gap: 6px;
     }
   }
+  .gridStatusChangeControl{
+    grid-template-columns: repeat(2, 1fr);
+    
+   
+  }
 }
+
+//662px
+@media (max-width: 662px){
+  .gridStatusChangeControl{
+    grid-template-columns: repeat(1, 1fr);
+    
+   
+  }
+}
+
 
 //554px
 @media (max-width: 554px) {

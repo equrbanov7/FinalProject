@@ -40,19 +40,17 @@ const FilteredProducts = ({ searchId }) => {
       dispatch(setObjFilter({ name: "page", value: page }));
       // dispatch(getOneCategory(searchId));
       if (filterObj.id) {
-
-        const allCheckingsFalse = checkCategoryControl.every(item => item.checking === false) ;
-       // console.log(filterObj.id, "aaaa");
-       if(allCheckingsFalse){
-        dispatch(getProductsByCategoryId({ ...filterObj, id: searchId }));
-       }else{
-        dispatch(getProductsByCategoryId(filterObj));
-       }
+        const allCheckingsFalse = checkCategoryControl.every(item => item.checking === false);
       
+        if (allCheckingsFalse) {
+          dispatch(getProductsByCategoryId({ ...filterObj, categoryArray: [...filterObj.categoryArray, searchId] }));
+        } else {
+          dispatch(getProductsByCategoryId(filterObj));
+        }
       } else {
-        //console.log(searchId, "aaaa");
-        dispatch(getProductsByCategoryId({ ...filterObj, id: searchId }));
+        dispatch(getProductsByCategoryId({ ...filterObj, categoryArray: [...filterObj.categoryArray, searchId]  }));
       }
+      
     } else {
       dispatch(getProducts(12));
     }

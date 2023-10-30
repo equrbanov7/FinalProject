@@ -20,8 +20,8 @@ const initialState = {
     rating: "",
     id: "",
     check: false,
-    colorArray:[],
-    categoryArray:[]
+    colorArray: [],
+    categoryArray: [],
   },
   checkFilterControl: [{ checkedName: "", checking: false }],
   checkPriceRangeControl: [{ checkedName: "", checking: false }],
@@ -61,7 +61,7 @@ export const categorySlice = createSlice({
         state.checkPriceRangeControl.push(action.payload);
       }
     },
-    controlCategory:(state,action) =>{
+    controlCategory: (state, action) => {
       const { checkedName, checking } = action.payload;
       const existingControl = state.checkCategoryControl.find(
         (item) => item.checkedName === checkedName
@@ -88,14 +88,14 @@ export const categorySlice = createSlice({
           rating: "",
           id: "",
           check: false,
-          colorArray:[],
-          categoryArray:[]
+          colorArray: [],
+          categoryArray: [],
         },
         checkFilterControl: [{ checkedName: "", checking: false }],
         checkPriceRangeControl: [{ checkedName: "", checking: false }],
+        checkCategoryControl: [{ checkedName: "", checking: false }],
       };
     },
-    
   },
 
   extraReducers: (builder) => {
@@ -157,7 +157,7 @@ export const {
   controlPriceRange,
   resetPriceRange,
   signOutUserFilters,
-  controlCategory
+  controlCategory,
 } = categorySlice.actions;
 
 export const categoryReducer = categorySlice.reducer;
