@@ -18,15 +18,9 @@ const LeftShoppingChecking = ({ productInfo, priceCount, productCheck }) => {
   function catchId(idx, ctg, name,ctgId) {
    // navigation(`/productdetail/${idx}`);
     navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
-   // navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
-    //  console.log(idx)
-   // console.log(productInfo.attributes.categories.data[0].id)
+  
   }
-  // console.log( productInfo.id,
-  //   productInfo.attributes?.categories?.data[0]?.attributes?.title, title
-  //   productInfo.attributes?.title,
-
-  // );
+  
  
   const { exampleIdCount } = useSelector((state) => state.selectedProducts);
 
@@ -40,13 +34,11 @@ const LeftShoppingChecking = ({ productInfo, priceCount, productCheck }) => {
       }
       return item;
     });
-    //console.log('Updated exampleIdCount:', updatedExampleIdCount);
-
+    
     // Dispatch the updated array
     dispatch(toggleCheck(updatedExampleIdCount));
 
-    // Add your event handling logic here
-    // console.log("Checkbox clicked", id);
+   
   };
 
   return (
