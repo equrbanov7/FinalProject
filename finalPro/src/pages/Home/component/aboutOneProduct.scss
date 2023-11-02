@@ -1,12 +1,12 @@
+@import "../../../assets/styles/variables.scss";
+@import "../../../assets/styles/mixin.scss";
+
 .AboutOneProductHome {
   border-radius: 16px;
   background: var(--orange-3, #fcece1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexItems(center, center);
   gap: 120px;
-  // height: 400px;
-  // margin: 120px;
+
   margin-top: 120px;
   .leftImageHome {
     width: 430px;
@@ -18,15 +18,12 @@
     }
   }
   .rightInfoHome {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+    @include maekFlexForColum(32px);
     padding-right: 80px;
     ._catchInfos_1j6zo_1 {
-      display: flex;
-      flex-direction: column;
+      @include maekFlexForColum(16px);
       align-items: baseline;
-      gap: 16px;
+      
       ._titleDes_1j6zo_5 {
         text-align: inherit;
       }
@@ -44,9 +41,7 @@
     margin-right: 80px;
     gap: 90px;
     .rightInfoHome {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
+      @include maekFlexForColum(32px);
       padding-right: 80px;
       ._catchInfos_1j6zo_1 {
         ._titleDes_1j6zo_5 {

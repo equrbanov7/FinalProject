@@ -1,6 +1,9 @@
+@import "../../../../assets/styles/mixin.scss";
+
 .slideriTemsCatch {
-    display: flex;
-    background: #fff;
-    justify-content: space-between;
-    gap: 24px;
-  }
+  background: #fff;
+
+  gap: 24px;
+
+  @include flexItems(space-between);
+}

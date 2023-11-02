@@ -1,62 +1,44 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variables.scss";
+
 .searchHeadInfoAll {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexItems(space-between, center);
   margin-top: 32px;
   margin-bottom: 52px;
 }
 
-.gridStatusChangeControl{
+.gridStatusChangeControl {
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   width: 100%;
 }
 
 .searchHeadInfoAll .leftInfos ._catchInfos_1j6zo_1 {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  @include maekFlexForColum(4px);
   h2 {
-    color: var(--black-01, #0b0f0e);
-    font-family: Clash Grotesk;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%;
-    letter-spacing: -0.2px;
+    @include makeColorFix(black, paragraph24, HardWeight);
     text-align: inherit;
   }
   p {
-    color: var(--grey-01, #818b9c);
-    font-family: Clash Grotesk;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
+    @include makeColorFix(secondary, paragraph16, RegularWeight);
     text-align: inherit;
   }
 }
 
 .searchHeadInfoAll .rightInfos {
-  display: flex;
-  align-items: center;
+  @include flexItems(null, center);
   gap: 24px;
 
   .leftSelectionSide {
-    display: flex;
-    align-items: center;
+    @include flexItems(null, center);
     gap: 16px;
     p {
-      color: var(--grey-01, #818b9c);
-      font-family: Clash Grotesk;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
+      @include makeColorFix(secondary, paragraph16, RegularWeight);
       line-height: 160%;
     }
     ._formCategory_1gezz_1 {
       border-radius: 8px;
-      border: 1px solid var(--d-grey-01, #e4e9ee);
+      border: 1px solid map-get($colors, GreyDark);
       ._serachIcon_1gezz_15 {
         display: none;
       }
@@ -64,14 +46,13 @@
   }
 
   .allRightElments {
-    display: flex;
-    align-items: center;
+    @include flexItems(null, center);
     gap: 24px;
     .imgCatchFlt {
       display: none;
       align-items: center;
       border-radius: 8px;
-      border: 1px solid var(--d-grey-01, #e4e9ee);
+      border: 1px solid map-get($colors, GreyDark);
       z-index: 3;
       img {
         padding: 10px;
@@ -80,27 +61,24 @@
         object-fit: cover;
       }
     }
-    .icon{
+    .icon {
       height: 44px;
       width: 44px;
     }
   }
 
   .lineBridge {
-    background: #e4e9ee;
+    background: map-get($colors, GreyDark);
     width: 2px;
     height: 24px;
   }
   .rightSideMenu {
-    display: flex;
-    align-items: center;
+    @include flexItems(null, center);
     gap: 8px;
     .firstIconBar {
       border-radius: 8px;
-      background: var(--dark-green-01, #1e4c2f);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: map-get($colors, primary);
+      @include flexItems(center, center);
       cursor: pointer;
       img {
         padding: 10px;
@@ -110,12 +88,10 @@
     }
     .secondIconBar {
       border-radius: 8px;
-      border: 1px solid var(--d-grey-01, #e4e9ee);
+      border: 1px solid map-get($colors, GreyDark);
       img {
         padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexItems(center, center);
       }
     }
   }
@@ -125,17 +101,17 @@
 @media (max-width: 1200px) {
   .searchHeadInfoAll .leftInfos ._catchInfos_1j6zo_1 {
     h2 {
-      font-size: 20px;
+      font-size: map-get($fonts, paragraph20);
     }
     p {
-      font-size: 14px;
+      font-size: map-get($fonts, paragraph14);
     }
   }
   .searchHeadInfoAll .rightInfos {
     .leftSelectionSide {
       gap: 14px;
       p {
-        font-size: 14px;
+        font-size: map-get($fonts, paragraph14);
       }
     }
 
@@ -145,32 +121,27 @@
   }
 }
 
-
 //997px
-@media (max-width: 997px){
-  .gridStatusChangeControl{
+@media (max-width: 997px) {
+  .gridStatusChangeControl {
     grid-template-columns: repeat(1, 1fr);
-    
-   
   }
 }
 
 //778px
 @media (max-width: 778px) {
   .searchHeadInfoAll {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    @include maekFlexForColum(24px);
     align-items: baseline;
     position: relative;
     width: 100%;
   }
   .searchHeadInfoAll .leftInfos ._catchInfos_1j6zo_1 {
     h2 {
-      font-size: 18px;
+      font-size: map-get($fonts, paragraph18);
     }
     p {
-      font-size: 12px;
+      font-size: map-get($fonts, paragraph12);
     }
   }
   .searchHeadInfoAll .rightInfos {
@@ -185,36 +156,29 @@
     .allRightElments {
       gap: 12px;
       .icon {
-        min-width: max-content; /* Adjust the minimum width as needed */
-        /* You can also set a minimum height if necessary */
+        min-width: max-content;
+
         min-height: max-content;
       }
     }
     .allRightElments .imgCatchFlt {
-      align-items: center;
-      justify-content: center;
-      display: flex;
+      @include flexItems(center, center);
     }
     .rightSideMenu {
       gap: 6px;
     }
   }
-  .gridStatusChangeControl{
+  .gridStatusChangeControl {
     grid-template-columns: repeat(2, 1fr);
-    
-   
   }
 }
 
 //662px
-@media (max-width: 662px){
-  .gridStatusChangeControl{
+@media (max-width: 662px) {
+  .gridStatusChangeControl {
     grid-template-columns: repeat(1, 1fr);
-    
-   
   }
 }
-
 
 //554px
 @media (max-width: 554px) {
@@ -240,17 +204,9 @@
         }
       }
     }
- 
+
     .allRightElments {
       gap: 5px;
-      // .imgCatchFlt {
-      //   img {
-      //     padding: 8px;
-      //     width: 90%;
-      //     height: 90%;
-      //     object-fit: cover;
-      //   }
-      // }
     }
 
     .rightSideMenu {
@@ -285,10 +241,9 @@
 
 //374px
 @media (max-width: 345px) {
-  .searchHeadInfoAll .rightInfos{
+  .searchHeadInfoAll .rightInfos {
     flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
+    @include flexItems(center, center);
     width: 100%;
     gap: 14px;
   }
@@ -296,14 +251,13 @@
     padding: 15px;
     height: auto;
   }
-  .searchHeadInfoAll .rightInfos .rightSideMenu{
+  .searchHeadInfoAll .rightInfos .rightSideMenu {
     gap: 20px;
   }
   .searchHeadInfoAll .rightInfos .allRightElments {
     gap: 20px;
   }
-  .searchHeadInfoAll .rightInfos .lineBridge{
+  .searchHeadInfoAll .rightInfos .lineBridge {
     display: none;
   }
-
 }

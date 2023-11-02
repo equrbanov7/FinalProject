@@ -1,7 +1,10 @@
+@import "../../../../assets/styles/mixin.scss";
+@import "../../../../assets/styles/variables.scss";
+
 .sliderrightCatch {
   width: 50%;
   position: relative;
-  //   padding-right: 60px;
+
   .sliderBackImg {
     width: 100%;
     height: 100%;
@@ -17,19 +20,15 @@
   transform: translate(8%, -38%);
 }
 .sliderrightCatch .cathcCardComp {
-  // position: absolute;
-  // top: 175px;
-  // left: 187px;
-  /* right: 17px; */
   margin: inherit;
   width: 150px;
   height: 144px;
-  background: #fff;
+
   border-radius: 8px 8px 0px 0px;
-  background: var(--l-grey-02, #f6f6f6);
+  background: map-get($colors, GreyLight1);
   .topSide {
     border-radius: 8px 8px 0px 0px;
-    background: var(--l-grey-02, #f6f6f6);
+    background: map-get($colors, GreyLight1);
     .imgCatch {
       width: 120px;
       height: 120px;
@@ -42,23 +41,23 @@
     background: #fff;
     .leftProductInfos ._catchInfos_1j6zo_1 {
       h2 {
-        color: var(--black-01, #0b0f0e);
-        font-feature-settings: "clig" off, "liga" off;
         font-family: Clash Grotesk;
-        font-size: 14px;
+
         font-style: normal;
-        font-weight: 600;
+
         line-height: 140%;
         letter-spacing: -0.2px;
+
+        @include makeColorFix(black, paragraph14, HardWeight);
       }
       p {
-        color: var(--grey-01, #818b9c);
-        font-feature-settings: "clig" off, "liga" off;
         font-family: Clash Grotesk;
-        font-size: 10px;
+
         font-style: normal;
-        font-weight: 400;
+
         line-height: 160%;
+
+        @include makeColorFix(secondary, paragraph10, RegularWeight);
       }
     }
     .leftProductInfos .rating {
@@ -67,23 +66,23 @@
           width: 12px;
         }
         span {
-          color: var(--black-01, #0b0f0e);
-          font-feature-settings: "clig" off, "liga" off;
           font-family: Clash Grotesk;
-          font-size: 10px;
+
           font-style: normal;
-          font-weight: 500;
+
           line-height: 160%;
+
+          @include makeColorFix(black, paragraph10, MediumWeight);
         }
       }
       .soldCount {
-        color: var(--black-01, #0b0f0e);
-        font-feature-settings: "clig" off, "liga" off;
         font-family: Clash Grotesk;
-        font-size: 10px;
+
         font-style: normal;
-        font-weight: 500;
+
         line-height: 160%;
+
+        @include makeColorFix(black, paragraph10, MediumWeight);
       }
     }
     .rightPrice {
@@ -99,11 +98,9 @@
 
 //1200px
 @media (max-width: 1200px) {
-  .sliderrightCatch{
+  .sliderrightCatch {
     .newCarditemContainer {
-   
-      top: 41% ;
-     
+      top: 41%;
     }
   }
 }
@@ -126,8 +123,8 @@
 
     .wishIcon {
       img {
-        width: 12px;
-        height: 12px;
+        width: map-get($fonts, desktopSize12);
+        height: map-get($fonts, desktopSize12);
       }
     }
   }
@@ -137,7 +134,6 @@
 
 @media (max-width: 576px) {
   .sliderrightCatch .cathcCardComp {
-   
     margin: inherit;
     width: 128px;
     height: inherit;
@@ -145,12 +141,11 @@
 
     .topSide {
       width: 100%;
-      display: flex;
-      justify-content: center;
+
+      @include flexItems(center);
       .imgCatch {
         width: 100px;
         height: 100px;
-        // margin: 14px;
       }
     }
     .bottomSide {
@@ -158,7 +153,7 @@
 
       .leftProductInfos ._catchInfos_1j6zo_1 {
         h2 {
-          font-size: 12px;
+          font-size: map-get($fonts, paragraph12);
           padding-bottom: 2px;
         }
         p {
@@ -183,11 +178,9 @@
       }
     }
   }
-  .sliderrightCatch{
+  .sliderrightCatch {
     .newCarditemContainer {
-   
-      top: 50% ;
-     
+      top: 50%;
     }
   }
 }
@@ -195,11 +188,9 @@
 
 @media (max-width: 445px) {
   .sliderrightCatch .cathcCardComp {
-   
- width: 110px;
+    width: 110px;
 
     .topSide {
-    
       .imgCatch {
         width: 100%;
         height: 80px;
@@ -210,7 +201,7 @@
 
       .leftProductInfos ._catchInfos_1j6zo_1 {
         h2 {
-          font-size: 12px;
+          font-size: map-get($fonts, paragraph12);
           padding-bottom: 2px;
         }
         p {
@@ -235,11 +226,9 @@
       }
     }
   }
-  .sliderrightCatch{
+  .sliderrightCatch {
     .newCarditemContainer {
-   
-      top: 42% ;
-     
+      top: 42%;
     }
   }
 }

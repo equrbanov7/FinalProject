@@ -1,16 +1,19 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/mixin.scss";
+
+
 .ProductSummary {
   border-radius: 12px;
-  border: 1px solid var(--d-grey-01, #e4e9ee);
+  border: 1px solid map-get($colors, GreyDark);
   background: var(--white-general, #fff);
   padding: 24px;
-  display: flex;
-  flex-direction: column;
+  @include maekFlexForColum();
   position: relative;
   top: -32px;
   width: 30%;
 
   .lineBreakBox {
-    background: #e4e9ee;
+    background: map-get($colors, GreyDark);
     height: 1px;
     width: 100%;
     margin-bottom: 24px;
@@ -18,19 +21,13 @@
   }
 
   .titleOfCheckBox {
-    color: var(--black-01, #0b0f0e);
-    font-family: Clash Grotesk;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%;
-    letter-spacing: -0.2px;
+    @include makeColorFix(black, desktopSize20, HardWeight);
     margin-bottom: 24px;
   }
   ._catchInfos_1j6zo_1 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+   
+
+    @include flexItems(space-between, center);
   }
   ._catchInfos_1j6zo_1 h2,
   p {
@@ -38,73 +35,38 @@
   }
   .selectedProductsInBox ._catchInfos_1j6zo_1 h2,
   p {
-    color: var(--black-01, #0b0f0e);
-
-    /* Paragraph/P1/16 Regular - Lh 160% */
-    font-family: Clash Grotesk;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 25.6px */
+    @include makeColorFix(black, paragraph16, RegularWeight);
   }
   .selectedProductsInBox ._catchInfos_1j6zo_1 p {
-    color: var(--black-01, #0b0f0e);
-
-    /* Paragraph/P1/16 Regular - Lh 160% */
-    font-family: Clash Grotesk;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 25.6px */
+    @include makeColorFix(black, paragraph16, RegularWeight);
   }
 
   .calculatedItems ._catchInfos_1j6zo_1 h2 {
-    color: var(--grey-01, #818b9c);
-
-    /* Paragraph/P1/16 Regular - Lh 160% */
-    font-family: Clash Grotesk;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 25.6px */
+    @include makeColorFix(secondary, paragraph16, RegularWeight);
   }
   .calculatedItems ._catchInfos_1j6zo_1 p {
-    color: var(--black-01, #0b0f0e);
-
-    /* Paragraph/P1/16 Regular - Lh 160% */
-    font-family: Clash Grotesk;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 25.6px */
+    @include makeColorFix(black, paragraph16, RegularWeight);
   }
   .totalPriceItems ._catchInfos_1j6zo_1 h2,
   p {
-    color: var(--black-01, #0b0f0e);
+   
     text-align: right;
 
-    /* Extra Heading/Eh6 - 20 Semi Bold -  Lh 130% */
-    font-family: Clash Grotesk;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%; /* 28px */
-    letter-spacing: -0.2px;
+    @include makeColorFix(black, paragraph20, RegularWeight);
   }
 
   .selectedProductsInBox,
   .calculatedItems {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    @include maekFlexForColum(16px);
   }
 
   .usingPromocode {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+   
+
+    @include flexItems(space-between, center);
+
     border-radius: 12px;
-    border: 1px solid var(--d-grey-01, #e4e9ee);
+    border: 1px solid map-get($colors, GreyDark);
     background: var(--white-general, #fff);
     padding: 19px 16px;
     margin-top: 16px;
@@ -112,14 +74,11 @@
     .catchAllThreeElements .leftImgLogo {
       width: 24px;
       height: 24px;
-      max-width: inherit;
-      min-width: inherit;
-      max-height: inherit;
-      min-height: inherit;
+      @include inheritDimensions();
     }
 
     .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
-      font-size: 16px;
+      font-size: map-get($fonts,  paragraph16);
     }
     .catchAllThreeElements .rightInfoLogo .rightInfosCatch {
       gap: 2px;
@@ -128,17 +87,12 @@
 
   .checkoutCLick {
     border-radius: 8px;
-    background: var(--dark-green-01, #1e4c2f);
+    background: map-get($colors, primary);
     .btn {
       width: 100%;
       color: var(--white-general, #fff);
       text-align: center;
-      font-family: Clash Grotesk;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 140%;
-      letter-spacing: -0.2px;
+      font-size: map-get($fonts,  paragraph16);
     }
   }
 }
@@ -147,23 +101,23 @@
 @media (max-width: 1048px) {
   .ProductSummary {
     .titleOfCheckBox {
-      font-size: 16px;
+      font-size: map-get($fonts,  paragraph16);
     }
 
     .selectedProductsInBox ._catchInfos_1j6zo_1 h2,
     p {
-      font-size: 14px;
+        font-size: map-get($fonts,  paragraph14);
     }
 
     .calculatedItems ._catchInfos_1j6zo_1 h2 {
-      font-size: 14px;
+        font-size: map-get($fonts,  paragraph14);
     }
     .calculatedItems ._catchInfos_1j6zo_1 p {
-      font-size: 14px;
+      font-size: map-get($fonts,  paragraph14);
     }
     .totalPriceItems ._catchInfos_1j6zo_1 h2,
     p {
-      font-size: 16px;
+      font-size: map-get($fonts,  paragraph16);
     }
 
     .usingPromocode {
@@ -175,16 +129,16 @@
         height: 20px;
       }
       .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
-        font-size: 14px;
+        font-size: map-get($fonts,  paragraph14);
       }
 
       .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
-        font-size: 12px;
+        font-size: map-get($fonts,  paragraph12);
       }
     }
 
     .checkoutCLick .btn {
-      font-size: 16px;
+      font-size: map-get($fonts,  paragraph16);
     }
   }
 }
@@ -206,7 +160,7 @@
     }
 
     .checkoutCLick .btn {
-      font-size: 14px;
+      font-size: map-get($fonts,  paragraph14);
     }
   }
 }

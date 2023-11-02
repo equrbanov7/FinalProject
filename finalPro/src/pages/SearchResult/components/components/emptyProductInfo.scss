@@ -1,7 +1,8 @@
+@import "../../../../assets/styles/mixin.scss";
+
+
 .EmptyProductInfo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexItems(center, center);
     margin-block: 32px;
     width: 100%;
     border-radius: 12px;

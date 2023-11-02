@@ -1,45 +1,40 @@
+@import "../../../assets/styles/variables.scss";
+@import "../../../assets/styles/mixin.scss";
+
 .allTopShoppingChart {
   background: var(--d-grey-03, #f7f7f7);
   width: 100%;
-  display: flex;
-  justify-content: center;
+ 
+
+  @include flexItems(center,null);
 }
 
 .TopShoppingChart {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  @include flexItems(space-between, center);
   padding: 60px 120px;
   max-width: 1600px;
   width: 100%;
 
   ._catchInfos_1j6zo_1 {
     h2 {
-      color: var(--black-01, #0b0f0e);
-      font-family: Clash Grotesk;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 140%;
-      letter-spacing: -0.2px;
+       @include makeColorFix(black, desktopSize24, HardWeight);
       text-align: inherit;
     }
     p {
-      color: var(--grey-01, #818b9c);
-      font-family: Clash Grotesk;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 160%;
+      @include makeColorFix(secondary, paragraph16, RegularWeight);
       text-align: inherit;
     }
   }
   .selectOfProduct {
-    flex-direction: row;
+   
     align-items: center;
-    gap: 16px;
+   
+
+    @include makeFlexForRow(16px);
     h6 {
-      color: var(--grey-01, #818b9c);
+      // color: var(--grey-01, #818b9c);
+      color: map-get($colors, secondary);
     }
   }
 }
@@ -49,16 +44,16 @@
   .allTopShoppingChart {
     ._catchInfos_1j6zo_1 {
       h2 {
-        font-size: 20px;
+        font-size: map-get($fonts, paragraph20);
       }
       p {
-        font-size: 14px;
+         font-size: map-get($fonts, paragraph14);
       }
     }
     .selectOfProduct {
       gap: 10px;
       h6 {
-        font-size: 14px;
+         font-size: map-get($fonts, paragraph14);
       }
     }
   }
@@ -93,10 +88,10 @@
   .allTopShoppingChart {
     ._catchInfos_1j6zo_1 {
       h2 {
-        font-size: 18px;
+        font-size: map-get($fonts, paragraph18);
       }
       p {
-        font-size: 12px;
+         font-size: map-get($fonts, paragraph12);
       }
     }
    

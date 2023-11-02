@@ -1,6 +1,7 @@
+@import "../../../../assets/styles/mixin.scss";
 .catchSides{
-    display: flex;
-    justify-content: center;
+    
+    @include flexItems(center);
 }
 
 @media (max-width: 778px) {

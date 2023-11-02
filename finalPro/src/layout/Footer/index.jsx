@@ -5,15 +5,15 @@ const Footer = () => {
   return (
     <footer>
         {/*//? Header */}
-        <div className={style.footer_top}>
-            <div className={style.footer_left}>
-                <div className={style.header_icon}>
+        <div className={style.allFooter}>
+            <div className={style.catchLeftFooter}>
+                <div className={style.iconOfHead}>
                     <img src={logo}/>
                 </div>
                 <p>The biggest marketplace managed by Ideologist corp, which provides various kinds of daily needs and hobbies.</p>
             </div>
-            <div className={style.footer_right}>
-                <div className={style.box}>
+            <div className={style.catchFooterRight}>
+                <div className={style.informationOfFooter}>
                     <h1 className={style.li_tittle}>About Lenny</h1>
                     <ul>
                         <li>Information</li>
@@ -24,7 +24,7 @@ const Footer = () => {
                         <li>Live Station</li>
                     </ul>
                 </div>
-                <div className={style.box}>
+                <div className={style.informationOfFooter}>
                     <h1 className={style.li_tittle}>About Lenny</h1>
                     <ul>
                         <li>FAQ</li>
@@ -34,20 +34,20 @@ const Footer = () => {
                         <li>Contact Us</li>
                     </ul>
                 </div>
-                <div className={style.box}>
-                    <h1 className={style.li_tittle}>Account</h1>
+                <div className={style.informationOfFooter}>
+                    <h1 className={style.catchOfInfos}>Account</h1>
                     <ul>
                         <li>Membership</li>
                         <li>Address</li>
                         <li>Cupons</li>
                     </ul>
                 </div>
-                <div className={style.box}>
-                    <h1 className={style.li_tittle}>Contact Us</h1>
+                <div className={style.informationOfFooter}>
+                    <h1 className={style.catchOfInfos}>Contact Us</h1>
                     <ul>
                         <li>For  Lenny Consumer Complaint Services</li>
                         <li>(684) 555-0102 and curtis.weaver@example.com</li>
-                        <div className={style.line}></div>
+                        <div className={style.lineBreak}></div>
                         <li>Customers Complaint Service</li>
                         <li>Directorate Generate of the Republic of Indonesia</li>
                         <li>(480) 555-0103</li>
@@ -56,11 +56,11 @@ const Footer = () => {
             </div>
         </div>
         {/*//? Footer */}
-        <div className={style.footer_bottom}>
-            <div className={style.footer_left_bottom}>
+        <div className={style.catchFooterBottom}> 
+            <div className={style.catchLeftSide}>
                 <p>COPYRIGHT © LENNY CO., LTD. ALL RIGHTS RESERVED.</p>
             </div>
-            <div className={style.footer_right_bottom}>
+            <div className={style.footer_right_bottom}> 
                 <p>Terms of use</p>
                 <p>Privacy Policy</p>
             </div>

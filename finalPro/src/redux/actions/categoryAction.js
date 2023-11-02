@@ -36,7 +36,6 @@ export const getProductsByCategoryId = createAsyncThunk(
      
       page,
       rating,
-
       price,
       type,
       sort,

@@ -1,38 +1,29 @@
+@import "../../../../../../assets/styles/variables.scss";
+@import "../../../../../../assets/styles/mixin.scss";
+
 .LeftShoppingChecking {
-  display: flex;
-  align-items: center;
+  @include flexItems(null, center);
   gap: 24px;
 
-  .catchAllThreeElements{
+  .catchAllThreeElements {
     cursor: pointer;
   }
   .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
-    font-size: 20px;
+    font-size: map-get($fonts, paragraph20);
   }
   .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
-    font-size: 16px;
+    font-size: map-get($fonts, paragraph16);
   }
   .catchAllThreeElements .rightInfoLogo .bottomInfosMerchant h5 {
-    color: var(--dark-green-03, #1d9e34);
-    font-family: Clash Grotesk;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%;
-    letter-spacing: -0.2px;
+    @include makeColorFix(primarySecond2, desktopSize20, MediumWeight);
     background-color: inherit;
   }
 
   .catchAllThreeElements .leftImgLogo {
     border-radius: 8px;
     background: var(--l-grey-02, #f6f6f6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: inherit;
-    min-width: inherit;
-    max-height: inherit;
-    min-height: inherit;
+    @include flexItems(center, center);
+    @include inheritDimensions();
     width: auto;
     img {
       width: 84px;
@@ -47,13 +38,13 @@
 @media (max-width: 1048px) {
   .LeftShoppingChecking {
     .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
-      font-size: 14px;
+      font-size: map-get($fonts, paragraph14);
     }
     .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
-      font-size: 14px;
+      font-size: map-get($fonts, paragraph14);
     }
     .catchAllThreeElements .rightInfoLogo .bottomInfosMerchant h5 {
-      font-size: 16px;
+      font-size: map-get($fonts, paragraph16);
     }
     .catchAllThreeElements .leftImgLogo {
       img {
@@ -74,13 +65,13 @@
       gap: 12px;
     }
     .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
-      font-size: 12px;
+      font-size: map-get($fonts, paragraph12);
     }
     .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
-      font-size: 10px;
+      font-size: map-get($fonts, paragraph10);
     }
     .catchAllThreeElements .rightInfoLogo .bottomInfosMerchant h5 {
-      font-size: 12px;
+      font-size: map-get($fonts, paragraph12);
     }
     .catchAllThreeElements .leftImgLogo {
       img {

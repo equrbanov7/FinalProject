@@ -27,9 +27,7 @@ const CatchBuyingItems = ({ showShipping }) => {
       )}
 
       <div className="selectingItemsOfProducts">
-        {/* {selectedProducts?.data?.map((product,id) => (
-          <ShoppingCardItem key={id} product={product}/>
-        ))} */}
+      
         {selectedProducts?.data?.map((product, id) => {
           // Find the corresponding count from your data
           const countData = result.find((item) => item.id == product.id);

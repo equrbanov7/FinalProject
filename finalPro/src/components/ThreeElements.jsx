@@ -5,7 +5,7 @@ const ThreeElements = ({ image, dataCreator, dataBottom, imageSecond,handleId })
   return (
     <div className="catchAllThreeElements" onClick={handleId}>
       <div className="leftImgLogo">
-        <img src={image} alt="logo" />
+        <img src={image} alt="logo" /> 
       </div>
       <div className="rightInfoLogo">
         <div className="rightInfosCatch">

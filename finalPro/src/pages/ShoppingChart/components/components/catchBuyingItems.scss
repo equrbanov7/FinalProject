@@ -1,17 +1,18 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/mixin.scss";
+
 .CatchBuyingItems {
   border-radius: 12px;
-  border: 1px solid var(--d-grey-01, #e4e9ee);
+  border: 1px solid map-get($colors, GreyDark);;
   background: var(--white-general, #fff);
   width: 60%;
   padding: 32px 24px;
-  // margin-left: 120px;
+ 
   position: relative;
   top: -32px;
 
   .selectingItemsOfProducts {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    @include maekFlexForColum(24px);
     margin-top: 32px;
   }
   .catchAllThreeElements .rightInfoLogo .bottomInfosMerchant h5 {
@@ -30,18 +31,15 @@
       .catchAllThreeElements {
         gap: 8px;
         .leftImgLogo {
-          min-width: inherit;
-          min-height: inherit;
-          max-width: inherit;
-          max-height: inherit;
+          @include inheritDimensions();
           width: 46px;
           height: 46px;
         }
         .rightInfoLogo .rightInfosCatch h4 {
-          font-size: 14px;
+          font-size: map-get($fonts,  paragraph14);
         }
         .rightInfoLogo .rightInfosCatch h3 {
-          font-size: 12px;
+          font-size: map-get($fonts,  paragraph12);
         }
       }
     }
@@ -63,18 +61,15 @@
       .catchAllThreeElements {
         gap: 8px;
         .leftImgLogo {
-          min-width: inherit;
-          min-height: inherit;
-          max-width: inherit;
-          max-height: inherit;
+          @include inheritDimensions();
           width: 46px;
           height: 46px;
         }
         .rightInfoLogo .rightInfosCatch h4 {
-          font-size: 14px;
+          font-size: map-get($fonts,  paragraph14);
         }
         .rightInfoLogo .rightInfosCatch h3 {
-          font-size: 12px;
+          font-size: map-get($fonts,  paragraph12);
         }
       }
     }

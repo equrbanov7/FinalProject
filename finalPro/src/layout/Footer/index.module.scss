@@ -1,101 +1,102 @@
-@import '../../assets/styles/variables.scss';
-@import '../../assets/styles/mixin.scss';
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixin.scss";
 footer {
-    margin-top: 90px;
+  margin-top: 90px;
+  width: 100%;
+  background-color: #f7f7f7;
+  position: relative;
+  @include maekFlexForColum();
+  //? footer top
+  .allFooter {
+    padding: 40px 24px;
+    @include maekFlexForColum(33px);
+    .catchLeftFooter {
+    
+      @include flexItems(center, start);
+      @include maekFlexForColum(16px);
+      p {
+        @include makeColorFix(black, paragraph14, RegularWeight);
+        line-height: 160%;
+      }
+    }
+    .catchFooterRight {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 28px;
+      row-gap: 40px;
+    }
+  }
+  //? Footer bottom
+  .catchFooterBottom {
+    padding: 16px 0;
     width: 100%;
-    background-color: #F7F7F7;
-    position: relative;
-    @include flex_colum();
-    //? footer top
-    .footer_top {
-        padding: 40px 24px;
-        @include flex_colum(33px);
-        .footer_left {
-            @include flex(center, start);
-            @include flex_colum(16px);
-            p {
-                @include size_color(black, PR3-14, FW_R);
-                line-height: 160%;
-            }
-        }
-        .footer_right {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            column-gap: 28px;
-            row-gap: 40px;
-        }
+    background-color: map-get($colors, GreyLight);
+    @include maekFlexForColum(12px);
+    align-items: center;
+    p {
+      @include makeColorFix(black, paragraph14, RegularWeight);
     }
-    //? Footer bottom
-    .footer_bottom {
-        padding: 16px 0;
-        width: 100%;
-        background-color: map-get($colors,lGrey );
-        @include flex_colum(12px);
-        align-items: center;
-        p {
-            @include size_color(black,PR3-14,FW_R);
-        }
-        .footer_right_bottom {
-            @include flex_row(24px)
-        }
+    .catchRightSide {
+      @include makeFlexForRow(24px);
     }
+  }
 }
-.footer_right .box {
-    @include flex_colum(16px);
-    h1 {
-        @include size_color(black, EH_defualt, FW_H)
+.catchFooterRight .informationOfFooter {
+  @include maekFlexForColum(16px);
+  h1 {
+    @include makeColorFix(black, defualtSize, HardWeight);
+  }
+  ul {
+    @include maekFlexForColum(12px);
+    li {
+      cursor: pointer;
+      @include makeColorFix(black, paragraph14, RegularWeight);
     }
-    ul {
-        @include flex_colum(12px);
-        li {
-            cursor: pointer;
-            @include size_color(black, PR3-14, FW_R)
-        }
-        .line {
-            width: 100%;
-            height: 1px;
-            background-color: map-get($colors,dGrey );
-        }
+    .lineBreak {
+      width: 100%;
+      height: 1px;
+      background-color: map-get($colors, GreyDark);
     }
+  }
 }
-.header_icon {
-    position: relative;
-    width: 127px;
-    height: auto;
+.iconOfHead {
+  position: relative;
+  width: 127px;
+  height: auto;
 }
 //! Query for Ipad
 @media screen and (min-width: 1024px) {
-    footer {
+  footer {
+    width: 100%;
+    @include flexItems(space-between);
+    .allFooter {
+      padding: 60px 120px;
+      @include flexItems(space-between, start);
+      @include makeFlexForRow();
+      .catchLeftFooter p {
+        @include makeColorFix(black, paragraph16, RegularWeight);
+      }
+      .catchFooterRight {
         width: 100%;
-        @include flex(space-between);
-        .footer_top {
-            padding: 60px 120px;
-            @include flex(space-between, start);
-            @include flex_row();
-            .footer_left p {
-                @include size_color(black, PR2-16, FW_R)
-            }
-            .footer_right {
-                width: 100%;
-                @include flex_row(32px);
-                justify-content: space-between;
-                h1 {
-                    @include size_color(black, EH6-20,FW_H);
-                    white-space: nowrap;
-                }
-                .box:nth-child(4){
-                    width: 274px;
-                }
-            }
+        @include makeFlexForRow(32px);
+        justify-content: space-between;
+        h1 {
+          @include makeColorFix(black, desktopSize20, HardWeight);
+          white-space: nowrap;
         }
-        .footer_bottom {
-            padding: 16px 120px;
-            @include flex_row();
-            @include flex(space-between);
-            p {
-                @include size_color(black,PR2-16,FW_R);
-            }
+        .informationOfFooter:nth-child(4) {
+          width: 274px;
         }
+      }
     }
+    .catchFooterBottom {
+      padding: 16px 120px;
+      @include makeFlexForRow();
+      @include flexItems(space-between);
+      p {
+        @include makeColorFix(black, paragraph16, RegularWeight);
+      }
+    }
+  }
 }

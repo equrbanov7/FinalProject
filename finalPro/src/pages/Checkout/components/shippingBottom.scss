@@ -1,37 +1,28 @@
+@import "../../../assets/styles/variables.scss";
+@import "../../../assets/styles/mixin.scss";
+
+
 .ShippingBottom {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  @include maekFlexForColum(24px);
 
   .titleOfCargo {
-    color: var(--black-01, #0b0f0e);
-    font-family: Clash Grotesk;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%;
-    letter-spacing: -0.2px;
+    @include makeColorFix(black-01, desktopSize20, HardWeight);
   }
   .catchShippingAddres {
-    display: flex;
-    justify-content: space-between;
+   
+    @include flexItems(space-between,null);
     border-radius: 12px;
     border: 1px solid var(--d-grey-01, #e4e9ee);
     background: var(--white-general, #fff);
     padding: 24px;
 
     .priceSide {
-      display: flex;
-      align-items: center;
+    
+
+      @include flexItems(null, center);
       gap: 24px;
       .price {
-        color: var(--black-01, #0b0f0e);
-        font-family: Clash Grotesk;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 140%;
-        letter-spacing: -0.2px;
+        @include makeColorFix(black-01, desktopSize20, HardWeight);
       }
       .iconDown {
         width: 24px;
@@ -50,10 +41,10 @@
     min-height: inherit;
   }
   .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
-    font-size: 20px;
+    font-size: map-get($fonts,  paragraph20);
   }
   .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
-    font-size: 16px;
+    font-size: map-get($fonts,  paragraph16);
   }
 }
 
@@ -61,21 +52,21 @@
 @media (max-width: 1048px) {
   .ShippingBottom {
     .titleOfCargo {
-      font-size: 16px;
+      font-size: map-get($fonts,  paragraph16);
     }
 
     .catchShippingAddres {
       padding: 20px 16px;
     }
     .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
-      font-size: 14px;
+       font-size: map-get($fonts,  paragraph14);
     }
     .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
-      font-size: 12px;
+      font-size: map-get($fonts,  paragraph12);
     }
     .catchShippingAddres.priceSide {
       .price {
-        font-size: 14px;
+         font-size: map-get($fonts,  paragraph14);
       }
     }
     .catchAllThreeElements .leftImgLogo {
@@ -96,15 +87,15 @@
       }
     }
     .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
-      font-size: 12px;
+       font-size: map-get($fonts,  paragraph12);
     }
     .catchAllThreeElements .rightInfoLogo .rightInfosCatch h3 {
-      font-size: 10px;
+      font-size: map-get($fonts,  paragraph10);
     }
     .catchShippingAddres .priceSide {
       gap: 8px;
       .price {
-        font-size: 12px;
+         font-size: map-get($fonts,  paragraph12);
       }
       .iconDown {
         width: 20px;

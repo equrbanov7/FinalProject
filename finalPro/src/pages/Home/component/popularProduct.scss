@@ -1,9 +1,12 @@
+@import "../../../assets/styles/variables.scss";
+@import "../../../assets/styles/mixin.scss";
+
 .catchAllPopularProducts {
   margin-top: 100px;
-  display: flex;
+
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  @include flexItems(center, center);
   ._btn_1a95r_1 {
     margin-top: 36px;
   }
@@ -12,10 +15,10 @@
 @media (max-width: 1024px) {
   .catchAllPopularProducts div:nth-child(1) {
     h2 {
-      font-size: 28px;
+      font-size: map-get($fonts, desktopSize38);
     }
     p {
-      font-size: 16px;
+      font-size: map-get($fonts, paragraph16);
     }
   }
 }
@@ -23,10 +26,10 @@
 @media (max-width: 778px) {
   .catchAllPopularProducts .helperDivforModule {
     h2 {
-      font-size: 18px;
+      font-size: map-get($fonts, Ipad18);
     }
     p {
-      font-size: 14px;
+      font-size: map-get($fonts, paragraph14);
     }
   }
 }
