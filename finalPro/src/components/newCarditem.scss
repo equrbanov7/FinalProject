@@ -1,10 +1,11 @@
+@import "../assets/styles/mixin.scss";
+@import "../assets/styles/variables.scss";
+
 .cathcCardComp {
-  // width: 100%;
-  // max-width: 282px;
   width: 282px;
   margin-bottom: 32px;
   min-width: 155px;
-  // margin:24px;
+
   display: flex;
   flex-direction: column;
   position: relative;
@@ -14,9 +15,7 @@
     background: var(--l-grey-02, #f6f6f6);
   }
   .bottomSide {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    @include flexItems(space-between, flex-start);
     padding-top: 16px;
     gap: 8px;
     height: 100%;
@@ -38,22 +37,17 @@
 }
 .cathcCardComp .bottomSide .leftProductInfos div:nth-child(1) {
   h2 {
-    color: var(--black-01, #0b0f0e);
     font-family: Clash Grotesk;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%;
+
+    @include makeColorFix(black, paragraph20, HardWeight);
     letter-spacing: -0.2px;
     text-align: inherit;
     padding-bottom: 4px;
   }
   p {
-    color: var(--grey-01, #818b9c);
     font-family: Clash Grotesk;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
+
+    @include makeColorFix(secondary, paragraph16, RegularWeight);
     line-height: 160%;
     text-align: inherit;
     padding-bottom: 8px;
@@ -61,41 +55,38 @@
 }
 
 .cathcCardComp .bottomSide .leftProductInfos {
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  @include flexItems(space-between, null);
   height: 100%;
   .rating {
     display: flex;
     align-items: center;
+
+    @include flexItems(null, center);
     gap: 16px;
     margin-top: auto;
-    .dotSpaceCard{
+    .dotSpaceCard {
       width: 4px;
       height: 4px;
-      background-color: #E4E9EE;
+      background-color: #e4e9ee;
       border-radius: 50%;
     }
     .starSide {
-      display: flex;
-      align-items: center;
+      @include flexItems(null, center);
       gap: 8px;
       span {
-        color: var(--black-01, #0b0f0e);
         font-family: Clash Grotesk;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
+
+        @include makeColorFix(black, paragraph16, RegularWeight);
         line-height: 160%;
         transform: translateY(2px);
       }
     }
     .soldCount {
-      color: var(--black-01, #0b0f0e);
+      @include makeColorFix(black, paragraph16, RegularWeight);
       font-family: Clash Grotesk;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
+
       line-height: 160%;
       transform: translateY(2px);
     }
@@ -104,14 +95,11 @@
 
 .cathcCardComp .bottomSide .rightPrice {
   h4 {
-    color: var(--dark-green-03, #1d9e34);
     text-align: right;
 
-    /* Extra Heading/Eh6 - 20 Semi Bold -  Lh 130% */
     font-family: Clash Grotesk;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
+
+    @include makeColorFix(primarySecond2, paragraph20, HardWeight);
     line-height: 140%; /* 28px */
     letter-spacing: -0.2px;
   }
@@ -119,9 +107,8 @@
 
 .cathcCardComp .wishIcon {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  @include flexItems(center, center);
   right: 20px;
   top: 20px;
   background-color: #fff;
@@ -158,33 +145,32 @@
   }
   .cathcCardComp .bottomSide .leftProductInfos div:nth-child(1) {
     h2 {
-      font-size: 16px;
+      font-size: map-get($fonts, paragraph16);
     }
     p {
-      font-size: 14px;
+       font-size: map-get($fonts, paragraph14);
     }
   }
 
   .cathcCardComp .bottomSide .leftProductInfos {
     .rating {
-      display: flex;
-      align-items: center;
+      @include flexItems(null, center);
       gap: 8px;
       margin-top: auto;
       .starSide {
         span {
-          font-size: 14px;
+           font-size: map-get($fonts, paragraph14);
         }
       }
       .soldCount {
-        font-size: 14px;
+         font-size: map-get($fonts, paragraph14);
         width: max-content;
       }
     }
   }
   .cathcCardComp .bottomSide .rightPrice {
     h4 {
-      font-size: 16px;
+      font-size: map-get($fonts, paragraph16);
     }
   }
 }
@@ -215,7 +201,7 @@
 @media (max-width: 572px) {
   .cathcCardComp {
     width: 155px;
-    .bottomSide{
+    .bottomSide {
       padding-top: 23px;
       gap: inherit;
     }
@@ -228,10 +214,10 @@
   }
   .cathcCardComp .bottomSide .leftProductInfos div:nth-child(1) {
     h2 {
-      font-size: 14px;
+      font-size: map-get($fonts, paragraph14);
     }
     p {
-      font-size: 12px;
+        font-size: map-get($fonts, paragraph12);
     }
   }
 
@@ -239,11 +225,11 @@
     .rating {
       .starSide {
         span {
-          font-size: 12px;
+            font-size: map-get($fonts, paragraph12);
         }
       }
       .soldCount {
-        font-size: 12px;
+          font-size: map-get($fonts, paragraph12);
       }
     }
   }

@@ -1,7 +1,10 @@
+@import "../assets/styles/mixin.scss";
+@import "../assets/styles/variables.scss";
+
 .catchAllThreeElements {
-  display: flex;
-  align-items: center;
   gap: 16px;
+
+  @include flexItems(null, center);
 
   .leftImgLogo {
     max-width: 84px;
@@ -17,29 +20,21 @@
     }
   }
   .rightInfoLogo {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    @include maekFlexForColum(12px);
 
     .rightInfosCatch {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      @include maekFlexForColum(4px);
       h4 {
-        color: var(--black-01, #0b0f0e);
         font-family: Clash Grotesk;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
+
+        @include makeColorFix(black, paragraph16, HardWeight);
         line-height: 140%;
         letter-spacing: -0.2px;
       }
       h3 {
-        color: var(--grey-01, #818b9c);
         font-family: Clash Grotesk;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
+
+        @include makeColorFix(secondary, paragraph14, RegularWeight);
         line-height: 160%;
       }
     }
@@ -48,11 +43,10 @@
       gap: 8px;
       h5 {
         padding: 5px 8px;
-        color: var(--dark-green-03, #1d9e34);
+
         font-family: Clash Grotesk;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
+
+        @include makeColorFix(primarySecond2, paragraph14, RegularWeight);
         line-height: 160%;
         border-radius: 4px;
         background: rgba(29, 158, 52, 0.1);

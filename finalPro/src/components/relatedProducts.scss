@@ -1,22 +1,24 @@
+@import "../assets/styles/mixin.scss";
+@import "../assets/styles/variables.scss";
+
 .RelatedProducts {
   margin-top: 20px;
   ._titleitem_1nt0c_1 {
     h1 {
-      color: var(--black-01, #0b0f0e);
+      
       font-family: Clash Grotesk;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 600;
+    
+      @include makeColorFix(black, paragraph20, HardWeight);
       line-height: 140%;
       letter-spacing: -0.2px;
     }
     button {
-      color: var(--dark-green-01, #1e4c2f);
+     
       text-align: center;
       font-family: Clash Grotesk;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 600;
+     
+
+      @include makeColorFix(primary, paragraph16, HardWeight);
       line-height: 140%;
       letter-spacing: -0.2px;
     }

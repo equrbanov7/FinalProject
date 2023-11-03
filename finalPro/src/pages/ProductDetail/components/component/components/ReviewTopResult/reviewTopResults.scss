@@ -1,12 +1,10 @@
+@import "../../../../../../assets/styles/mixin.scss";
+@import "../../../../../../assets/styles/variables.scss";
+
 .allReviewTopResultsWrap {
   .titleOfSide {
-    color: var(--black-01, #0b0f0e);
-
-    /* Extra Heading/Eh6 - 20 Semi Bold -  Lh 130% */
-    font-family: Clash Grotesk;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
+    
+    @include makeColorFix(black, paragraph20, HardWeight);
     line-height: 140%; /* 28px */
     letter-spacing: -0.2px;
     margin-bottom: 24px;
@@ -17,19 +15,14 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-radius: 12px;
-  border: 1px solid var(--d-grey-01, #e4e9ee);
+  border: 1px solid map-get($colors, GreyDark);
   padding: 24px;
   .leftReviewScore {
     .catchAllThreeElements {
       .rightInfoLogo .rightInfosCatch {
         h4 {
-          color: var(--black-01, #0b0f0e);
-
-          /* Paragraph/P1/16 Regular - Lh 160% */
-          font-family: Clash Grotesk;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 400;
+         
+          @include makeColorFix(black, paragraph16, RegularWeight);
           line-height: 160%; /* 25.6px */
         }
       }
@@ -51,7 +44,7 @@
 @media (max-width: 994px) {
   .ReviewTopResults {
     .leftReviewScore .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
-      font-size: 14px;
+      font-size: map-get($fonts, paragraph14);
     }
   }
 }
@@ -60,21 +53,16 @@
 @media (max-width: 778px) {
   .allReviewTopResultsWrap{
     .titleOfSide{
-      font-size: 16px;
+      font-size: map-get($fonts, paragraph16);
     }
   }
   .ReviewTopResults {
-    display: flex;
-    flex-direction: column;
-    gap: 23px;
+    @include maekFlexForColum(23px);
     width: 100%;
     .catchAllThreeElements .leftImgLogo {
       width: 64px;
       height: 64px;
-      max-width: inherit;
-      min-width: inherit;
-      max-height: inherit;
-      min-height: inherit;
+      @include inheritDimensions();
     }
     .leftReviewScore .catchAllThreeElements .rightInfoLogo .rightInfosCatch h4 {
       font-size: 12px;
@@ -82,9 +70,7 @@
     .rightReviewRank {
       margin-left: inherit;
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+      @include maekFlexForColum(12px);
     }
   }
 }

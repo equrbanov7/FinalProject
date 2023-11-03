@@ -1,63 +1,43 @@
+@import "../../../assets/styles/variables.scss";
+@import "../../../assets/styles/mixin.scss";
+
 .ProductInfoRightAll {
   width: 50%;
   .topInfoProduct {
     .nameOfProduct {
-      color: var(--black-01, #0b0f0e);
-      font-family: Clash Grotesk;
-      font-size: 38px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 140%;
-      letter-spacing: -0.2px;
+      @include makeColorFix(black, desktopSize38, HardWeight);
     }
     .rankingProduct {
-      display: flex;
-      align-items: center;
+      @include flexItems(null, center);
       gap: 8px;
       margin-bottom: 16px;
       margin-top: 8px;
-      .dotSpace{
+      .dotSpace {
         width: 4px;
         height: 4px;
-        background-color: #E4E9EE;
+
+        background-color: map-get($colors, GreyDark);
         border-radius: 50%;
       }
       .starSide {
-        display: flex;
-        align-items: center;
+        @include flexItems(null, center);
         gap: 8px;
         img {
           width: 20px;
           height: 20px;
         }
         span {
-          color: var(--black-01, #0b0f0e);
-          font-family: Clash Grotesk;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 160%;
+          @include makeColorFix(black, paragraph16, RegularWeight);
           transform: translateY(1px);
         }
       }
       .soldCount {
-        color: var(--black-01, #0b0f0e);
-        font-family: Clash Grotesk;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%;
+        @include makeColorFix(black, paragraph16, RegularWeight);
       }
     }
     .productPrice {
       h4 {
-        color: var(--dark-green-03, #1d9e34);
-        font-family: Clash Grotesk;
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 140%;
-        letter-spacing: -0.2px;
+        @include makeColorFix(primarySecond2, desktopSize28, HardWeight);
       }
     }
   }
@@ -65,43 +45,31 @@
   .middleDescription {
     margin-top: 24px;
     p {
-      color: var(--grey-01, #818b9c);
-      font-family: Clash Grotesk;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
+      @include makeColorFix(secondary, paragraph16, RegularWeight);
       line-height: 160%;
     }
   }
   .lineBreak {
     height: 1px;
     width: 100%;
-    background: #e4e9ee;
+    background: map-get($colors, GreyDark);
     margin: 24px auto;
   }
   .catchAllSelections {
     margin-bottom: 52px;
     .titleOfSide {
-      color: var(--black-01, #0b0f0e);
-      font-family: Clash Grotesk;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 140%;
-      letter-spacing: -0.2px;
+      @include makeColorFix(black, paragraph18, HardWeight);
     }
 
     .catchSlections {
-      display: flex;
-      align-items: center;
+      @include flexItems(null, center);
       gap: 16px;
       margin-top: 12px;
     }
   }
 
   .btnesOfProduct {
-    display: flex;
-    align-items: center;
+    @include flexItems(null, center);
     gap: 16px;
     width: 100%;
 
@@ -118,7 +86,7 @@
   }
   .btnesOfProduct .ButtonImgUniverse:nth-child(1) {
     border-radius: 8px;
-    background: var(--dark-green-01, #1e4c2f);
+    background: map-get($colors, primary);
     button {
       color: #fff;
     }

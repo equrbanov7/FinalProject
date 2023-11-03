@@ -1,10 +1,11 @@
+@import "../assets/styles/mixin.scss";
+@import "../assets/styles/variables.scss";
+
 .articleCardHomeItem {
   width: 100%;
   max-width: 384px;
   min-width: 327px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  @include maekFlexForColum(16px);
   .topofArticleImg {
     img {
       width: 100%;
@@ -14,41 +15,31 @@
     }
   }
   .bottomofArticleInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    @include maekFlexForColum(12px);
   }
 }
 
 .articleCardHomeItem .bottomofArticleInfo {
   .dataArticle span {
-    color: var(--grey-01, #818b9c);
-    font-family: Clash Grotesk;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
+    
+
+    @include makeColorFix(secondary, paragraph16, RegularWeight);
     line-height: 160%;
   }
   ._catchInfos_1j6zo_1 {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    @include maekFlexForColum(4px);
     h2 {
-      color: var(--black-01, #0b0f0e);
-      font-family: Clash Grotesk;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 600;
+     
+
+      @include makeColorFix(black, paragraph20, HardWeight);
       line-height: 140%;
       letter-spacing: -0.2px;
       text-align: inherit;
     }
     p {
-      color: var(--grey-01, #818b9c);
-      font-family: Clash Grotesk;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
+     
+
+      @include makeColorFix(secondary, paragraph16, RegularWeight);
       line-height: 160%;
       text-align: inherit;
     }
@@ -74,17 +65,15 @@
 
   .articleCardHomeItem .bottomofArticleInfo {
     .dataArticle span {
-      font-size: 14px;
+        font-size: map-get($fonts, paragraph14);
     }
     ._catchInfos_1j6zo_1 {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      @include maekFlexForColum(4px);
       h2 {
-        font-size: 16px;
+        font-size: map-get($fonts, paragraph16);
       }
       p {
-        font-size: 14px;
+          font-size: map-get($fonts, paragraph14);
       }
     }
   }

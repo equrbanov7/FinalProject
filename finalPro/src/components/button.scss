@@ -1,41 +1,38 @@
-.btn {
-  color: var(--dark-green-01, #1e4c2f);
-  text-align: center;
+@import "../assets/styles/mixin.scss";
+@import "../assets/styles/variables.scss";
 
-  /* Heading/H2 - 18 Semi Bold -  Lh 140% */
-  font-family: Clash Grotesk;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
+.btn {
+  text-align: center;
+  font-family: "Clash Grotesk", sans-serif;
+
+  @include makeColorFix(primary, paragraph18, HardWeight);
   line-height: 140%; /* 25.2px */
   letter-spacing: -0.2px;
   background: none;
   padding: 10px 16px;
   border-radius: 8px;
-  border: 1px solid var(--dark-green-01, #1E4C2F);
+  border: 1px solid map-get($colors, primary);
   cursor: pointer;
 }
 
 //1024px
 @media (max-width: 1024px) {
   .btn {
-    font-size: 16px;
+    font-size: map-get($fonts, paragraph16);
   }
 }
 
 //778px
 @media (max-width: 778px) {
   .btn {
-    font-size: 14px;
+    font-size: map-get($fonts, paragraph14);
     padding: 6px 12px;
   }
 }
 
 //384px
 @media (max-width: 384px) {
- 
   .btn {
-    font-size: 12px;
+    font-size: map-get($fonts, paragraph12);
   }
-  
 }

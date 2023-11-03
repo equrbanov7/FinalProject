@@ -1,13 +1,10 @@
+@import "../../../../../../../assets/styles/mixin.scss";
+@import "../../../../../../../assets/styles/variables.scss";
+
 .ReviewsRightItems {
   width: 100%;
   .titleReviewList {
-    color: var(--black-01, #0b0f0e);
-
-    /* Extra Heading/Eh6 - 20 Semi Bold -  Lh 130% */
-    font-family: Clash Grotesk;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
+    @include makeColorFix(black, desktopSize20, HardWeight);
     line-height: 140%; /* 28px */
     letter-spacing: -0.2px;
   }
@@ -15,13 +12,12 @@
     margin-top: 16px;
     .filterIconSide {
       border-radius: 8px;
-      border: 1px solid var(--d-grey-01, #e4e9ee);
+      border: 1px solid map-get($colors, GreyDark);
 
       width: 44px;
       height: 44px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+      @include flexItems(center, center);
       display: none;
       img {
         width: 100%;
@@ -36,88 +32,72 @@
     gap: 12px;
 
     button {
-      color: var(--black-01, #0b0f0e);
-      font-family: Clash Grotesk;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 500;
+      @include makeColorFix(black, paragraph14, MediumWeight);
       line-height: 160%;
       border-radius: 8px;
-      border: 1px solid var(--d-grey-01, #e4e9ee);
+      border: 1px solid map-get($colors, GreyDark);
       padding: 11px 16px;
       cursor: pointer;
     }
     .buttonActive {
-      color: var(--dark-green-03, #1d9e34);
+      color: map-get($colors, primarySecond2);
       background-color: #fff;
-      border: 1px solid var(--dark-green-03, #1d9e34);
+      border: 1px solid map-get($colors, primarySecond2);
     }
   }
   .ResultReview {
     margin-top: 32px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+    @include maekFlexForColum(32px);
 
     .lineBlockBridge {
       width: 100%;
       height: 1px;
-      background: #e4e9ee;
+      background: map-get($colors, GreyDark);
     }
   }
   .paginationCatch {
     margin-top: 52px;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    justify-content: center;
+
+    @include flexItems(center, null);
     .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-      color: var(--dark-green-03, #1d9e34);
       text-align: center;
 
-      /* Paragraph/P2/14 Medium - Lh 160% */
-      font-family: Clash Grotesk;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 500;
+      @include makeColorFix(primarySecond2, paragraph14, MediumWeight);
       line-height: 160%; /* 22.4px */
     }
     .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
-      color: #1d9e34;
+      color: map-get($colors, primarySecond2);
     }
     .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root {
-      color: var(--grey-01, #818b9c);
+     
       text-align: center;
 
-      /* Paragraph/P2/14 Medium - Lh 160% */
-      font-family: Clash Grotesk;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 500;
+
+      @include makeColorFix(secondary, paragraph14, MediumWeight);
       line-height: 160%; /* 22.4px */
       padding: 16px 18px !important;
     }
   }
 }
 
-
 //778px
 @media (max-width: 778px) {
   .ReviewsRightItems {
     .forResponsiveDivCatch {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-        .filterIconSide{
-          display: flex;
-          cursor: pointer;
-        }
+    
+      @include flexItems(flex-start, space-between);
+      .filterIconSide {
+        display: flex;
+        cursor: pointer;
+      }
       .btnesReview {
         flex-wrap: wrap;
         width: 300px;
-        button{
-          font-size: 12px;
+        button {
+          font-size: map-get($fonts, paragraph12);
         }
       }
     }
@@ -126,7 +106,7 @@
 
 //778px
 @media (max-width: 778px) {
-  .ResultReview{
+  .ResultReview {
     gap: 24px;
   }
 }

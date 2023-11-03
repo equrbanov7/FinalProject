@@ -1,18 +1,19 @@
+@import "../assets/styles/mixin.scss";
+@import "../assets/styles/variables.scss";
+
 .ButtonImgUniverse {
-  display: flex;
-  align-items: center;
+  @include flexItems(null, center);
   gap: 8px;
   border-radius: 8px;
-  border: 1px solid var(--dark-green-01, #1e4c2f);
+  border: 1px solid map-get($colors, primary);
   padding: 14px 24px;
-cursor: pointer;
+  cursor: pointer;
+  font-family: "Clash Grotesk", sans-serif;
   button {
-    color: var(--dark-green-01, #1e4c2f);
     text-align: center;
-    font-family: Clash Grotesk;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
+    font-family: "Clash Grotesk", sans-serif;
+
+    @include makeColorFix(primary, paragraph18, HardWeight);
     line-height: 140%;
     letter-spacing: -0.2px;
     background: none;
@@ -20,8 +21,7 @@ cursor: pointer;
     cursor: pointer;
   }
   .btnCatch {
-    display: flex;
-    align-items: center;
+    @include flexItems(null, center);
     gap: 8px;
     margin: auto;
   }

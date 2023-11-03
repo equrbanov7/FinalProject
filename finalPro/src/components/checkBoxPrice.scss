@@ -1,8 +1,11 @@
+@import "../assets/styles/mixin.scss";
+@import "../assets/styles/variables.scss";
+
 .formCHeckSelect {
   border-radius: 12px;
-  border: 1px solid var(--d-grey-01, #e4e9ee);
+  border: 1px solid map-get($colors, GreyDark);
 
-  .hiddenBtn{
+  .hiddenBtn {
     display: none;
   }
   .selectAll {
@@ -11,11 +14,10 @@
     padding: 9px 16px;
     .priceSelects {
       border: none;
-      color: var(--black-01, #0b0f0e);
+
       font-family: Clash Grotesk;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
+
+      @include makeColorFix(black, paragraph16, MediumWeight);
       line-height: 160%;
     }
     .lineSelect {
@@ -23,18 +25,18 @@
       height: 24px;
       /* margin-right: 6px; */
       /* z-index: 6; */
-      background: #e4e9ee;
+      background: map-get($colors, GreyDark);
       color: #fff;
       margin: auto 12px;
     }
     input {
       border: none;
       outline: none;
-      color: var(--grey-01, #818b9c);
+     
       font-family: Clash Grotesk;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
+     
+
+      @include makeColorFix(secondary, paragraph16, RegularWeight);
       line-height: 160%;
       padding: 4px 0px;
       width: 100%;
@@ -44,7 +46,5 @@
       -webkit-appearance: none;
       margin: 0;
     }
-
-   
   }
 }

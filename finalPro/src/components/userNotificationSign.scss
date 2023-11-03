@@ -1,10 +1,12 @@
+@import "../assets/styles/mixin.scss";
+@import "../assets/styles/variables.scss";
+
 .UserNotificationSign {
   background: #fff;
   .innerNotification {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+    @include flexItems(center, center);
     padding: 24px 24px;
     width: 100%;
 
@@ -20,30 +22,23 @@
     }
 
     .informationUser {
-
-        margin-top: 24px;
-        margin-bottom: 32px;
+      margin-top: 24px;
+      margin-bottom: 32px;
       h2 {
-        color: #0b0f0e;
         text-align: center;
 
-        /* Extra Heading/Eh5 - 24 Semi Bold -  Lh 140% */
         font-family: Clash Grotesk;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 600;
+
+        @include makeColorFix(black, paragraph24, HardWeight);
         line-height: 140%; /* 33.6px */
         letter-spacing: -0.2px;
       }
       p {
-        color: #818b9c;
         text-align: center;
 
-        /* Paragraph / P2 / 14 Regular - Lh 160% */
         font-family: Clash Grotesk;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
+
+        @include makeColorFix(secondary, paragraph14, RegularWeight);
         line-height: 160%; /* 22.4px */
       }
     }
@@ -51,16 +46,18 @@
     .btnSign {
       width: 100%;
       button {
-        color: var(--white-general, #fff);
+        // color: var(--white-general, #fff);
         text-align: center;
         border-radius: 8px;
         background: var(--dark-green-01, #1e4c2f);
 
         /* Heading / Eh - 16 Semi Bold -  Lh 140% */
         font-family: Clash Grotesk;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
+        // font-size: 16px;
+        // font-style: normal;
+        // font-weight: 600;
+
+        @include makeColorFix(white, paragraph16, HardWeight);
         line-height: 140%; /* 22.4px */
         letter-spacing: -0.2px;
         width: 100%;

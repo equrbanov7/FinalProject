@@ -1,12 +1,10 @@
+@import "../../../../../../../assets/styles/mixin.scss";
+@import "../../../../../../../assets/styles/variables.scss";
+
 .EachLineSysRequred {
   .sysItem {
-    color: var(--grey-01, #818b9c);
-
-    /* Paragraph/P1/16 Regular - Lh 160% */
-    font-family: Clash Grotesk;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
+    
+    @include makeColorFix(secondary, paragraph16, RegularWeight);
     line-height: 160%; /* 25.6px */
   }
 }
@@ -15,7 +13,7 @@
 @media (max-width: 994px) {
   .EachLineSysRequred {
     .sysItem {
-      font-size: 14px;
+      font-size: map-get($fonts, paragraph14);
     }
   }
 }
