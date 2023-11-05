@@ -36,12 +36,28 @@
   button {
     max-width: 200px;
     width: 100%;
+    transition: background 0.3s, color 0.3s;
+    
   }
   button:nth-child(1) {
     background: map-get($colors, primary);
     color: #fff;
+    transition: background 0.3s, color 0.3s;
   }
+ 
+
 }
+._btnes_z8uh4_1 button:nth-child(1):hover{
+  background: map-get($colors, primaryFirst1);
+  color:#fff;
+}
+
+._btnes_z8uh4_1 button:nth-child(2):hover{
+  background: map-get($colors, primaryFirst1);
+  color: #fff;
+}
+
+
 @media (max-width: 1110px) {
   // for slider first slider item
 

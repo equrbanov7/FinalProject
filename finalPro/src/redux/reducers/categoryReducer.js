@@ -41,7 +41,7 @@ export const categorySlice = createSlice({
       const { checkedName, checking } = action.payload;
       const existingControl = state.checkFilterControl.find(
         (item) => item.checkedName === checkedName
-      );
+      ); 
 
       if (existingControl) {
         existingControl.checking = checking;

@@ -6,10 +6,8 @@ import MenuBar from "../../../assets/icons/pages/search/menuBar.svg";
 import Menu from "../../../assets/icons/pages/search/menu.svg";
 import FilterIcon from "../../../assets/icons/pages/search/filter.svg";
 import "./searchHeadInfo.scss";
- import {useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 const SearchHeadInfo = () => {
-
-  
   const [objData, setObjData] = React.useState({
     title: "Relevant Products",
     elements: ["DESC", "ASC"],
@@ -48,22 +46,26 @@ const SearchHeadInfo = () => {
     showingElement.classList.toggle("filterMobile1");
     // console.log(showingElement,"aaaaaaaaaaaaaa")
     const overlayElm = document.querySelector(".ovarley1");
-    overlayElm.classList.toggle("changeOpacity1")
+    overlayElm.classList.toggle("changeOpacity1");
   }
 
   const { oneCategory } = useSelector((state) => state.categories);
 
- function changeGridStatus(){
-    const gridItems= document.querySelector(".catchFilteredPro")
+  function changeGridStatus() {
+    const gridItems = document.querySelector(".catchFilteredPro");
     gridItems.classList.toggle("gridStatusChangeControl");
-    console.log(gridItems)
- }
+    console.log(gridItems);
+  }
   return (
     <div className="searchHeadInfoAll">
       <div className="leftInfos">
         <TitleDescription
           title={"Showing products"}
-          desc={`Showing ${oneCategory?.data?.length ?  `1 - ${oneCategory?.data?.length}`: "" }   Products`}
+          desc={
+            oneCategory?.data?.length > 0
+              ? `Displaying 1 - ${oneCategory?.data?.length} products`
+              : "No products to display"
+          }
         />
       </div>
       <div className="rightInfos">
@@ -81,7 +83,7 @@ const SearchHeadInfo = () => {
             <div className="firstIconBar icon" onClick={changeGridStatus}>
               <img src={MenuBar} alt="menuBar" />
             </div>
-            <div className="secondIconBar icon" >
+            <div className="secondIconBar icon">
               <img src={Menu} alt="menu" />
             </div>
           </div>

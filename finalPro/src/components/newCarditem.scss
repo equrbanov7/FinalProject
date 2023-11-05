@@ -120,6 +120,39 @@
   cursor: pointer;
 }
 
+// Hover the card
+.cathcCardComp {
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform 0.3s ease-out 0s;
+    background: rgba(155, 166, 185, 0.1);
+    content: "";
+    pointer-events: none;
+  }
+
+  &::before {
+    transform-origin: left top;
+  }
+
+  &::after {
+    transform-origin: right bottom;
+  }
+
+  &:hover,
+  &:focus {
+    &::before,
+    &::after {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}
+
 //1200px
 @media (max-width: 1200px) {
   .cathcCardComp {
@@ -148,7 +181,7 @@
       font-size: map-get($fonts, paragraph16);
     }
     p {
-       font-size: map-get($fonts, paragraph14);
+      font-size: map-get($fonts, paragraph14);
     }
   }
 
@@ -159,11 +192,11 @@
       margin-top: auto;
       .starSide {
         span {
-           font-size: map-get($fonts, paragraph14);
+          font-size: map-get($fonts, paragraph14);
         }
       }
       .soldCount {
-         font-size: map-get($fonts, paragraph14);
+        font-size: map-get($fonts, paragraph14);
         width: max-content;
       }
     }
@@ -178,6 +211,13 @@
 @media (max-width: 778px) {
   .cathcCardComp {
     width: 170px;
+
+    .wishIcon {
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
   }
   .cathcCardComp .topSide {
     .imgCatch {
@@ -205,6 +245,12 @@
       padding-top: 23px;
       gap: inherit;
     }
+    .wishIcon {
+      img {
+        width: 14px;
+        height: 14px;
+      }
+    }
   }
   .cathcCardComp .topSide {
     .imgCatch {
@@ -217,7 +263,7 @@
       font-size: map-get($fonts, paragraph14);
     }
     p {
-        font-size: map-get($fonts, paragraph12);
+      font-size: map-get($fonts, paragraph12);
     }
   }
 
@@ -225,11 +271,11 @@
     .rating {
       .starSide {
         span {
-            font-size: map-get($fonts, paragraph12);
+          font-size: map-get($fonts, paragraph12);
         }
       }
       .soldCount {
-          font-size: map-get($fonts, paragraph12);
+        font-size: map-get($fonts, paragraph12);
       }
     }
   }

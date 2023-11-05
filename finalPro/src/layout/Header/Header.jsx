@@ -19,25 +19,29 @@ import SignUpIn from "../../components/SignUpIn";
 
 import { useForm } from "react-hook-form";
 import UserNotificationSign from "../../components/UserNotificationSign";
-import { changeShowContent, changeSignInStatus } from "../../redux/reducers/auth";
+import {
+  changeModalLogStatus,
+  changeShowContent,
+  changeSignInStatus,
+} from "../../redux/reducers/auth";
 
 //Import Image Notify
 import SuccesImg from "../../assets/icons/header/tick-circle.svg";
 import ErrorImg from "../../assets/icons/header/ErrorTick.png";
 import UserModal from "./component/UserModal";
+import React from "react";
 
 const Header = () => {
-  const { regStatus, showContent, status, token } = useSelector(
+  const { regStatus, showContent, status, token,userDatas,showModalLoginInfo } = useSelector(
     (state) => state.auth
   );
 
-   //console.log(status, "error handler");
+  //console.log(userDatas.username, "error handler");
 
-   function signInError(){
-    dispatch(changeSignInStatus())
+  function signInError() {
+    dispatch(changeSignInStatus());
     alert("Please write correct email or password");
-   
-   }
+  }
 
   const handleClick = () => {
     // setShowContent(!showContent);
@@ -80,6 +84,22 @@ const Header = () => {
     dispatch(fetchAuthLogin(logObjj));
   };
   // console.log(watch('password'))
+
+  // Login succed Notification asynchronous
+  const [showNotification, setShowNotification] = React.useState(false);
+
+  React.useEffect(() => {
+    if (status === "success" && token && !showModalLoginInfo  ) {
+      setShowNotification(true);
+      
+      setTimeout(() => {
+        dispatch(changeModalLogStatus())
+        setShowNotification(false);
+      }, 2000); // Display for 3 seconds
+    }
+  }, [dispatch, showModalLoginInfo, status, token]);
+
+  const loginSuccedNotification ="loginSuccedNotification"
   return (
     <header>
       <div className="container">
@@ -119,6 +139,7 @@ const Header = () => {
                     description={
                       "There was an error creating your account. Please try again."
                     }
+                    newClassLogin={"loginSuccedNotification"}
                   />
                 </>
               ) : (
@@ -286,10 +307,20 @@ const Header = () => {
             </>
           )}
         </div>
-        
       </SignUpIn>
 
-      {status === "error" && signInError() }
+      {status === "error" && signInError()}
+
+      {showNotification && (
+        <UserNotificationSign
+          image={SuccesImg}
+          title={
+            "Login Successful!"
+          }
+          description={`Welcome, ${userDatas.username}! You have successfully logged in.`}
+          newClassLogin={loginSuccedNotification}
+        />
+      )}
 
       <UserModal />
       <div className="ovarley" onClick={closeFilter}></div>

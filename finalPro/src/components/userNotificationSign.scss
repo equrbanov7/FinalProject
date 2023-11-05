@@ -46,18 +46,18 @@
     .btnSign {
       width: 100%;
       button {
-        // color: var(--white-general, #fff);
+        color: var(--white-general, #fff);
         text-align: center;
         border-radius: 8px;
         background: var(--dark-green-01, #1e4c2f);
 
         /* Heading / Eh - 16 Semi Bold -  Lh 140% */
         font-family: Clash Grotesk;
-        // font-size: 16px;
-        // font-style: normal;
-        // font-weight: 600;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
 
-        @include makeColorFix(white, paragraph16, HardWeight);
+        // @include makeColorFix(white, paragraph16, HardWeight);
         line-height: 140%; /* 22.4px */
         letter-spacing: -0.2px;
         width: 100%;

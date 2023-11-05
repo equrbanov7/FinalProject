@@ -6,7 +6,8 @@ const initialState = {
   error: "",
   status: "nothing",
   regStatus:"nothing",
-  showContent:"false"
+  showContent:"false",
+  showModalLoginInfo: false
 };
 
 export const authReducer = createSlice({
@@ -30,9 +31,13 @@ export const authReducer = createSlice({
       state.status = "nothing";
       state.regStatus = "nothing";
       state.showContent = false;
+      state.showModalLoginInfo=false
     },
     changeSignInStatus(state){
       state.status="nothing"
+    },
+    changeModalLogStatus(state){
+      state.showModalLoginInfo=!state.showModalLoginInfo
     }
     
     
@@ -90,6 +95,7 @@ export const {
   changeRegistrationStatus,
   changeRegistrationDefault,
   signOutAct,
-  changeSignInStatus
+  changeSignInStatus,
+  changeModalLogStatus
 }= authReducer.actions
 export default authReducer.reducer;

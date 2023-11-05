@@ -9,6 +9,7 @@
   border-radius: 12px;
   border: 2px solid var(--d-grey-01, #e4e9ee);
   cursor: pointer;
+  transition: color .3s ease-in-out, box-shadow 
 }
 
 .catchElm {
@@ -46,6 +47,8 @@
     }
   }
 }
+
+
 
 //1024px
 @media (max-width: 1024px) {

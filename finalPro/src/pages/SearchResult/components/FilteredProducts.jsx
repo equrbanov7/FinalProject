@@ -90,7 +90,7 @@ const FilteredProducts = ({ searchId }) => {
                     // Apply truncation logic for screen width less than or equal to 778 pixels.
                     truncatedTitle = attributes.title.slice(0, 10) + "...";
                     //console.log("778")
-                  }
+                  } 
                   return (
                     <NewCarditem
                       key={id}
