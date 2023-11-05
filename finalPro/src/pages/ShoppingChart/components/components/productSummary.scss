@@ -52,7 +52,7 @@
    
     text-align: right;
 
-    @include makeColorFix(black, paragraph20, RegularWeight);
+    @include makeColorFix(black, paragraph20, HardWeight);
   }
 
   .selectedProductsInBox,

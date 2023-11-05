@@ -25,7 +25,7 @@ const Search = () => {
   const handleBlur = () => {
     dispatch(searchInputControl())
   };
-  console.log(searchFocus,"fooo")
+  //console.log(searchFocus,"fooo")
 
   //console.log(isFocused,"focusss")
   const dispatch = useDispatch();

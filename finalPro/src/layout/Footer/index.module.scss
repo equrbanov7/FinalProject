@@ -65,7 +65,13 @@ footer {
   width: 127px;
   height: auto;
 }
-//! Query for Ipad
+
+footer {
+  .footer_right_bottom{
+    display: flex;
+    gap: 24px;
+  }
+}
 @media screen and (min-width: 1024px) {
   footer {
     width: 100%;
@@ -99,4 +105,12 @@ footer {
       }
     }
   }
+
+  footer {
+    .footer_right_bottom{
+      display: flex;
+      gap: 32px;
+    }
+  }
 }
+
