@@ -109,7 +109,19 @@ const ProductSummary = () => {
           <div className="checkoutCLick">
             {pathNames[1] === "shoppingChart" ? (
               <>
-                <Button btnData={"Checkout"} handleClick={alertLoginCustomer} />
+
+                {token && status == "success" ? (
+                   <>
+                    <Button btnData={"Checkout"}  />
+                   </>
+                ):(
+                  <>
+                   <Button btnData={"Checkout"} handleClick={alertLoginCustomer} />
+                  </>
+                )}
+               
+
+
               </>
             ) : (
               <>
