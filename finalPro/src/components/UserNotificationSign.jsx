@@ -9,7 +9,7 @@ import {
   changeRegistrationStatus,
 } from "../redux/reducers/auth";
 
-const UserNotificationSign = ({ image, title, description, newClassLogin }) => {
+const UserNotificationSign = ({ image, title, description }) => {
   const dispatch = useDispatch();
 
   const { regStatus } = useSelector((state) => state.auth);
@@ -25,7 +25,7 @@ const UserNotificationSign = ({ image, title, description, newClassLogin }) => {
     dispatch(changeRegistrationDefault());
   };
   return (
-    <div className={`UserNotificationSign ${newClassLogin}`}>
+    <div className={`UserNotificationSign`}>
       <div className="innerNotification">
         <div className="imgNotify">
           <img src={image} alt="notify" />
@@ -33,7 +33,7 @@ const UserNotificationSign = ({ image, title, description, newClassLogin }) => {
         <div className="informationUser">
           <TitleDescription title={title} desc={description} />
         </div>
-        {!newClassLogin && (
+      
           <div className="btnSign">
             {regStatus === "error" ? (
               <>
@@ -45,7 +45,7 @@ const UserNotificationSign = ({ image, title, description, newClassLogin }) => {
               </>
             )}
           </div>
-        )}
+       
       </div>
     </div>
   );

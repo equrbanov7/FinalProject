@@ -15,7 +15,7 @@ import { signOutUserDatas } from "../../../redux/reducers/cardReducer";
 import { signOutUserFilters } from "../../../redux/reducers/categoryReducer";
 const UserModal = () => {
   const { userDatas } = useSelector((state) => state.auth);
-  console.log(userDatas);
+  //console.log(userDatas);
 
   // Sign Out
   const modalRef = React.useRef(null);

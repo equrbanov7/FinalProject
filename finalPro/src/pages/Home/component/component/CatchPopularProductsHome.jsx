@@ -8,12 +8,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../../../redux/actions/productAction";
 import { useNavigate } from "react-router-dom";
 import LoadingItems from "../../../../components/LoadingItems";
+import { signOutUserFilters } from "../../../../redux/reducers/categoryReducer";
 
 const CatchPopularProductsHome = ({ count }) => {
   const navigation = useNavigate();
   function catchId(idx, ctg, name,ctgId) {
   
     navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
+    dispatch(signOutUserFilters())
   
   }
   const { products } = useSelector((state) => state.products);

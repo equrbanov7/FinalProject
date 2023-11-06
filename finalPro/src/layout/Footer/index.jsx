@@ -61,8 +61,8 @@ const Footer = () => {
                 <p>COPYRIGHT © LENNY CO., LTD. ALL RIGHTS RESERVED.</p>
             </div>
             <div className={style.footer_right_bottom}> 
-                <p>Terms of use</p>
-                <p>Privacy Policy</p>
+                <p>Cavid Eliyev</p>
+                <p>Elvin Qurbanov</p>
             </div>
         </div>
     </footer>

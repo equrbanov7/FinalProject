@@ -19,9 +19,10 @@ function ScrollToTop() {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
+  <ScrollToTop />
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <ScrollToTop />
+        
         <App />
       </PersistGate>
     </Provider>

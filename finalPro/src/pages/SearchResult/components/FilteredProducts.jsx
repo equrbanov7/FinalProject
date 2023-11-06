@@ -54,6 +54,9 @@ const FilteredProducts = ({ searchId }) => {
     } else {
       dispatch(getProducts(12));
     }
+
+   
+
   }, [checkCategoryControl, dispatch, filterObj, page, searchId]);
 
   
@@ -141,7 +144,7 @@ const FilteredProducts = ({ searchId }) => {
         </>
       )}
 
-      {oneCategory?.data?.length === 0 && <EmptyProductInfo />}
+      {oneCategory?.data?.length === 0 && <EmptyProductInfo />  }
     </div>
   );
 };

@@ -11,6 +11,8 @@ const PopularProduct = () => {
   const [loadMode, setLoadMode] = React.useState(true); // Initialize to "Load More" mode
  
 
+  
+
   const loadMoreOrLess = () => {
     if (loadMode) {
       // "Load More" mode
@@ -19,7 +21,7 @@ const PopularProduct = () => {
         setClickCount(prev => prev+1)
       }
       else{
-        console.log(counter,"exm")
+        //console.log(counter,"exm")
         setLoadMode(!loadMode);
       }
     } else {

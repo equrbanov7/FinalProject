@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleCheck } from "../../../../../../redux/reducers/cardReducer";
+import { signOutUserFilters } from "../../../../../../redux/reducers/categoryReducer";
 
 // eslint-disable-next-line react/prop-types
 const LeftShoppingChecking = ({ productInfo, priceCount, productCheck }) => {
@@ -18,6 +19,7 @@ const LeftShoppingChecking = ({ productInfo, priceCount, productCheck }) => {
   function catchId(idx, ctg, name,ctgId) {
    // navigation(`/productdetail/${idx}`);
     navigation(`/${ctg}/${ctgId}/${name}/${idx}`);
+    dispatch(signOutUserFilters())
   
   }
   

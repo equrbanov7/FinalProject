@@ -2,7 +2,7 @@ import "./wayOfPage.scss";
 import { Breadcrumbs } from "@mui/material";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 
 
 const WayOfPage = () => {
@@ -24,7 +24,7 @@ const WayOfPage = () => {
   }, [location.pathname]);
   //console.log(breadcrumbs,"a")
 
-  const { oneCategory, filterObj} = useSelector((state) => state.categories);
+//  const { oneCategory, filterObj} = useSelector((state) => state.categories);
  
  //console.log(filterObj)
 
@@ -52,13 +52,13 @@ const WayOfPage = () => {
             );
           }
           //console.log(elm?.label, breadcrumbs,"aa")
-          if(oneCategory?.data?.length === 0 || filterObj?.categoryArray?.length >0 ){
-              //console.log(filterObj)
-            return null
-            //console.log(test) 
+          // if(oneCategory?.data?.length === 0 || filterObj?.categoryArray?.length >0 ){
+          //     //console.log(filterObj)
+          //   return null
+          //   //console.log(test) 
           
 
-          } 
+          // } 
         
           return (
             <Link key={i} to={`${elm.path}/${breadcrumbs[1].label}`} className="eachBreadCrumbs">

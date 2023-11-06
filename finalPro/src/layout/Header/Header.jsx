@@ -20,7 +20,7 @@ import SignUpIn from "../../components/SignUpIn";
 import { useForm } from "react-hook-form";
 import UserNotificationSign from "../../components/UserNotificationSign";
 import {
-  changeModalLogStatus,
+  
   changeShowContent,
   changeSignInStatus,
 } from "../../redux/reducers/auth";
@@ -29,10 +29,10 @@ import {
 import SuccesImg from "../../assets/icons/header/tick-circle.svg";
 import ErrorImg from "../../assets/icons/header/ErrorTick.png";
 import UserModal from "./component/UserModal";
-import React from "react";
+//import React from "react";
 
 const Header = () => {
-  const { regStatus, showContent, status, token,userDatas,showModalLoginInfo } = useSelector(
+  const { regStatus, showContent, status, token } = useSelector(
     (state) => state.auth
   );
 
@@ -86,20 +86,20 @@ const Header = () => {
   // console.log(watch('password'))
 
   // Login succed Notification asynchronous
-  const [showNotification, setShowNotification] = React.useState(false);
+  // const [showNotification, setShowNotification] = React.useState(false);
 
-  React.useEffect(() => {
-    if (status === "success" && token && !showModalLoginInfo  ) {
-      setShowNotification(true);
+  // React.useEffect(() => {
+  //   if (status === "success" && token && !showModalLoginInfo  ) {
+  //     setShowNotification(true);
       
-      setTimeout(() => {
-        dispatch(changeModalLogStatus())
-        setShowNotification(false);
-      }, 2000); // Display for 3 seconds
-    }
-  }, [dispatch, showModalLoginInfo, status, token]);
+  //     setTimeout(() => {
+  //       dispatch(changeModalLogStatus())
+  //       setShowNotification(false);
+  //     }, 2000); // Display for 3 seconds
+  //   }
+  // }, [dispatch, showModalLoginInfo, status, token]);
 
-  const loginSuccedNotification ="loginSuccedNotification"
+ // const loginSuccedNotification ="loginSuccedNotification"
   return (
     <header>
       <div className="container">
@@ -311,7 +311,7 @@ const Header = () => {
 
       {status === "error" && signInError()}
 
-      {showNotification && (
+      {/* {showNotification && (
         <UserNotificationSign
           image={SuccesImg}
           title={
@@ -320,7 +320,7 @@ const Header = () => {
           description={`Welcome, ${userDatas.username}! You have successfully logged in.`}
           newClassLogin={loginSuccedNotification}
         />
-      )}
+      )} */}
 
       <UserModal />
       <div className="ovarley" onClick={closeFilter}></div>
