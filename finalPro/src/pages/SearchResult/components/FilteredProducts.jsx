@@ -52,7 +52,7 @@ const FilteredProducts = ({ searchId }) => {
       }
       
     } else {
-      dispatch(getProducts(12));
+      dispatch(getProducts(9));
     }
 
    

@@ -52,23 +52,19 @@ const FeaturedCtg = () => {
 
   const navigation = useNavigate();
   const { categories } = useSelector((state) => state.categories);
-     const { loading } = useSelector((state) => state.categories);
+  const { loading } = useSelector((state) => state.categories);
 
   // console.log(loading,"loadd")
 
- 
-
- 
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(getCategories());
   }, [dispatch]);
 
-  function catchId(idx,ctg) {
+  function catchId(idx, ctg) {
     //console.log(ctg)
-    dispatch(signOutUserFilters())
+    dispatch(signOutUserFilters());
     navigation(`/${ctg}/${idx}`);
-   
   }
   return (
     <div className="FeaturedCtgAll my-SpesficContainer my-Margin-container ">
@@ -78,7 +74,7 @@ const FeaturedCtg = () => {
         {loading ? (
           // Show loading state while data is being fetched
           <div className="loading-container">
-            <LoadingItems  loading={loading} size={20}/>
+            <LoadingItems loading={loading} size={20} />
           </div>
         ) : (
           <Swiper
@@ -89,19 +85,20 @@ const FeaturedCtg = () => {
             modules={[Scrollbar]}
             className="mySwiper"
           >
-            {categories?.data?.map(({ id, attributes }) => (
-              
-              <SwiperSlide key={id}>
-                <SliderItem
-                  key={id}
-                  title={attributes.title}
-                  image={`${import.meta.env.VITE_UPLOAD_IMAGE}${
-                    attributes.img.data.attributes.url
-                  }`}
-                  handleId={() => catchId(id,attributes.title)}
-                />
-              </SwiperSlide>
-            ))}
+            {categories?.data?.map(({ id, attributes }) => {
+              return (
+                <SwiperSlide key={id}>
+                  <SliderItem
+                    key={id}
+                    title={attributes.title}
+                    image={`${import.meta.env.VITE_UPLOAD_IMAGE}${
+                      attributes.img.data.attributes.url
+                    }`}
+                    handleId={() => catchId(id, attributes.title)}
+                  />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         )}
       </div>

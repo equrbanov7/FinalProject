@@ -1,24 +1,22 @@
 import React from "react";
-import ArticleCradHome from "../../../../components/ArticleCradHome"
-import "./catchArticlesHome.scss"
+import ArticleCradHome from "../../../../components/ArticleCradHome";
+import "./catchArticlesHome.scss";
 import { getArticles } from "../../../../api/articles";
 
 const CatchArticlesHome = () => {
-    const [articles, setArticles] = React.useState([]);
+  const [articles, setArticles] = React.useState([]);
 
-    React.useEffect(() => {
-      async function getAllArticles() {
-        const data = await getArticles();
-  
-        setArticles(data);
-        // console.log(data, "++++")
-      }
-      getAllArticles();
-    }, []);
-    // console.log(articles)
+  React.useEffect(() => {
+    async function getAllArticles() {
+      const data = await getArticles();
+      setArticles(data);
+    }
+    getAllArticles();
+  }, []);
+
   return (
     <div className="AllArticleforHome">
-       {articles?.data?.map(({ id, attributes }) => {
+      {articles?.data?.map(({ id, attributes }) => {
         return (
           <ArticleCradHome
             key={id}
@@ -32,7 +30,7 @@ const CatchArticlesHome = () => {
         );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default CatchArticlesHome
+export default CatchArticlesHome;
