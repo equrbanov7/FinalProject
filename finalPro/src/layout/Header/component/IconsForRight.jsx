@@ -12,7 +12,7 @@ import "./IconsForRight.scss";
 // For Logined User
 import SmsBox from "../../../assets/icons/header/smsBox.svg";
 import Notification from "../../../assets/icons/header/notification.svg";
-import Person from "../../../assets/icons/header/userImg.svg";
+import Person from "../../../assets/icons/header/user.svg";
 import MenuBurger from "../../../assets/icons/header/menu.svg";
 
 import React from "react";

@@ -1,5 +1,5 @@
 import "./userModal.scss";
-import Person from "../../../assets/icons/header/userImg.svg";
+import Person from "../../../assets/icons/header/user.svg";
 import BalanceLenny from "../../../assets/icons/header/moneys.svg";
 import CoinLenny from "../../../assets/icons/header/coin.svg";
 import Purchase from "../../../assets/icons/header/purchase.svg";

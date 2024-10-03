@@ -11,8 +11,8 @@ import BottomDots from "../../../../assets/icons/header/dottedImg.svg";
 const SliderRightItem = () => {
   const navigation = useNavigate();
   function catchId(idx) {
-    navigation(`/Fashion/2/shirt/${idx}`);
-
+    navigation(`/Fashion/2/Green%20T-shirt/${idx}`);
+   // http://localhost:5173/Fashion/2/Green%20T-shirt/14
     // console.log(idx)
   }
   return (
@@ -35,7 +35,7 @@ const SliderRightItem = () => {
           rating={"4.3"}
           image={SliderImageHome}
           price={20}
-          handleId={() => catchId(21)}
+          handleId={() => catchId(14)}
         />
       </div>
     </div>
