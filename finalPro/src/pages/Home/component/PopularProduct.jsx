@@ -16,7 +16,7 @@ const PopularProduct = () => {
   const loadMoreOrLess = () => {
     if (loadMode) {
       // "Load More" mode
-      if (clickCount < 2) {
+      if (clickCount < 1) {
         setCounter(counter + 8);
         setClickCount(prev => prev+1)
       }
